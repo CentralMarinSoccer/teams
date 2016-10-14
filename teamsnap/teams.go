@@ -37,11 +37,12 @@ func (ts TeamSnap) team(team relHrefData) (Team, bool) {
 	var t Team
 
 	var division = string(ts.configuration.Division)
-	if results, ok := team.Data.findValues("name", "id", "is_archived_season", "is_retired"); ok {
+	if results, ok := team.Data.findValues("name", "id", "is_archived_season", "is_retired", "division_name"); ok {
 		if results["is_archived_season"] == "true" || results["is_retired"] == "true" {
 			return t, false
 		}
 		t.Name = results["name"]
+		t.Level = results["division_name"]
 		t.ID = generateHash(string(division), results["id"])
 
 		ts.teamPreferences(team.Links, &t)

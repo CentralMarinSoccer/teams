@@ -30,7 +30,7 @@ type Configuration struct {
 
 type ClubData struct {
 	LastUpdated time.Time `json:"last_updated"`
-	Teams       Teams
+	Teams       Teams     `json:"teams"`
 }
 
 type Teams []Team
@@ -41,6 +41,7 @@ type Team struct {
 	Name     string       `json:"name"`
 	Gender   string       `json:"gender"`
 	Year     int          `json:"year"`
+	Level    string       `json:"level"`
 	PhotoURL string       `json:"image_url,omitempty"`
 	Members  []TeamMember `json:"members,omitempty"`
 	Events   []TeamEvent  `json:"events,omitempty"`
