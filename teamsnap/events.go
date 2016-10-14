@@ -2,6 +2,7 @@ package teamsnap
 
 import (
 	"time"
+	"fmt"
 )
 
 //type location struct {
@@ -30,9 +31,14 @@ func (ts TeamSnap) events(links relHrefDatas) []TeamEvent {
 }
 
 func (ts TeamSnap) event(e relHrefData, locs map[string]TeamEventLocation) (TeamEvent, bool) {
-	if results, ok := e.Data.findValues("type", "name", "arrival_date", "duration_in_minutes", "location_id"); ok {
+	if results, ok := e.Data.findValues("type", "name", "arrival_date", "duration_in_minutes", "location_id", "minutes_to_arrive_early"); ok {
 		loc := locs[results["location_id"]]
 		start, _ := time.Parse(time.RFC3339, results["arrival_date"])
+
+		// Game start is arrival_date + minutes_to_arrive_early
+		if earlyArrival, err := time.ParseDuration(fmt.Sprintf("%sm", results["minutes_to_arrive_early"])); err == nil {
+			start = start.Add(earlyArrival);
+		}
 
 		// Only add events if they're for today or the future
 		diff := start.Sub(time.Now())
