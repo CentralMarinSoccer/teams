@@ -1,5 +1,7 @@
 package teamsnap
 
+import "strings"
+
 func (ts TeamSnap) teamPreferences(links relHrefDatas, t *Team) {
 
 	// Get Team Preferences url
@@ -23,7 +25,12 @@ func teamImage(tr teamSnapResult) string {
 
 func teamGender(tr teamSnapResult) string {
 	if results, ok := tr.Collection.Items[0].Data.findValues("gender"); ok {
-		return results["gender"]
+		// convert to boys / girls
+		if strings.EqualFold(results["gender"], "Men") {
+			return "Boys"
+		} else {
+			return "Girls"
+		}
 	}
 	return ""
 }
