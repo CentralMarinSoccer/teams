@@ -61,6 +61,7 @@ type TeamMember struct {
 // TeamEvent contains all of the data that makes up an event
 type TeamEvent struct {
 	Start     time.Time            `json:"start"`
+	Opponent  string               `json:"opponent"`
 	Duration  string               `json:"duration"`
 	Location  TeamEventLocation    `json:"location"`
 }

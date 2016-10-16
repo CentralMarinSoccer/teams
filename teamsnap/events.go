@@ -52,6 +52,7 @@ func (ts TeamSnap) event(e relHrefData, locs map[string]TeamEventLocation) (Team
 
 			var event =  TeamEvent{
 				Start:    start,
+				Opponent: ts.opponent(e.Links),
 				Duration: results["duration_in_minutes"],
 				Location: TeamEventLocation{
 					Name:    loc.Name,
@@ -93,5 +94,16 @@ func (ts TeamSnap) load_locations(links relHrefDatas, loc_type string) {
 			}
 		}
 	}
+}
+
+func (ts TeamSnap) opponent(links relHrefDatas) string {
+	if href, ok := links.findRelLink("opponent"); ok {
+		tr, _ := ts.makeRequest(href)
+		if results, ok := tr.Collection.Items[0].Data.findValues("name"); ok {
+			return results["name"]
+		}
+	}
+
+	return ""
 }
 
