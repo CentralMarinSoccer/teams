@@ -2,7 +2,6 @@ package teamsnap
 
 import (
 	"encoding/json"
-	"fmt"
 	"log"
 	"strconv"
 )
@@ -82,11 +81,14 @@ func (nvps nameValuePrompts) findValues(names ...string) (nameValueResults, bool
 					case int:
 						results[name] = strconv.FormatInt(int64(nvp.Value.(int)), 10)
 					default:
-						fmt.Printf("Unknown value: %v for name: %s\n", nvp.Value, name)
+						log.Printf("Unknown value: %v for name: %s\n", nvp.Value, name)
 					}
+				} else {
+					results[name] = ""
 				}
 			}
 		}
 	}
+
 	return results, len(results) == len(names)
 }

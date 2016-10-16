@@ -15,6 +15,7 @@ type ClubDataInterface interface {
 
 type TeamSnap struct {
 	root          teamSnapResult
+	locations     map[string]TeamEventLocation
 	clubData      ClubData
 	configuration Configuration
 }
@@ -60,7 +61,6 @@ type TeamMember struct {
 // TeamEvent contains all of the data that makes up an event
 type TeamEvent struct {
 	Name      string               `json:"name"`
-	EventType string               `json:"type"`
 	Start     time.Time            `json:"start"`
 	Duration  string               `json:"duration"`
 	Location  TeamEventLocation    `json:"location"`
@@ -91,6 +91,7 @@ func New(configuration *Configuration) (*TeamSnap, error) {
 
 	ts := &TeamSnap{
 		configuration: *configuration,
+		locations: make(map[string]TeamEventLocation),
 	}
 
 	// Check if the file exists

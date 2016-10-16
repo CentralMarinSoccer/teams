@@ -5,23 +5,18 @@ import (
 	"fmt"
 )
 
-//type location struct {
-//	name    string
-//	address string
-//}
-
 func (ts TeamSnap) events(links relHrefDatas) []TeamEvent {
 
 	var events []TeamEvent
 
 	// Load all of the team event locations
-	loc := ts.locations(links)
+	ts.team_locations(links)
 
 	// Load the events
 	if href, ok := links.findRelLink("events"); ok {
 		tr, _ := ts.makeRequest(href)
 		for _, e := range tr.Collection.Items {
-			if event, ok := ts.event(e, loc); ok {
+			if event, ok := ts.event(e, ts.locations); ok {
 				events = append(events, event)
 			}
 		}
@@ -31,13 +26,24 @@ func (ts TeamSnap) events(links relHrefDatas) []TeamEvent {
 }
 
 func (ts TeamSnap) event(e relHrefData, locs map[string]TeamEventLocation) (TeamEvent, bool) {
-	if results, ok := e.Data.findValues("type", "name", "arrival_date", "duration_in_minutes", "location_id", "minutes_to_arrive_early"); ok {
-		loc := locs[results["location_id"]]
+
+	if results, ok := e.Data.findValues("is_game", "name", "arrival_date", "duration_in_minutes", "division_location_id", "location_id", "minutes_to_arrive_early"); ok {
+		if results["is_game"] != "true" {
+			return TeamEvent{}, false
+		}
+		var loc TeamEventLocation
+		locId := results["location_id"]
+		if locId == "" {
+			locId = results["division_location_id"]
+		}
+		loc = locs[locId]
 		start, _ := time.Parse(time.RFC3339, results["arrival_date"])
 
 		// Game start is arrival_date + minutes_to_arrive_early
-		if earlyArrival, err := time.ParseDuration(fmt.Sprintf("%sm", results["minutes_to_arrive_early"])); err == nil {
-			start = start.Add(earlyArrival);
+		if (results["minutes_to_arrive_early"] != "") {
+			if earlyArrival, err := time.ParseDuration(fmt.Sprintf("%sm", results["minutes_to_arrive_early"])); err == nil {
+				start = start.Add(earlyArrival);
+			}
 		}
 
 		// Only add events if they're for today or the future
@@ -68,22 +74,25 @@ func (ts TeamSnap) event(e relHrefData, locs map[string]TeamEventLocation) (Team
 	return TeamEvent{}, false
 }
 
-func (ts TeamSnap) locations(links relHrefDatas) map[string]TeamEventLocation {
-	locs := make(map[string]TeamEventLocation)
+func (ts TeamSnap) team_locations(links relHrefDatas) {
 
-	// Load all of the locations for this team
-	if href, ok := links.findRelLink("locations"); ok {
+	// Load club and division locations
+	ts.load_locations(links, "division_locations")
+	ts.load_locations(links, "locations")
+}
+
+func (ts TeamSnap) load_locations(links relHrefDatas, loc_type string) {
+
+	if href, ok := links.findRelLink(loc_type); ok {
 		tr, _ := ts.makeRequest(href)
 		for _, l := range tr.Collection.Items {
 			if results, ok := l.Data.findValues("id", "name", "address"); ok {
-				locs[results["id"]] = TeamEventLocation{
+				ts.locations[results["id"]] = TeamEventLocation{
 					Name:    results["name"],
 					Address: results["address"],
 				}
-
 			}
 		}
 	}
-
-	return locs
 }
+
