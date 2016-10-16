@@ -7,7 +7,7 @@ import (
 )
 
 func (ts TeamSnap) members(links relHrefDatas) ([]TeamMember, int) {
-	var year int
+	year := 0
 	var members []TeamMember
 
 	if href, ok := links.findRelLink("members"); ok {
@@ -31,7 +31,7 @@ func teamYear(birthday string, year *int) {
 		y, _ = strconv.Atoi(birthday[:4])
 	}
 
-	if y < *year || *year == 0 {
+	if y > *year {
 		*year = y
 	}
 }
