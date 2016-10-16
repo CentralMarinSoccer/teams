@@ -51,7 +51,6 @@ func (ts TeamSnap) event(e relHrefData, locs map[string]TeamEventLocation) (Team
 		if diff.Hours() > -16 {
 
 			var event =  TeamEvent{
-				Name:     results["name"],
 				Start:    start,
 				Duration: results["duration_in_minutes"],
 				Location: TeamEventLocation{
