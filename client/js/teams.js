@@ -260,13 +260,18 @@ var Teams = (function() {
     };
 
     var activeMarkers = [];
+    var markerCluster;
     var updateMap = function (dateObj) {
 
+        if (markerCluster == undefined) {
+            markerCluster = new MarkerClusterer(_map, null, {imagePath: 'team/client/images/m'});
+        }
         // Clear existing markers
         activeMarkers.forEach(function(marker) {
             marker.setMap(null);
         });
         activeMarkers = [];
+        markerCluster.clearMarkers();
 
         // Add markers for the specified date
         var newBoundary = new google.maps.LatLngBounds();
@@ -278,28 +283,13 @@ var Teams = (function() {
             activeMarkers.push(marker);
         });
         _map.fitBounds(newBoundary);
-        var markerCluster = new MarkerClusterer(_map, markers, {imagePath: 'team/client/images/m'});
+        markerCluster.addMarkers(markers);
     };
 
     return {
         initMap : initMap
     }
 })();
-
-// function setupPage() {
-//
-//     var datePicker = document.createElement('select');
-//     datePicker.id = "map-date-picker";
-//     script.parentNode.appendChild(datePicker);
-//
-//     var div = document.createElement('div');
-//     div.id = "map";
-//     div.height = '400px';
-//     div.width = '100%';
-//     script.parentNode.appendChild(div);
-// }
-//
-// setupPage();
 
 
 
