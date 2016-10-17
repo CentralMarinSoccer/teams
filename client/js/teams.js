@@ -169,12 +169,17 @@ var Teams = (function() {
         };
     });
 
-    var _infoWindow;
+    var _infoWindow;  // Google Info popup window
     var _datePicker; // DOM object
     var _map;  // Google Map object
     var _locations = Locations; // All locations
+    var _teams  = []
 
-    function initMap() {
+    var teamName = function(team) {
+        return team.year + " " + team.gender + " " + team.level;
+    };
+
+    var initMap = function() {
 
         _infoWindow = new google.maps.InfoWindow();
         _map = new google.maps.Map(document.getElementById('map'));
@@ -185,9 +190,9 @@ var Teams = (function() {
             processData(data);
         }, function (status) {
             // TODO: Handle this error differently
-            alert('Faield to get data. Status: ' + status);
+            alert('Failed to get data. Status: ' + status);
         });
-    }
+    };
 
     var getTeamsJSON = function (successHandler, errorHandler) {
 
@@ -217,6 +222,9 @@ var Teams = (function() {
 
         // construct locations
         data.teams.forEach(function (team) {
+
+            _teams.push(team);
+
             if (team.events) {
                 team.events.forEach(function (event) {
 
@@ -226,7 +234,7 @@ var Teams = (function() {
 
                         var eventDate = new Date(event.start);
                         var location = _locations.addLocation(lat,lng, event.location.address, event.location.name);
-                        location.addGame(eventDate, team.year + " " + team.gender + " " + team.level + " vs " + event.opponent);
+                        location.addGame(eventDate, teamName(team) + " vs " + event.opponent);
 
                         // save off date
                         dates[eventDate.justDate()] = true;
@@ -257,6 +265,32 @@ var Teams = (function() {
         });
 
         updateMap(availableDates[0]);
+
+        // Sort and Display teams
+        teams.sort(function(team1, team2) {
+            if (team1.gender > team2.gender) return 1;
+            else if (team1.gender < team2.gender) return -1;
+            else {
+                if (team1.year > team2.year) return 1;
+                else if (team1.year < team2.year) return -1;
+                else {
+                    if (team1.level > team2.level) return 1;
+                    else if (team1.level < team2.level) return -1;
+                }
+            }
+
+            return 0;
+        });
+    };
+
+    // TODO: use a templating engine (https://github.com/olado/doT)
+    var displayTeams = function() {
+        var teams = document.getElementById("teams");
+        var html = "";
+        _teams.forEach(function(team) {
+
+        });
+        teams.innerHTML(html);
     };
 
     var activeMarkers = [];
