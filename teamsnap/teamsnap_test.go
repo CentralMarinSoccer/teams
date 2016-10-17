@@ -3,7 +3,7 @@ package teamsnap_test
 import (
 	. "github.com/centralmarinsoccer/teams/teamsnap"
 
-	"encoding/json"
+	//"encoding/json"
 	"errors"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
@@ -76,7 +76,7 @@ var _ = Describe("TeamSnap", func() {
 		httpMfs.StatCall.Returns.Error = errors.New("File not found")
 		httpConfiguration = Configuration{Token: testToken, Division: 5678, FileSystem: &httpMfs, TeamSnapServer: server.URL}
 	})
-
+/*
 	It("should return cached TeamSnap data", func() {
 
 		// Load fixture data
@@ -97,7 +97,7 @@ var _ = Describe("TeamSnap", func() {
 		actual := ts.Get()
 		Expect(actual).Should(Equal(expected), "Fixture data doesn't match cache data")
 	})
-
+*/
 	// Test HTTP Requests
 	It("should return club data from mocked http calls", func() {
 		_, err := New(&httpConfiguration)
