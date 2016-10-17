@@ -6,7 +6,7 @@ import (
 	"github.com/centralmarinsoccer/teams/filesystem"
 )
 
-// FileSystemData provides an interface to set and get data for mocked file system calls
+// FileSystem provides an interface to set and get data for mocked file system calls
 type FileSystem struct {
 	OpenCall struct {
 		Receives struct {
@@ -53,12 +53,14 @@ func (f *FileSystem) Open(name string) (filesystem.FileInterface, error) {
 	return f, nil
 }
 
+// Stat provides a mocked file system Stat call
 func (f *FileSystem) Stat(name string) (os.FileInfo, error) {
 	f.StatCall.Receives.Filename = name
 
 	return f.StatCall.Returns.FileInfo, f.StatCall.Returns.Error
 }
 
+// ReadFile provides a mocked file system ReadFile call
 func (f *FileSystem) ReadFile(filename string) ([]byte, error) {
 	f.ReadFileCall.Receives.Filename = filename
 

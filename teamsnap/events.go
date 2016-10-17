@@ -10,7 +10,7 @@ func (ts TeamSnap) events(links relHrefDatas) []TeamEvent {
 	var events []TeamEvent
 
 	// Load all of the team event locations
-	ts.team_locations(links)
+	ts.teamLocations(links)
 
 	// Load the events
 	if href, ok := links.findRelLink("events"); ok {
@@ -32,11 +32,11 @@ func (ts TeamSnap) event(e relHrefData, locs map[string]TeamEventLocation) (Team
 			return TeamEvent{}, false
 		}
 		var loc TeamEventLocation
-		locId := results["location_id"]
-		if locId == "" {
-			locId = results["division_location_id"]
+		locID := results["location_id"]
+		if locID == "" {
+			locID = results["division_location_id"]
 		}
-		loc = locs[locId]
+		loc = locs[locID]
 		start, _ := time.Parse(time.RFC3339, results["arrival_date"])
 
 		// Game start is arrival_date + minutes_to_arrive_early
@@ -74,16 +74,16 @@ func (ts TeamSnap) event(e relHrefData, locs map[string]TeamEventLocation) (Team
 	return TeamEvent{}, false
 }
 
-func (ts TeamSnap) team_locations(links relHrefDatas) {
+func (ts TeamSnap) teamLocations(links relHrefDatas) {
 
 	// Load club and division locations
-	ts.load_locations(links, "division_locations")
-	ts.load_locations(links, "locations")
+	ts.loadLocations(links, "division_locations")
+	ts.loadLocations(links, "locations")
 }
 
-func (ts TeamSnap) load_locations(links relHrefDatas, loc_type string) {
+func (ts TeamSnap) loadLocations(links relHrefDatas, locType string) {
 
-	if href, ok := links.findRelLink(loc_type); ok {
+	if href, ok := links.findRelLink(locType); ok {
 		tr, _ := ts.makeRequest(href)
 		for _, l := range tr.Collection.Items {
 			if results, ok := l.Data.findValues("id", "name", "address"); ok {

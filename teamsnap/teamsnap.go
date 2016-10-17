@@ -9,10 +9,12 @@ import (
 	"github.com/centralmarinsoccer/teams/cache"
 )
 
+// ClubDataInterface provides a mechanism to retrieve club data
 type ClubDataInterface interface {
 	Get() ClubData
 }
 
+// TeamSnap provides a mechanism to configure and cache team data stored in TeamSnap.com website
 type TeamSnap struct {
 	root          teamSnapResult
 	locations     map[string]TeamEventLocation
@@ -20,6 +22,7 @@ type TeamSnap struct {
 	configuration Configuration
 }
 
+// Configuration defines how TeamSnap information should be accessed
 type Configuration struct {
 	Token           string
 	Division        int
@@ -29,11 +32,13 @@ type Configuration struct {
 	DumpJSON        bool
 }
 
+// ClubData is the data returned from TeamSnap
 type ClubData struct {
 	LastUpdated time.Time `json:"last_updated"`
 	Teams       Teams     `json:"teams"`
 }
 
+// Teams is an array of Team
 type Teams []Team
 
 // Team stores the details of a Team
@@ -48,9 +53,9 @@ type Team struct {
 	Events   []TeamEvent  `json:"events,omitempty"`
 }
 
-const MemberTypePlayer = "player"
-const MemberTypeCoach = "coach"
-const MemberTypeManager = "manager"
+const memberTypePlayer = "player"
+const memberTypeCoach = "coach"
+const memberTypeManager = "manager"
 
 // TeamMember holds the text and metadata for a team member
 type TeamMember struct {
@@ -79,6 +84,7 @@ const defaultFilename = "teamsnap.json"
 
 // TODO: Notify callers when data in cache has changed. Maybe hash our data struct so we can detect changes
 
+// New creates a TeamSnap with the specified configuration
 func New(configuration *Configuration) (*TeamSnap, error) {
 
 	// Use defaults if variable not specified
@@ -132,10 +138,12 @@ func (ts *TeamSnap) loadTeamSnapData() bool {
 	return true
 }
 
+// Get returns club data
 func (ts *TeamSnap) Get() ClubData {
 	return ts.clubData
 }
 
+// Update reloads the club data from TeamSnap.com
 func (ts *TeamSnap) Update() bool {
 	return ts.loadTeamSnapData()
 }
@@ -153,10 +161,8 @@ func (cd ClubData) Less(i, j int) bool {
 	if cd.Teams[i].Gender == cd.Teams[j].Gender {
 		if cd.Teams[i].Year == cd.Teams[j].Year {
 			return cd.Teams[i].Name < cd.Teams[j].Name
-		} else {
-			return cd.Teams[i].Year > cd.Teams[j].Year
 		}
-	} else {
-		return cd.Teams[i].Gender < cd.Teams[j].Gender
+		return cd.Teams[i].Year > cd.Teams[j].Year
 	}
+	return cd.Teams[i].Gender < cd.Teams[j].Gender
 }

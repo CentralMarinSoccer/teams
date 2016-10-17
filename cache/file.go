@@ -7,6 +7,7 @@ import (
 	"io/ioutil"
 )
 
+// Load loads the cache file from disk using specified filename
 func Load(filename string, structure interface{}) error {
 	if _, err := os.Stat(filename); err != nil {
 		log.Printf("Cache file '%s' doesn't exist.\n", filename)
@@ -28,19 +29,17 @@ func Load(filename string, structure interface{}) error {
 	return nil
 }
 
+// Save saves the cache file to disk using the specified filename
 func Save(filename string, structure interface{}) error {
 
-	// Remove the old cache file
-//	os.Remove(filename)
-
 	// Save the data to file after successful retrieval
-	resultJson, err := json.Marshal(structure)
+	resultJSON, err := json.Marshal(structure)
 	if err != nil {
 		log.Printf("Warning: Unable to generate JSON for cache '%s'. Error: %v\n", filename, err)
 		return err
 	}
 
-	if err := ioutil.WriteFile(filename, resultJson, 0644); err != nil {
+	if err := ioutil.WriteFile(filename, resultJSON, 0644); err != nil {
 		log.Printf("Warning: Unable to save cache data to file '%s'. Error: %v\n", filename, err)
 		return err
 	}

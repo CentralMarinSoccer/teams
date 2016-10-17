@@ -23,6 +23,7 @@ type teams struct {
 
 type teamIDToJSONMap map[string][]byte
 
+// New creates an HTTP handler at /teams/
 func New(clubData teamsnap.ClubDataInterface, updateData chan bool) (http.HandlerFunc, error) {
 
 	team := &teams{

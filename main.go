@@ -18,7 +18,7 @@ import (
 
 const defaultPort = 8080
 const urlPath = "/teams/"
-const defaultInterval = 60 
+const defaultInterval = 60
 
 // Environment contains all of the required and optional environment variables
 type Environment struct {
@@ -26,7 +26,7 @@ type Environment struct {
 	Division        int
 	URL             string
 	RefreshInterval time.Duration
-	GoogleApiKey	string
+	GoogleAPIKey	string
 }
 
 func main() {
@@ -38,7 +38,7 @@ func main() {
 	}
 
 	// Create a geocoder
-	geocoder := geocode.New(env.GoogleApiKey)
+	geocoder := geocode.New(env.GoogleAPIKey)
 
 	ts, err := teamsnap.New(&teamsnap.Configuration{
 		Division:      env.Division,
@@ -122,7 +122,7 @@ func ValidateEnvs() (Environment, bool) {
 		state = false
 	}
 
-	if env.GoogleApiKey, ok = getEnvString("GOOGLE_API_KEY", "", true); !ok {
+	if env.GoogleAPIKey, ok = getEnvString("GOOGLE_API_KEY", "", true); !ok {
 		state = false
 	}
 
@@ -135,9 +135,8 @@ func getEnvString(name string, defaultVal string, required bool) (string, bool) 
 		if required {
 			log.Printf("Missing required environment variable '%s'\n", name)
 			return "", false
-		} else {
-			return defaultVal, true
 		}
+		return defaultVal, true
 	}
 
 	return val, true

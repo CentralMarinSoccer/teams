@@ -26,7 +26,8 @@ type OSFS struct{}
 // Open provides the default File System open
 func (OSFS) Open(name string) (FileInterface, error) { return os.Open(name) }
 
-// Stat provices the default File System stat
+// Stat provides the default File System stat
 func (OSFS) Stat(name string) (os.FileInfo, error) { return os.Stat(name) }
 
+// ReadFile provides the default File system read file
 func (OSFS) ReadFile(filename string) ([]byte, error) { return ioutil.ReadFile(filename) }

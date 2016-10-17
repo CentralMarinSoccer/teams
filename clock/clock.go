@@ -2,13 +2,14 @@ package clock
 
 import "time"
 
-type ClockInterface interface {
+// Interface provides a mocking point for testing interactions with time
+type Interface interface {
 	Now() time.Time
-	//	After(d time.Duration) <-chan time.Time
 }
 
+// RealClock provides a real implementation using the time package
 type RealClock struct{}
 
+// Now returns the current time
 func (RealClock) Now() time.Time { return time.Now() }
 
-//func (RealClock) After(d time.Duration) <-chan time.Time { return time.After(d) }

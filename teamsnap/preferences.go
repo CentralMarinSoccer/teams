@@ -28,9 +28,8 @@ func teamGender(tr teamSnapResult) string {
 		// convert to boys / girls
 		if strings.EqualFold(results["gender"], "Men") {
 			return "Boys"
-		} else {
-			return "Girls"
 		}
+		return "Girls"
 	}
 	return ""
 }

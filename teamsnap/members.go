@@ -50,7 +50,7 @@ func (ts TeamSnap) member(m relHrefData) (TeamMember, string) {
 
 func (ts TeamSnap) memberType(href string, results nameValueResults) string {
 	if results["is_non_player"] == "false" {
-		return MemberTypePlayer
+		return memberTypePlayer
 	}
 
 	// Determine if this is a coach
@@ -58,20 +58,20 @@ func (ts TeamSnap) memberType(href string, results nameValueResults) string {
 		for _, e := range tr.Collection.Items {
 			if l, ok := e.Data.findValues("label"); ok {
 				if caseInsensitiveContains(l["label"], "coach") {
-					return MemberTypeCoach
+					return memberTypeCoach
 				}
 			}
 		}
 	}
 
-	return MemberTypeManager
+	return memberTypeManager
 }
 
 func name(first string, last string, mt string) string {
 	switch mt {
-	case MemberTypeCoach, MemberTypeManager:
+	case memberTypeCoach, memberTypeManager:
 		// Show full last name, so nothing to do
-	case MemberTypePlayer:
+	case memberTypePlayer:
 		if len(last) > 0 {
 			// Just show the first initial of the last name
 			last = last[0:1]
