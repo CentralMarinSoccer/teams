@@ -3,7 +3,7 @@ package mocks
 import (
 	"io"
 	"os"
-	"services2/team/filesystem"
+	"github.com/centralmarinsoccer/team/filesystem"
 )
 
 // FileSystemData provides an interface to set and get data for mocked file system calls

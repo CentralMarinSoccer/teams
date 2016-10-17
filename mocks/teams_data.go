@@ -2,7 +2,7 @@ package mocks
 
 /*
 import (
-	"services2/team/teamsdata"
+	"github.com/centralmarinsoccer/team/teamsdata"
 )
 
 // TeamsData provides a mechanism to set and get mocked TeamsData
