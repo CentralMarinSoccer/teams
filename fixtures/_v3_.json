@@ -1,0 +1,13 @@
+{
+  "collection": {
+    "version": "3.329.3",
+    "href": "https://api.teamsnap.com/v3/",
+    "rel": "root",
+    "links": [
+      {
+        "rel": "teams",
+        "href": "https://api.teamsnap.com/v3/teams"
+      }
+    ]
+  }
+}
