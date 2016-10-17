@@ -7,7 +7,7 @@ import (
 	"log"
 	"encoding/json"
 	"strconv"
-	"services2/team/cache"
+	"github.com/centralmarinsoccer/team/cache"
 )
 
 type Geocoder struct {

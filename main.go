@@ -8,12 +8,12 @@ import (
 
 	"github.com/prometheus/client_golang/prometheus"
 
-	"services2/team/handler"
-	"services2/team/teamsnap"
+	"github.com/centralmarinsoccer/team/handler"
+	"github.com/centralmarinsoccer/team/teamsnap"
 
 	"net/http"
 	"time"
-	"services2/team/geocode"
+	"github.com/centralmarinsoccer/team/geocode"
 )
 
 const defaultPort = 8080

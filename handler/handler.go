@@ -3,7 +3,7 @@ package handler
 import (
 	"encoding/json"
 	"net/http"
-	"services2/team/teamsnap"
+	"github.com/centralmarinsoccer/team/teamsnap"
 	"sort"
 	"strings"
 	"log"
