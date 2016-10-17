@@ -1,14 +1,14 @@
 package teamsnap_test
 
 import (
-	. "github.com/centralmarinsoccer/team/teamsnap"
+	. "github.com/centralmarinsoccer/teams/teamsnap"
 
 	"encoding/json"
 	"errors"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 	"io/ioutil"
-	"github.com/centralmarinsoccer/team/mocks"
+	"github.com/centralmarinsoccer/teams/mocks"
 	"net/http"
 	"net/http/httptest"
 	"log"

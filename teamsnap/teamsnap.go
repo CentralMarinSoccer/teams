@@ -3,10 +3,10 @@ package teamsnap
 import (
 	"errors"
 	"log"
-	"github.com/centralmarinsoccer/team/filesystem"
+	"github.com/centralmarinsoccer/teams/filesystem"
 	"time"
-	"github.com/centralmarinsoccer/team/geocode"
-	"github.com/centralmarinsoccer/team/cache"
+	"github.com/centralmarinsoccer/teams/geocode"
+	"github.com/centralmarinsoccer/teams/cache"
 )
 
 type ClubDataInterface interface {

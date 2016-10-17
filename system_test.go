@@ -8,8 +8,8 @@ package main_test
 //	"io/ioutil"
 //	"net/http"
 //	"os"
-//	"github.com/centralmarinsoccer/team"
-//	"github.com/centralmarinsoccer/team/handlers"
+//	"github.com/centralmarinsoccer/teams"
+//	"github.com/centralmarinsoccer/teams/handlers"
 //)
 //
 //var _ = Describe("Team", func() {

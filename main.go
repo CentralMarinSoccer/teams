@@ -8,17 +8,17 @@ import (
 
 	"github.com/prometheus/client_golang/prometheus"
 
-	"github.com/centralmarinsoccer/team/handler"
-	"github.com/centralmarinsoccer/team/teamsnap"
+	"github.com/centralmarinsoccer/teams/handler"
+	"github.com/centralmarinsoccer/teams/teamsnap"
 
 	"net/http"
 	"time"
-	"github.com/centralmarinsoccer/team/geocode"
+	"github.com/centralmarinsoccer/teams/geocode"
 )
 
 const defaultPort = 8080
 const urlPath = "/teams/"
-const defaultInterval = 60
+const defaultInterval = 60 
 
 // Environment contains all of the required and optional environment variables
 type Environment struct {
