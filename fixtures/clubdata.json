@@ -1,0 +1,1046 @@
+{
+  "LastUpdated": "2010-01-11T11:05:33.369598348-07:00",
+  "Teams": [
+    {
+      "ID": "04e33766832c00df7f66fd61d635f6d32668aa04cdcdb343ea648a36e6e8cbfd",
+      "Name": "2016 Central Marin U13 / '04 Girls Red",
+      "Gender": "Women",
+      "Year": 2004,
+      "members": [
+        {
+          "Name": "Greer D",
+          "type": "player"
+        },
+        {
+          "Name": "Jessica K",
+          "type": "player"
+        },
+        {
+          "Name": "Lucy C",
+          "type": "player"
+        },
+        {
+          "Name": "Isaiah Schwerin",
+          "type": "manager"
+        },
+        {
+          "Name": "Piper B",
+          "type": "player"
+        },
+        {
+          "Name": "Sailor B",
+          "type": "player"
+        },
+        {
+          "Name": "Kaia A",
+          "type": "player"
+        },
+        {
+          "Name": "Abigail T",
+          "type": "player"
+        },
+        {
+          "Name": "Charlotte B",
+          "type": "player"
+        },
+        {
+          "Name": "Charlotte T",
+          "type": "player"
+        },
+        {
+          "Name": "Ella N",
+          "type": "player"
+        },
+        {
+          "Name": "harley d",
+          "type": "player"
+        },
+        {
+          "Name": "Lucy H",
+          "type": "player"
+        },
+        {
+          "Name": "Eleanor T",
+          "type": "player"
+        },
+        {
+          "Name": "Lisa Wing",
+          "type": "manager"
+        },
+        {
+          "Name": "Gia F",
+          "type": "player"
+        },
+        {
+          "Name": "Maya L",
+          "type": "player"
+        },
+        {
+          "Name": "Makena C",
+          "type": "player"
+        }
+      ],
+      "events": [
+        {
+          "Name": "",
+          "EventType": "",
+          "Start": "2016-09-24T16:40:00Z",
+          "Duration": "90",
+          "Location": {
+            "Name": "Mayfield North",
+            "Address": "2650 El Camino Real Palo Alto, CA 94306"
+          }
+        },
+        {
+          "Name": "",
+          "EventType": "",
+          "Start": "2016-09-24T22:15:00Z",
+          "Duration": "90",
+          "Location": {
+            "Name": "Mayfield South",
+            "Address": "2650 El Camino Real Palo Alto, CA 94306"
+          }
+        },
+        {
+          "Name": "",
+          "EventType": "",
+          "Start": "2016-09-25T16:55:00Z",
+          "Duration": "100",
+          "Location": {
+            "Name": "Mayfield South",
+            "Address": "2650 El Camino Real Palo Alto, CA 94306"
+          }
+        },
+        {
+          "Name": "",
+          "EventType": "",
+          "Start": "2016-09-25T23:00:00Z",
+          "Duration": "0",
+          "Location": {
+            "Name": "TBD",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "",
+          "EventType": "",
+          "Start": "2016-10-09T16:45:00Z",
+          "Duration": "90",
+          "Location": {
+            "Name": "Raiders East",
+            "Address": "3600 Oxford St Napa, CA 94558"
+          }
+        },
+        {
+          "Name": "",
+          "EventType": "",
+          "Start": "2016-10-15T16:00:00Z",
+          "Duration": "90",
+          "Location": {
+            "Name": "Hanna Boys Center Fields",
+            "Address": "17000 Arnold Drive, P.O. Box 100 Sonoma, CA 95476-0100"
+          }
+        },
+        {
+          "Name": "",
+          "EventType": "",
+          "Start": "2016-10-22T17:00:00Z",
+          "Duration": "90",
+          "Location": {
+            "Name": "Place to Play Field #6",
+            "Address": "2375 West 3 Road Street, Santa Rosa, CA 95401"
+          }
+        },
+        {
+          "Name": "San Ramon Boo Cup",
+          "EventType": "",
+          "Start": "2016-10-29T15:00:00Z",
+          "Duration": "0",
+          "Location": {
+            "Name": "San Ramon",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "San Ramon Boo Cup",
+          "EventType": "",
+          "Start": "2016-10-30T15:00:00Z",
+          "Duration": "0",
+          "Location": {
+            "Name": "San Ramon",
+            "Address": ""
+          }
+        }
+      ]
+    },
+    {
+      "ID": "c7d428b9c72ffa33717932ef214aae538bafd76b64245c40808a6cf8e0a52ed3",
+      "Name": "2016 CENTRAL MARIN BLUE MAGIC 2004",
+      "Gender": "Women",
+      "Year": 0,
+      "image_url": "https://35b7f1d7d0790b02114c-1b8897185d70b198c119e1d2b7efd8a2.ssl.cf1.rackcdn.com/team_photo/390895/original/a9e4d4fa-d8d9-4c88-815b-abd76cb6ee55.jpg",
+      "members": [
+        {
+          "Name": "Alexandra B",
+          "type": "player"
+        },
+        {
+          "Name": "Sophia B",
+          "type": "player"
+        },
+        {
+          "Name": "Lauren S",
+          "type": "player"
+        },
+        {
+          "Name": "Chloe S",
+          "type": "player"
+        },
+        {
+          "Name": "Inta Summers",
+          "type": "manager"
+        },
+        {
+          "Name": "Anna L",
+          "type": "player"
+        },
+        {
+          "Name": "Chiara S",
+          "type": "player"
+        },
+        {
+          "Name": "Cristina M",
+          "type": "player"
+        },
+        {
+          "Name": "Eleanor B",
+          "type": "player"
+        },
+        {
+          "Name": "Isabelle S",
+          "type": "player"
+        },
+        {
+          "Name": "Lauren M",
+          "type": "player"
+        },
+        {
+          "Name": "Lily T",
+          "type": "player"
+        },
+        {
+          "Name": "Maxine S",
+          "type": "player"
+        },
+        {
+          "Name": "Maya  W",
+          "type": "player"
+        },
+        {
+          "Name": "Ryann D",
+          "type": "player"
+        },
+        {
+          "Name": "Sydney K",
+          "type": "player"
+        },
+        {
+          "Name": "Brandon Murphy",
+          "type": "manager"
+        },
+        {
+          "Name": "Maddy Boston",
+          "type": "manager"
+        }
+      ],
+      "events": [
+        {
+          "Name": "PRACTICE",
+          "EventType": "",
+          "Start": "2016-09-13T23:00:00Z",
+          "Duration": "90",
+          "Location": {
+            "Name": "Piper Park",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "PRACTICE",
+          "EventType": "",
+          "Start": "2016-09-15T23:00:00Z",
+          "Duration": "90",
+          "Location": {
+            "Name": "Piper Park",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "",
+          "EventType": "",
+          "Start": "2016-09-17T14:45:00Z",
+          "Duration": "0",
+          "Location": {
+            "Name": "Terra Linda High School",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "",
+          "EventType": "",
+          "Start": "2016-09-18T20:30:00Z",
+          "Duration": "0",
+          "Location": {
+            "Name": "Pollicita Field",
+            "Address": "550 East Market Street Daly City, CA 94014"
+          }
+        },
+        {
+          "Name": "PRACTICE",
+          "EventType": "",
+          "Start": "2016-09-20T23:00:00Z",
+          "Duration": "90",
+          "Location": {
+            "Name": "Piper Park",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "PRACTICE",
+          "EventType": "",
+          "Start": "2016-09-22T23:00:00Z",
+          "Duration": "90",
+          "Location": {
+            "Name": "Piper Park",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "Soccerpalooza Union City",
+          "EventType": "",
+          "Start": "2016-09-24T07:00:00Z",
+          "Duration": "0",
+          "Location": {
+            "Name": "TBD",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "Soccerpalooza Union City",
+          "EventType": "",
+          "Start": "2016-09-25T07:00:00Z",
+          "Duration": "0",
+          "Location": {
+            "Name": "TBD",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "PRACTICE",
+          "EventType": "",
+          "Start": "2016-09-27T23:00:00Z",
+          "Duration": "90",
+          "Location": {
+            "Name": "Piper Park",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "PRACTICE",
+          "EventType": "",
+          "Start": "2016-09-29T23:00:00Z",
+          "Duration": "90",
+          "Location": {
+            "Name": "Piper Park",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "",
+          "EventType": "",
+          "Start": "2016-10-01T23:00:00Z",
+          "Duration": "0",
+          "Location": {
+            "Name": "Terra Linda High School",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "",
+          "EventType": "",
+          "Start": "2016-10-02T19:30:00Z",
+          "Duration": "0",
+          "Location": {
+            "Name": "Wilson Ranch",
+            "Address": "7955 Cameron Dr Windsor, CA 95492-8561"
+          }
+        },
+        {
+          "Name": "PRACTICE",
+          "EventType": "",
+          "Start": "2016-10-04T23:00:00Z",
+          "Duration": "90",
+          "Location": {
+            "Name": "Piper Park",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "PRACTICE",
+          "EventType": "",
+          "Start": "2016-10-06T23:00:00Z",
+          "Duration": "90",
+          "Location": {
+            "Name": "Piper Park",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "",
+          "EventType": "",
+          "Start": "2016-10-09T17:15:00Z",
+          "Duration": "0",
+          "Location": {
+            "Name": "Terra Linda High School",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "PRACTICE",
+          "EventType": "",
+          "Start": "2016-10-11T23:00:00Z",
+          "Duration": "90",
+          "Location": {
+            "Name": "Piper Park",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "PRACTICE",
+          "EventType": "",
+          "Start": "2016-10-13T23:00:00Z",
+          "Duration": "90",
+          "Location": {
+            "Name": "Piper Park",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "CM FUNDRAISER",
+          "EventType": "",
+          "Start": "2016-10-15T01:00:00Z",
+          "Duration": "0",
+          "Location": {
+            "Name": "TBD",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "Brandi Chastain Clinic",
+          "EventType": "",
+          "Start": "2016-10-15T07:00:00Z",
+          "Duration": "0",
+          "Location": {
+            "Name": "TBD",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "PRACTICE",
+          "EventType": "",
+          "Start": "2016-10-18T23:00:00Z",
+          "Duration": "90",
+          "Location": {
+            "Name": "Piper Park",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "PRACTICE",
+          "EventType": "",
+          "Start": "2016-10-20T23:00:00Z",
+          "Duration": "90",
+          "Location": {
+            "Name": "Piper Park",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "",
+          "EventType": "",
+          "Start": "2016-10-22T15:00:00Z",
+          "Duration": "0",
+          "Location": {
+            "Name": "Place to Play",
+            "Address": "2375 W 3rd St, Santa Rosa, CA 95401"
+          }
+        },
+        {
+          "Name": "PRACTICE",
+          "EventType": "",
+          "Start": "2016-10-25T23:00:00Z",
+          "Duration": "90",
+          "Location": {
+            "Name": "Piper Park",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "PRACTICE",
+          "EventType": "",
+          "Start": "2016-10-27T23:00:00Z",
+          "Duration": "90",
+          "Location": {
+            "Name": "Piper Park",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "TOURNEY?",
+          "EventType": "",
+          "Start": "2016-10-29T07:00:00Z",
+          "Duration": "0",
+          "Location": {
+            "Name": "TBD",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "TOURNEY?",
+          "EventType": "",
+          "Start": "2016-10-30T07:00:00Z",
+          "Duration": "0",
+          "Location": {
+            "Name": "TBD",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "PRACTICE",
+          "EventType": "",
+          "Start": "2016-11-01T23:00:00Z",
+          "Duration": "90",
+          "Location": {
+            "Name": "Piper Park",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "PRACTICE",
+          "EventType": "",
+          "Start": "2016-11-03T23:00:00Z",
+          "Duration": "90",
+          "Location": {
+            "Name": "Piper Park",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "STATE CUP GAME",
+          "EventType": "",
+          "Start": "2016-11-05T07:00:00Z",
+          "Duration": "0",
+          "Location": {
+            "Name": "TBD",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "",
+          "EventType": "",
+          "Start": "2016-11-06T20:00:00Z",
+          "Duration": "0",
+          "Location": {
+            "Name": "Eagle Park",
+            "Address": "1115 Emily Ave, Rohnert Park, CA 94928"
+          }
+        },
+        {
+          "Name": "PRACTICE",
+          "EventType": "",
+          "Start": "2016-11-09T00:00:00Z",
+          "Duration": "90",
+          "Location": {
+            "Name": "Piper Park",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "PRACTICE",
+          "EventType": "",
+          "Start": "2016-11-11T00:00:00Z",
+          "Duration": "90",
+          "Location": {
+            "Name": "Piper Park",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "STATE CUP",
+          "EventType": "",
+          "Start": "2016-11-12T08:00:00Z",
+          "Duration": "0",
+          "Location": {
+            "Name": "TBD",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "STATE CUP",
+          "EventType": "",
+          "Start": "2016-11-13T08:00:00Z",
+          "Duration": "0",
+          "Location": {
+            "Name": "TBD",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "PRACTICE",
+          "EventType": "",
+          "Start": "2016-11-16T00:00:00Z",
+          "Duration": "90",
+          "Location": {
+            "Name": "Piper Park",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "PRACTICE",
+          "EventType": "",
+          "Start": "2016-11-18T00:00:00Z",
+          "Duration": "90",
+          "Location": {
+            "Name": "Piper Park",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "PRACTICE",
+          "EventType": "",
+          "Start": "2016-11-23T00:00:00Z",
+          "Duration": "90",
+          "Location": {
+            "Name": "Piper Park",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "PRACTICE",
+          "EventType": "",
+          "Start": "2016-11-25T00:00:00Z",
+          "Duration": "90",
+          "Location": {
+            "Name": "Piper Park",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "PRACTICE",
+          "EventType": "",
+          "Start": "2016-11-30T00:00:00Z",
+          "Duration": "90",
+          "Location": {
+            "Name": "Piper Park",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "PRACTICE",
+          "EventType": "",
+          "Start": "2016-12-02T00:00:00Z",
+          "Duration": "90",
+          "Location": {
+            "Name": "Piper Park",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "STATE CUP",
+          "EventType": "",
+          "Start": "2016-12-03T08:00:00Z",
+          "Duration": "0",
+          "Location": {
+            "Name": "TBD",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "STATE CUP",
+          "EventType": "",
+          "Start": "2016-12-04T08:00:00Z",
+          "Duration": "0",
+          "Location": {
+            "Name": "TBD",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "PRACTICE",
+          "EventType": "",
+          "Start": "2016-12-07T00:00:00Z",
+          "Duration": "90",
+          "Location": {
+            "Name": "Piper Park",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "PRACTICE",
+          "EventType": "",
+          "Start": "2016-12-09T00:00:00Z",
+          "Duration": "90",
+          "Location": {
+            "Name": "Piper Park",
+            "Address": ""
+          }
+        }
+      ]
+    },
+    {
+      "ID": "2e870c46f68bee4f16c13ced27bd6033d159118d7a826311bf7fd8e687735733",
+      "Name": "CM U15G - Blue Magic 02",
+      "Gender": "",
+      "Year": 2002,
+      "members": [
+        {
+          "Name": "Taylor Hamblett",
+          "type": "manager"
+        },
+        {
+          "Name": "Alondra R",
+          "type": "player"
+        },
+        {
+          "Name": "Emily W",
+          "type": "player"
+        },
+        {
+          "Name": "Adam Dietz",
+          "type": "manager"
+        },
+        {
+          "Name": "Dalya B",
+          "type": "player"
+        },
+        {
+          "Name": "Alicia H",
+          "type": "player"
+        },
+        {
+          "Name": "Katie Turtle",
+          "type": "manager"
+        },
+        {
+          "Name": "Hannah K",
+          "type": "player"
+        },
+        {
+          "Name": "Megan R",
+          "type": "player"
+        },
+        {
+          "Name": "Jenna D",
+          "type": "player"
+        },
+        {
+          "Name": "Olivia S",
+          "type": "player"
+        },
+        {
+          "Name": "Natalie A",
+          "type": "player"
+        },
+        {
+          "Name": "Samantha K",
+          "type": "player"
+        },
+        {
+          "Name": "Sofia A",
+          "type": "player"
+        },
+        {
+          "Name": "Rebecca S",
+          "type": "player"
+        },
+        {
+          "Name": "Vanessa C",
+          "type": "player"
+        },
+        {
+          "Name": "Zoe H",
+          "type": "player"
+        },
+        {
+          "Name": "Taryn M",
+          "type": "player"
+        },
+        {
+          "Name": "Sofi M",
+          "type": "player"
+        }
+      ],
+      "events": [
+        {
+          "Name": "Practice",
+          "EventType": "",
+          "Start": "2016-09-14T00:45:00Z",
+          "Duration": "0",
+          "Location": {
+            "Name": "Terra Linda High School",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "Practice",
+          "EventType": "",
+          "Start": "2016-09-15T23:15:00Z",
+          "Duration": "0",
+          "Location": {
+            "Name": "Terra Linda High School",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "",
+          "EventType": "",
+          "Start": "2016-09-17T20:30:00Z",
+          "Duration": "90",
+          "Location": {
+            "Name": "San Rafael High School",
+            "Address": "185 Mission Ave, San Rafael, CA 94901"
+          }
+        },
+        {
+          "Name": "",
+          "EventType": "",
+          "Start": "2016-09-18T22:00:00Z",
+          "Duration": "90",
+          "Location": {
+            "Name": "Terra Linda High School",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "Practice",
+          "EventType": "",
+          "Start": "2016-09-21T00:45:00Z",
+          "Duration": "0",
+          "Location": {
+            "Name": "Terra Linda High School",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "Practice",
+          "EventType": "",
+          "Start": "2016-09-22T23:15:00Z",
+          "Duration": "0",
+          "Location": {
+            "Name": "Terra Linda High School",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "Practice",
+          "EventType": "",
+          "Start": "2016-09-28T00:45:00Z",
+          "Duration": "0",
+          "Location": {
+            "Name": "Terra Linda High School",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "Practice",
+          "EventType": "",
+          "Start": "2016-09-29T23:15:00Z",
+          "Duration": "0",
+          "Location": {
+            "Name": "Terra Linda High School",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "",
+          "EventType": "",
+          "Start": "2016-10-02T23:00:00Z",
+          "Duration": "90",
+          "Location": {
+            "Name": "American Canyon Middle School #1",
+            "Address": "300 Benton Way American Canyon, CA 94503"
+          }
+        },
+        {
+          "Name": "Practice",
+          "EventType": "",
+          "Start": "2016-10-05T00:45:00Z",
+          "Duration": "0",
+          "Location": {
+            "Name": "Terra Linda High School",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "Practice",
+          "EventType": "",
+          "Start": "2016-10-06T23:15:00Z",
+          "Duration": "0",
+          "Location": {
+            "Name": "Terra Linda High School",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "",
+          "EventType": "",
+          "Start": "2016-10-08T15:15:00Z",
+          "Duration": "90",
+          "Location": {
+            "Name": "Redwood HS-Ghilotti Field",
+            "Address": "395 Doherty Drive Larkspur, CA 94939"
+          }
+        },
+        {
+          "Name": "",
+          "EventType": "",
+          "Start": "2016-10-09T19:00:00Z",
+          "Duration": "90",
+          "Location": {
+            "Name": "Redwood Middle S",
+            "Address": "3600 Oxford Street Napa, CA 94558"
+          }
+        },
+        {
+          "Name": "Practice",
+          "EventType": "",
+          "Start": "2016-10-12T00:45:00Z",
+          "Duration": "0",
+          "Location": {
+            "Name": "Terra Linda High School",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "Practice",
+          "EventType": "",
+          "Start": "2016-10-13T23:15:00Z",
+          "Duration": "0",
+          "Location": {
+            "Name": "Terra Linda High School",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "Practice",
+          "EventType": "",
+          "Start": "2016-10-19T00:45:00Z",
+          "Duration": "0",
+          "Location": {
+            "Name": "Terra Linda High School",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "Practice",
+          "EventType": "",
+          "Start": "2016-10-20T23:15:00Z",
+          "Duration": "0",
+          "Location": {
+            "Name": "Terra Linda High School",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "",
+          "EventType": "",
+          "Start": "2016-10-22T22:00:00Z",
+          "Duration": "90",
+          "Location": {
+            "Name": "Place to Play",
+            "Address": "2375 West Third Street Santa Rosa, CA 95401"
+          }
+        },
+        {
+          "Name": "Practice",
+          "EventType": "",
+          "Start": "2016-10-26T00:45:00Z",
+          "Duration": "0",
+          "Location": {
+            "Name": "Terra Linda High School",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "Practice",
+          "EventType": "",
+          "Start": "2016-10-27T23:15:00Z",
+          "Duration": "0",
+          "Location": {
+            "Name": "Terra Linda High School",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "Practice",
+          "EventType": "",
+          "Start": "2016-11-02T00:45:00Z",
+          "Duration": "0",
+          "Location": {
+            "Name": "Terra Linda High School",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "Practice",
+          "EventType": "",
+          "Start": "2016-11-03T23:15:00Z",
+          "Duration": "0",
+          "Location": {
+            "Name": "Terra Linda High School",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "",
+          "EventType": "",
+          "Start": "2016-11-05T21:00:00Z",
+          "Duration": "90",
+          "Location": {
+            "Name": "Indian Valley Campus",
+            "Address": "1800 Ignacio Blvd. Novato, CA 94949"
+          }
+        },
+        {
+          "Name": "",
+          "EventType": "",
+          "Start": "2016-11-06T21:00:00Z",
+          "Duration": "90",
+          "Location": {
+            "Name": "White Hill",
+            "Address": "101 Glen Drive Fairfax, CA 94930"
+          }
+        },
+        {
+          "Name": "Practice",
+          "EventType": "",
+          "Start": "2016-11-09T01:45:00Z",
+          "Duration": "0",
+          "Location": {
+            "Name": "Terra Linda High School",
+            "Address": ""
+          }
+        },
+        {
+          "Name": "",
+          "EventType": "",
+          "Start": "2016-11-12T19:00:00Z",
+          "Duration": "90",
+          "Location": {
+            "Name": "TBD",
+            "Address": ""
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,6096 @@
+{
+  "collection": {
+    "version": "3.329.3",
+    "href": "https://api.teamsnap.com/v3/members",
+    "rel": "members",
+    "template": {
+      "data": [
+        {
+          "name": "first_name",
+          "value": null
+        },
+        {
+          "name": "last_name",
+          "value": null
+        },
+        {
+          "name": "gender",
+          "value": null
+        },
+        {
+          "name": "position",
+          "value": null
+        },
+        {
+          "name": "is_manager",
+          "value": null
+        },
+        {
+          "name": "birthday",
+          "value": null
+        },
+        {
+          "name": "hide_age",
+          "value": null,
+          "deprecated": true,
+          "prompt": "hide_age is deprecated and will be removed in a future version, use is_age_hidden instead."
+        },
+        {
+          "name": "is_age_hidden",
+          "value": null
+        },
+        {
+          "name": "hide_address",
+          "value": null,
+          "deprecated": true,
+          "prompt": "hide_address is deprecated and will be removed in a future version, use is_address_hidden instead."
+        },
+        {
+          "name": "is_address_hidden",
+          "value": null
+        },
+        {
+          "name": "is_non_player",
+          "value": null
+        },
+        {
+          "name": "address_street1",
+          "value": null
+        },
+        {
+          "name": "address_street2",
+          "value": null
+        },
+        {
+          "name": "address_city",
+          "value": null
+        },
+        {
+          "name": "address_state",
+          "value": null
+        },
+        {
+          "name": "address_zip",
+          "value": null
+        },
+        {
+          "name": "jersey_number",
+          "value": null
+        },
+        {
+          "name": "team_id",
+          "value": null
+        },
+        {
+          "name": "is_ownership_pending",
+          "value": null
+        },
+        {
+          "name": "type",
+          "value": "member"
+        }
+      ]
+    },
+    "links": [
+      {
+        "rel": "assignments",
+        "href": "https://api.teamsnap.com/v3/assignments"
+      },
+      {
+        "rel": "availabilities",
+        "href": "https://api.teamsnap.com/v3/availabilities"
+      },
+      {
+        "rel": "broadcast_email_attachments",
+        "href": "https://api.teamsnap.com/v3/broadcast_email_attachments"
+      },
+      {
+        "rel": "broadcast_emails",
+        "href": "https://api.teamsnap.com/v3/broadcast_emails"
+      },
+      {
+        "rel": "broadcast_alerts",
+        "href": "https://api.teamsnap.com/v3/broadcast_alerts"
+      },
+      {
+        "rel": "contact_email_addresses",
+        "href": "https://api.teamsnap.com/v3/contact_email_addresses"
+      },
+      {
+        "rel": "contact_phone_numbers",
+        "href": "https://api.teamsnap.com/v3/contact_phone_numbers"
+      },
+      {
+        "rel": "contacts",
+        "href": "https://api.teamsnap.com/v3/contacts"
+      },
+      {
+        "rel": "custom_data",
+        "href": "https://api.teamsnap.com/v3/custom_data"
+      },
+      {
+        "rel": "custom_fields",
+        "href": "https://api.teamsnap.com/v3/custom_fields"
+      },
+      {
+        "rel": "division",
+        "href": "https://api.teamsnap.com/v3/divisions"
+      },
+      {
+        "rel": "league_custom_data",
+        "href": "https://api.teamsnap.com/v3/league_custom_data"
+      },
+      {
+        "rel": "league_custom_fields",
+        "href": "https://api.teamsnap.com/v3/league_custom_fields"
+      },
+      {
+        "rel": "forum_posts",
+        "href": "https://api.teamsnap.com/v3/forum_posts"
+      },
+      {
+        "rel": "forum_subscriptions",
+        "href": "https://api.teamsnap.com/v3/forum_subscriptions"
+      },
+      {
+        "rel": "forum_topics",
+        "href": "https://api.teamsnap.com/v3/forum_topics"
+      },
+      {
+        "rel": "league_registrant_documents",
+        "href": "https://api.teamsnap.com/v3/league_registrant_documents"
+      },
+      {
+        "rel": "member_assignments",
+        "href": "https://api.teamsnap.com/v3/member_assignments"
+      },
+      {
+        "rel": "member_balances",
+        "href": "https://api.teamsnap.com/v3/member_balances"
+      },
+      {
+        "rel": "member_email_addresses",
+        "href": "https://api.teamsnap.com/v3/member_email_addresses"
+      },
+      {
+        "rel": "member_files",
+        "href": "https://api.teamsnap.com/v3/member_files"
+      },
+      {
+        "rel": "member_links",
+        "href": "https://api.teamsnap.com/v3/member_links"
+      },
+      {
+        "rel": "member_payments",
+        "href": "https://api.teamsnap.com/v3/member_payments"
+      },
+      {
+        "rel": "member_phone_numbers",
+        "href": "https://api.teamsnap.com/v3/member_phone_numbers"
+      },
+      {
+        "rel": "member_preferences",
+        "href": "https://api.teamsnap.com/v3/members_preferences"
+      },
+      {
+        "rel": "member_statistics",
+        "href": "https://api.teamsnap.com/v3/member_statistics"
+      },
+      {
+        "rel": "message_data",
+        "href": "https://api.teamsnap.com/v3/message_data"
+      },
+      {
+        "rel": "messages",
+        "href": "https://api.teamsnap.com/v3/messages"
+      },
+      {
+        "rel": "statistic_data",
+        "href": "https://api.teamsnap.com/v3/statistic_data"
+      },
+      {
+        "rel": "team",
+        "href": "https://api.teamsnap.com/v3/teams"
+      },
+      {
+        "rel": "team_media",
+        "href": "https://api.teamsnap.com/v3/team_media"
+      },
+      {
+        "rel": "team_medium_comments",
+        "href": "https://api.teamsnap.com/v3/team_medium_comments"
+      },
+      {
+        "rel": "tracked_item_statuses",
+        "href": "https://api.teamsnap.com/v3/tracked_item_statuses"
+      },
+      {
+        "rel": "user",
+        "href": "https://api.teamsnap.com/v3/users"
+      },
+      {
+        "rel": "root",
+        "href": "https://api.teamsnap.com/v3/"
+      },
+      {
+        "rel": "self",
+        "href": "https://api.teamsnap.com/v3/members/search?team_id=72084"
+      }
+    ],
+    "queries": [
+      {
+        "rel": "search",
+        "href": "https://api.teamsnap.com/v3/members/search",
+        "data": [
+          {
+            "name": "team_id",
+            "value": null
+          },
+          {
+            "name": "user_id",
+            "value": null
+          },
+          {
+            "name": "id",
+            "value": null
+          },
+          {
+            "name": "page_size",
+            "value": null,
+            "prompt": "The number of items to return for each page. Sending this parameter with the query will enable paging for the returned collection."
+          },
+          {
+            "name": "page_number",
+            "value": null,
+            "prompt": "The number of the page to be returned. This requires that paging be turned on by also providing the page_size parameter."
+          }
+        ]
+      },
+      {
+        "rel": "managers",
+        "href": "https://api.teamsnap.com/v3/members/managers",
+        "data": [
+          {
+            "name": "team_id",
+            "value": null
+          }
+        ]
+      },
+      {
+        "rel": "personas",
+        "href": "https://api.teamsnap.com/v3/members/personas",
+        "prompt": "Given a user ID, returns members directly associated with the user as well as members associated with the user via a shared access contact.",
+        "data": [
+          {
+            "name": "user_id",
+            "value": null
+          }
+        ]
+      },
+      {
+        "rel": "owner",
+        "href": "https://api.teamsnap.com/v3/members/owner",
+        "data": [
+          {
+            "name": "team_id",
+            "value": null
+          }
+        ]
+      },
+      {
+        "rel": "commissioners",
+        "href": "https://api.teamsnap.com/v3/members/commissioners",
+        "prompt": "BETA: (this query is subject to change or suddenly disappear) Given a a team_id or division_id, returns all members that are commissioners of the divisions that the team is in.",
+        "data": [
+          {
+            "name": "team_id",
+            "value": null
+          },
+          {
+            "name": "division_id",
+            "value": null
+          }
+        ]
+      },
+      {
+        "rel": "importable_members",
+        "href": "https://api.teamsnap.com/v3/members/importable_members",
+        "prompt": "Given a user ID, returns all members associated with user's active season teams.  If include_archived_teams (boolean) parameter is supplied, members associated with archived teams will be returned as well.",
+        "data": [
+          {
+            "name": "user_id",
+            "value": null
+          },
+          {
+            "name": "include_archived_teams",
+            "value": null
+          }
+        ]
+      }
+    ],
+    "commands": [
+      {
+        "rel": "disable_member",
+        "href": "https://api.teamsnap.com/v3/members/disable_member",
+        "data": [
+          {
+            "name": "member_id",
+            "value": null
+          }
+        ]
+      },
+      {
+        "rel": "upload_member_photo",
+        "href": "https://api.teamsnap.com/v3/members/upload_member_photo",
+        "data": [
+          {
+            "name": "member_id",
+            "value": null
+          },
+          {
+            "name": "file",
+            "value": null
+          },
+          {
+            "name": "x",
+            "value": null
+          },
+          {
+            "name": "y",
+            "value": null
+          },
+          {
+            "name": "width",
+            "value": null
+          },
+          {
+            "name": "height",
+            "value": null
+          }
+        ]
+      },
+      {
+        "rel": "remove_member_photo",
+        "href": "https://api.teamsnap.com/v3/members/remove_member_photo",
+        "data": [
+          {
+            "name": "member_id",
+            "value": null
+          }
+        ]
+      },
+      {
+        "rel": "set_commissioner_access",
+        "href": "https://api.teamsnap.com/v3/members/set_commissioner_access",
+        "data": [
+          {
+            "name": "member_id",
+            "value": null
+          },
+          {
+            "name": "division_id",
+            "value": null
+          }
+        ]
+      },
+      {
+        "rel": "generate_member_thumbnail",
+        "href": "https://api.teamsnap.com/v3/members/generate_member_thumbnail",
+        "data": [
+          {
+            "name": "member_id",
+            "value": null
+          },
+          {
+            "name": "x",
+            "value": null
+          },
+          {
+            "name": "y",
+            "value": null
+          },
+          {
+            "name": "width",
+            "value": null
+          },
+          {
+            "name": "height",
+            "value": null
+          }
+        ]
+      },
+      {
+        "rel": "import_from_team",
+        "href": "https://api.teamsnap.com/v3/members/import_from_team",
+        "prompt": "Given source_member_ids (array) and a destination_team_id, source members and related member data will be imported to the destination team. Newly created members will be returned.",
+        "data": [
+          {
+            "name": "source_member_ids",
+            "value": null
+          },
+          {
+            "name": "destination_team_id",
+            "value": null
+          },
+          {
+            "name": "send_invites",
+            "value": null,
+            "prompt": "Whether or not to create and send invitations for each imported member. Valid values are either 'true' or 'false' and will default to 'false'"
+          }
+        ]
+      },
+      {
+        "rel": "division_search",
+        "href": "https://api.teamsnap.com/v3/members/division_search",
+        "prompt": "BETA: (This endpoint subject to change) Searches the division and subdivision for the members meeting the search criteria.",
+        "data": [
+          {
+            "name": "division_id",
+            "value": null,
+            "prompt": "Id of the division and descendants to search"
+          },
+          {
+            "name": "is_unassigned",
+            "value": null,
+            "prompt": "true/false - For all members in a division that aren't assigned to a team. Not used if blank."
+          },
+          {
+            "name": "is_activated",
+            "value": null,
+            "prompt": "true/false - For all members in a division that have a user. Not used if blank."
+          }
+        ]
+      }
+    ],
+    "items": [
+      {
+        "href": "https://api.teamsnap.com/v3/members/4591783",
+        "data": [
+          {
+            "name": "id",
+            "value": 4591783
+          },
+          {
+            "name": "type",
+            "value": "member"
+          },
+          {
+            "name": "address_city",
+            "value": ""
+          },
+          {
+            "name": "address_state",
+            "value": ""
+          },
+          {
+            "name": "address_street1",
+            "value": "126 McAllister Ave"
+          },
+          {
+            "name": "address_street2",
+            "value": null
+          },
+          {
+            "name": "address_zip",
+            "value": ""
+          },
+          {
+            "name": "birthday",
+            "value": "2004-07-04"
+          },
+          {
+            "name": "division_id",
+            "value": 3271
+          },
+          {
+            "name": "first_name",
+            "value": "Greer"
+          },
+          {
+            "name": "gender",
+            "value": "Female"
+          },
+          {
+            "name": "has_facebook_post_scores_enabled",
+            "value": false
+          },
+          {
+            "name": "hide_address",
+            "value": false,
+            "deprecated": true,
+            "prompt": "hide_address is deprecated and will be removed in a future version, use is_address_hidden instead."
+          },
+          {
+            "name": "is_address_hidden",
+            "value": false
+          },
+          {
+            "name": "hide_age",
+            "value": false,
+            "deprecated": true,
+            "prompt": "hide_age is deprecated and will be removed in a future version, use is_age_hidden instead."
+          },
+          {
+            "name": "is_age_hidden",
+            "value": false
+          },
+          {
+            "name": "is_commissioner",
+            "value": false
+          },
+          {
+            "name": "invitation_code",
+            "value": "r0fb4ff054ad5176f5af8161b"
+          },
+          {
+            "name": "invitation_declined",
+            "value": false
+          },
+          {
+            "name": "is_activated",
+            "value": true
+          },
+          {
+            "name": "is_pushable",
+            "value": false
+          },
+          {
+            "name": "is_alertable",
+            "value": false
+          },
+          {
+            "name": "is_emailable",
+            "value": true
+          },
+          {
+            "name": "is_invitable",
+            "value": false
+          },
+          {
+            "name": "is_invited",
+            "value": false
+          },
+          {
+            "name": "is_manager",
+            "value": false
+          },
+          {
+            "name": "is_non_player",
+            "value": false
+          },
+          {
+            "name": "is_owner",
+            "value": false
+          },
+          {
+            "name": "is_ownership_pending",
+            "value": null
+          },
+          {
+            "name": "jersey_number",
+            "value": "32"
+          },
+          {
+            "name": "last_logged_in_at",
+            "value": null,
+            "deprecated": true,
+            "prompt": "%{field} is deprecated and has been removed.  Continued use of %{field} is not recommended it will no longer be stored."
+          },
+          {
+            "name": "last_name",
+            "value": "Diaz"
+          },
+          {
+            "name": "position",
+            "value": ""
+          },
+          {
+            "name": "team_id",
+            "value": 72084
+          },
+          {
+            "name": "user_id",
+            "value": 1922131
+          },
+          {
+            "name": "updated_at",
+            "value": "2016-09-16T17:05:11Z",
+            "type": "DateTime"
+          },
+          {
+            "name": "created_at",
+            "value": "2014-02-25T00:29:54Z",
+            "type": "DateTime"
+          }
+        ],
+        "links": [
+          {
+            "rel": "assignments",
+            "href": "https://api.teamsnap.com/v3/assignments/search?member_id=4591783"
+          },
+          {
+            "rel": "availabilities",
+            "href": "https://api.teamsnap.com/v3/availabilities/search?member_id=4591783"
+          },
+          {
+            "rel": "broadcast_email_attachments",
+            "href": "https://api.teamsnap.com/v3/broadcast_email_attachments/search?member_id=4591783"
+          },
+          {
+            "rel": "broadcast_emails",
+            "href": "https://api.teamsnap.com/v3/broadcast_emails/search?member_id=4591783"
+          },
+          {
+            "rel": "broadcast_alerts",
+            "href": "https://api.teamsnap.com/v3/broadcast_alerts/search?member_id=4591783"
+          },
+          {
+            "rel": "contact_email_addresses",
+            "href": "https://api.teamsnap.com/v3/contact_email_addresses/search?member_id=4591783"
+          },
+          {
+            "rel": "contact_phone_numbers",
+            "href": "https://api.teamsnap.com/v3/contact_phone_numbers/search?member_id=4591783"
+          },
+          {
+            "rel": "contacts",
+            "href": "https://api.teamsnap.com/v3/contacts/search?member_id=4591783"
+          },
+          {
+            "rel": "custom_data",
+            "href": "https://api.teamsnap.com/v3/custom_data/search?member_id=4591783"
+          },
+          {
+            "rel": "custom_fields",
+            "href": "https://api.teamsnap.com/v3/custom_fields/search?team_id=72084"
+          },
+          {
+            "rel": "division",
+            "href": "https://api.teamsnap.com/v3/divisions/3271"
+          },
+          {
+            "rel": "league_custom_data",
+            "href": "https://api.teamsnap.com/v3/league_custom_data/search?member_id=4591783"
+          },
+          {
+            "rel": "league_custom_fields",
+            "href": "https://api.teamsnap.com/v3/league_custom_fields/search?team_id=72084"
+          },
+          {
+            "rel": "forum_posts",
+            "href": "https://api.teamsnap.com/v3/forum_posts/search?member_id=4591783"
+          },
+          {
+            "rel": "forum_subscriptions",
+            "href": "https://api.teamsnap.com/v3/forum_subscriptions/search?member_id=4591783"
+          },
+          {
+            "rel": "forum_topics",
+            "href": "https://api.teamsnap.com/v3/forum_topics/search?team_id=72084"
+          },
+          {
+            "rel": "league_registrant_documents",
+            "href": "https://api.teamsnap.com/v3/league_registrant_documents/search?member_id=4591783"
+          },
+          {
+            "rel": "member_assignments",
+            "href": "https://api.teamsnap.com/v3/member_assignments/search?member_id=4591783"
+          },
+          {
+            "rel": "member_balances",
+            "href": "https://api.teamsnap.com/v3/member_balances/search?member_id=4591783"
+          },
+          {
+            "rel": "member_email_addresses",
+            "href": "https://api.teamsnap.com/v3/member_email_addresses/search?member_id=4591783"
+          },
+          {
+            "rel": "member_files",
+            "href": "https://api.teamsnap.com/v3/member_files/search?member_id=4591783"
+          },
+          {
+            "rel": "member_links",
+            "href": "https://api.teamsnap.com/v3/member_links/search?member_id=4591783"
+          },
+          {
+            "rel": "member_payments",
+            "href": "https://api.teamsnap.com/v3/member_payments/search?member_id=4591783"
+          },
+          {
+            "rel": "member_phone_numbers",
+            "href": "https://api.teamsnap.com/v3/member_phone_numbers/search?member_id=4591783"
+          },
+          {
+            "rel": "member_photo",
+            "href": "https://35b7f1d7d0790b02114c-1b8897185d70b198c119e1d2b7efd8a2.ssl.cf1.rackcdn.com/roster_full_photos/4591783/original/f8bc8d44535a175bb8a049b5dbcda355.JPG"
+          },
+          {
+            "rel": "member_photo_file",
+            "href": "https://api.teamsnap.com/v3/member_photo_files/4591783-1431574459"
+          },
+          {
+            "rel": "member_photos",
+            "href": "https://api.teamsnap.com/v3/member_photos/search?member_id=4591783"
+          },
+          {
+            "rel": "member_preferences",
+            "href": "https://api.teamsnap.com/v3/members_preferences/4591783"
+          },
+          {
+            "rel": "member_statistics",
+            "href": "https://api.teamsnap.com/v3/member_statistics/search?member_id=4591783"
+          },
+          {
+            "rel": "member_thumbnail",
+            "href": "https://35b7f1d7d0790b02114c-1b8897185d70b198c119e1d2b7efd8a2.ssl.cf1.rackcdn.com/roster_thumb_photos/4591783/thumb/1e4100cecd954f3f6b17c974791ea36c.JPG"
+          },
+          {
+            "rel": "message_data",
+            "href": "https://api.teamsnap.com/v3/message_data/search?member_id=4591783"
+          },
+          {
+            "rel": "messages",
+            "href": "https://api.teamsnap.com/v3/messages/search?member_id=4591783"
+          },
+          {
+            "rel": "statistic_data",
+            "href": "https://api.teamsnap.com/v3/statistic_data/search?member_id=4591783"
+          },
+          {
+            "rel": "team",
+            "href": "https://api.teamsnap.com/v3/teams/72084"
+          },
+          {
+            "rel": "team_media",
+            "href": "https://api.teamsnap.com/v3/team_media/search?member_id=4591783"
+          },
+          {
+            "rel": "team_medium_comments",
+            "href": "https://api.teamsnap.com/v3/team_medium_comments/search?member_id=4591783"
+          },
+          {
+            "rel": "tracked_item_statuses",
+            "href": "https://api.teamsnap.com/v3/tracked_item_statuses/search?member_id=4591783"
+          },
+          {
+            "rel": "user",
+            "href": "https://api.teamsnap.com/v3/users/1922131"
+          }
+        ],
+        "rel": "member-4591783"
+      },
+      {
+        "href": "https://api.teamsnap.com/v3/members/12106092",
+        "data": [
+          {
+            "name": "id",
+            "value": 12106092
+          },
+          {
+            "name": "type",
+            "value": "member"
+          },
+          {
+            "name": "address_city",
+            "value": "San Rafael"
+          },
+          {
+            "name": "address_state",
+            "value": "CA"
+          },
+          {
+            "name": "address_street1",
+            "value": "315 Mt. Shasta Dr."
+          },
+          {
+            "name": "address_street2",
+            "value": null
+          },
+          {
+            "name": "address_zip",
+            "value": "94903"
+          },
+          {
+            "name": "birthday",
+            "value": "2004-04-30"
+          },
+          {
+            "name": "division_id",
+            "value": 3271
+          },
+          {
+            "name": "first_name",
+            "value": "Jessica"
+          },
+          {
+            "name": "gender",
+            "value": "Female"
+          },
+          {
+            "name": "has_facebook_post_scores_enabled",
+            "value": false
+          },
+          {
+            "name": "hide_address",
+            "value": false,
+            "deprecated": true,
+            "prompt": "hide_address is deprecated and will be removed in a future version, use is_address_hidden instead."
+          },
+          {
+            "name": "is_address_hidden",
+            "value": false
+          },
+          {
+            "name": "hide_age",
+            "value": false,
+            "deprecated": true,
+            "prompt": "hide_age is deprecated and will be removed in a future version, use is_age_hidden instead."
+          },
+          {
+            "name": "is_age_hidden",
+            "value": false
+          },
+          {
+            "name": "is_commissioner",
+            "value": false
+          },
+          {
+            "name": "invitation_code",
+            "value": "e642d7fc5cccfaa76a454a32"
+          },
+          {
+            "name": "invitation_declined",
+            "value": false
+          },
+          {
+            "name": "is_activated",
+            "value": true
+          },
+          {
+            "name": "is_pushable",
+            "value": true
+          },
+          {
+            "name": "is_alertable",
+            "value": true
+          },
+          {
+            "name": "is_emailable",
+            "value": true
+          },
+          {
+            "name": "is_invitable",
+            "value": false
+          },
+          {
+            "name": "is_invited",
+            "value": false
+          },
+          {
+            "name": "is_manager",
+            "value": false
+          },
+          {
+            "name": "is_non_player",
+            "value": false
+          },
+          {
+            "name": "is_owner",
+            "value": false
+          },
+          {
+            "name": "is_ownership_pending",
+            "value": null
+          },
+          {
+            "name": "jersey_number",
+            "value": "8"
+          },
+          {
+            "name": "last_logged_in_at",
+            "value": null,
+            "deprecated": true,
+            "prompt": "%{field} is deprecated and has been removed.  Continued use of %{field} is not recommended it will no longer be stored."
+          },
+          {
+            "name": "last_name",
+            "value": "Kamman"
+          },
+          {
+            "name": "position",
+            "value": ""
+          },
+          {
+            "name": "team_id",
+            "value": 72084
+          },
+          {
+            "name": "user_id",
+            "value": 4058761
+          },
+          {
+            "name": "updated_at",
+            "value": "2016-09-17T17:27:16Z",
+            "type": "DateTime"
+          },
+          {
+            "name": "created_at",
+            "value": "2015-03-20T17:27:59Z",
+            "type": "DateTime"
+          }
+        ],
+        "links": [
+          {
+            "rel": "assignments",
+            "href": "https://api.teamsnap.com/v3/assignments/search?member_id=12106092"
+          },
+          {
+            "rel": "availabilities",
+            "href": "https://api.teamsnap.com/v3/availabilities/search?member_id=12106092"
+          },
+          {
+            "rel": "broadcast_email_attachments",
+            "href": "https://api.teamsnap.com/v3/broadcast_email_attachments/search?member_id=12106092"
+          },
+          {
+            "rel": "broadcast_emails",
+            "href": "https://api.teamsnap.com/v3/broadcast_emails/search?member_id=12106092"
+          },
+          {
+            "rel": "broadcast_alerts",
+            "href": "https://api.teamsnap.com/v3/broadcast_alerts/search?member_id=12106092"
+          },
+          {
+            "rel": "contact_email_addresses",
+            "href": "https://api.teamsnap.com/v3/contact_email_addresses/search?member_id=12106092"
+          },
+          {
+            "rel": "contact_phone_numbers",
+            "href": "https://api.teamsnap.com/v3/contact_phone_numbers/search?member_id=12106092"
+          },
+          {
+            "rel": "contacts",
+            "href": "https://api.teamsnap.com/v3/contacts/search?member_id=12106092"
+          },
+          {
+            "rel": "custom_data",
+            "href": "https://api.teamsnap.com/v3/custom_data/search?member_id=12106092"
+          },
+          {
+            "rel": "custom_fields",
+            "href": "https://api.teamsnap.com/v3/custom_fields/search?team_id=72084"
+          },
+          {
+            "rel": "division",
+            "href": "https://api.teamsnap.com/v3/divisions/3271"
+          },
+          {
+            "rel": "league_custom_data",
+            "href": "https://api.teamsnap.com/v3/league_custom_data/search?member_id=12106092"
+          },
+          {
+            "rel": "league_custom_fields",
+            "href": "https://api.teamsnap.com/v3/league_custom_fields/search?team_id=72084"
+          },
+          {
+            "rel": "forum_posts",
+            "href": "https://api.teamsnap.com/v3/forum_posts/search?member_id=12106092"
+          },
+          {
+            "rel": "forum_subscriptions",
+            "href": "https://api.teamsnap.com/v3/forum_subscriptions/search?member_id=12106092"
+          },
+          {
+            "rel": "forum_topics",
+            "href": "https://api.teamsnap.com/v3/forum_topics/search?team_id=72084"
+          },
+          {
+            "rel": "league_registrant_documents",
+            "href": "https://api.teamsnap.com/v3/league_registrant_documents/search?member_id=12106092"
+          },
+          {
+            "rel": "member_assignments",
+            "href": "https://api.teamsnap.com/v3/member_assignments/search?member_id=12106092"
+          },
+          {
+            "rel": "member_balances",
+            "href": "https://api.teamsnap.com/v3/member_balances/search?member_id=12106092"
+          },
+          {
+            "rel": "member_email_addresses",
+            "href": "https://api.teamsnap.com/v3/member_email_addresses/search?member_id=12106092"
+          },
+          {
+            "rel": "member_files",
+            "href": "https://api.teamsnap.com/v3/member_files/search?member_id=12106092"
+          },
+          {
+            "rel": "member_links",
+            "href": "https://api.teamsnap.com/v3/member_links/search?member_id=12106092"
+          },
+          {
+            "rel": "member_payments",
+            "href": "https://api.teamsnap.com/v3/member_payments/search?member_id=12106092"
+          },
+          {
+            "rel": "member_phone_numbers",
+            "href": "https://api.teamsnap.com/v3/member_phone_numbers/search?member_id=12106092"
+          },
+          {
+            "rel": "member_photo",
+            "href": "https://35b7f1d7d0790b02114c-1b8897185d70b198c119e1d2b7efd8a2.ssl.cf1.rackcdn.com/roster_full_photos/12106092/original/6bfcf76f873068b35be6e3055fff0d17.jpg"
+          },
+          {
+            "rel": "member_photo_file",
+            "href": "https://api.teamsnap.com/v3/member_photo_files/12106092-1427927595"
+          },
+          {
+            "rel": "member_photos",
+            "href": "https://api.teamsnap.com/v3/member_photos/search?member_id=12106092"
+          },
+          {
+            "rel": "member_preferences",
+            "href": "https://api.teamsnap.com/v3/members_preferences/12106092"
+          },
+          {
+            "rel": "member_statistics",
+            "href": "https://api.teamsnap.com/v3/member_statistics/search?member_id=12106092"
+          },
+          {
+            "rel": "member_thumbnail",
+            "href": "https://35b7f1d7d0790b02114c-1b8897185d70b198c119e1d2b7efd8a2.ssl.cf1.rackcdn.com/roster_thumb_photos/12106092/thumb/327237bcc4b4fa891e35aa8baaa7c31b.jpg"
+          },
+          {
+            "rel": "message_data",
+            "href": "https://api.teamsnap.com/v3/message_data/search?member_id=12106092"
+          },
+          {
+            "rel": "messages",
+            "href": "https://api.teamsnap.com/v3/messages/search?member_id=12106092"
+          },
+          {
+            "rel": "statistic_data",
+            "href": "https://api.teamsnap.com/v3/statistic_data/search?member_id=12106092"
+          },
+          {
+            "rel": "team",
+            "href": "https://api.teamsnap.com/v3/teams/72084"
+          },
+          {
+            "rel": "team_media",
+            "href": "https://api.teamsnap.com/v3/team_media/search?member_id=12106092"
+          },
+          {
+            "rel": "team_medium_comments",
+            "href": "https://api.teamsnap.com/v3/team_medium_comments/search?member_id=12106092"
+          },
+          {
+            "rel": "tracked_item_statuses",
+            "href": "https://api.teamsnap.com/v3/tracked_item_statuses/search?member_id=12106092"
+          },
+          {
+            "rel": "user",
+            "href": "https://api.teamsnap.com/v3/users/4058761"
+          }
+        ],
+        "rel": "member-12106092"
+      },
+      {
+        "href": "https://api.teamsnap.com/v3/members/12106105",
+        "data": [
+          {
+            "name": "id",
+            "value": 12106105
+          },
+          {
+            "name": "type",
+            "value": "member"
+          },
+          {
+            "name": "address_city",
+            "value": "Greenbrae"
+          },
+          {
+            "name": "address_state",
+            "value": "CA - California"
+          },
+          {
+            "name": "address_street1",
+            "value": "133 Eliseo Drive"
+          },
+          {
+            "name": "address_street2",
+            "value": null
+          },
+          {
+            "name": "address_zip",
+            "value": "94904"
+          },
+          {
+            "name": "birthday",
+            "value": "2004-06-16"
+          },
+          {
+            "name": "division_id",
+            "value": 3271
+          },
+          {
+            "name": "first_name",
+            "value": "Lucy"
+          },
+          {
+            "name": "gender",
+            "value": "Female"
+          },
+          {
+            "name": "has_facebook_post_scores_enabled",
+            "value": false
+          },
+          {
+            "name": "hide_address",
+            "value": false,
+            "deprecated": true,
+            "prompt": "hide_address is deprecated and will be removed in a future version, use is_address_hidden instead."
+          },
+          {
+            "name": "is_address_hidden",
+            "value": false
+          },
+          {
+            "name": "hide_age",
+            "value": false,
+            "deprecated": true,
+            "prompt": "hide_age is deprecated and will be removed in a future version, use is_age_hidden instead."
+          },
+          {
+            "name": "is_age_hidden",
+            "value": false
+          },
+          {
+            "name": "is_commissioner",
+            "value": false
+          },
+          {
+            "name": "invitation_code",
+            "value": "fec79582b6b79404c2a5513b"
+          },
+          {
+            "name": "invitation_declined",
+            "value": false
+          },
+          {
+            "name": "is_activated",
+            "value": true
+          },
+          {
+            "name": "is_pushable",
+            "value": true
+          },
+          {
+            "name": "is_alertable",
+            "value": true
+          },
+          {
+            "name": "is_emailable",
+            "value": true
+          },
+          {
+            "name": "is_invitable",
+            "value": false
+          },
+          {
+            "name": "is_invited",
+            "value": false
+          },
+          {
+            "name": "is_manager",
+            "value": false
+          },
+          {
+            "name": "is_non_player",
+            "value": false
+          },
+          {
+            "name": "is_owner",
+            "value": false
+          },
+          {
+            "name": "is_ownership_pending",
+            "value": null
+          },
+          {
+            "name": "jersey_number",
+            "value": "17"
+          },
+          {
+            "name": "last_logged_in_at",
+            "value": null,
+            "deprecated": true,
+            "prompt": "%{field} is deprecated and has been removed.  Continued use of %{field} is not recommended it will no longer be stored."
+          },
+          {
+            "name": "last_name",
+            "value": "Carruthers"
+          },
+          {
+            "name": "position",
+            "value": ""
+          },
+          {
+            "name": "team_id",
+            "value": 72084
+          },
+          {
+            "name": "user_id",
+            "value": 1925285
+          },
+          {
+            "name": "updated_at",
+            "value": "2016-09-17T20:36:55Z",
+            "type": "DateTime"
+          },
+          {
+            "name": "created_at",
+            "value": "2015-03-20T17:28:02Z",
+            "type": "DateTime"
+          }
+        ],
+        "links": [
+          {
+            "rel": "assignments",
+            "href": "https://api.teamsnap.com/v3/assignments/search?member_id=12106105"
+          },
+          {
+            "rel": "availabilities",
+            "href": "https://api.teamsnap.com/v3/availabilities/search?member_id=12106105"
+          },
+          {
+            "rel": "broadcast_email_attachments",
+            "href": "https://api.teamsnap.com/v3/broadcast_email_attachments/search?member_id=12106105"
+          },
+          {
+            "rel": "broadcast_emails",
+            "href": "https://api.teamsnap.com/v3/broadcast_emails/search?member_id=12106105"
+          },
+          {
+            "rel": "broadcast_alerts",
+            "href": "https://api.teamsnap.com/v3/broadcast_alerts/search?member_id=12106105"
+          },
+          {
+            "rel": "contact_email_addresses",
+            "href": "https://api.teamsnap.com/v3/contact_email_addresses/search?member_id=12106105"
+          },
+          {
+            "rel": "contact_phone_numbers",
+            "href": "https://api.teamsnap.com/v3/contact_phone_numbers/search?member_id=12106105"
+          },
+          {
+            "rel": "contacts",
+            "href": "https://api.teamsnap.com/v3/contacts/search?member_id=12106105"
+          },
+          {
+            "rel": "custom_data",
+            "href": "https://api.teamsnap.com/v3/custom_data/search?member_id=12106105"
+          },
+          {
+            "rel": "custom_fields",
+            "href": "https://api.teamsnap.com/v3/custom_fields/search?team_id=72084"
+          },
+          {
+            "rel": "division",
+            "href": "https://api.teamsnap.com/v3/divisions/3271"
+          },
+          {
+            "rel": "league_custom_data",
+            "href": "https://api.teamsnap.com/v3/league_custom_data/search?member_id=12106105"
+          },
+          {
+            "rel": "league_custom_fields",
+            "href": "https://api.teamsnap.com/v3/league_custom_fields/search?team_id=72084"
+          },
+          {
+            "rel": "forum_posts",
+            "href": "https://api.teamsnap.com/v3/forum_posts/search?member_id=12106105"
+          },
+          {
+            "rel": "forum_subscriptions",
+            "href": "https://api.teamsnap.com/v3/forum_subscriptions/search?member_id=12106105"
+          },
+          {
+            "rel": "forum_topics",
+            "href": "https://api.teamsnap.com/v3/forum_topics/search?team_id=72084"
+          },
+          {
+            "rel": "league_registrant_documents",
+            "href": "https://api.teamsnap.com/v3/league_registrant_documents/search?member_id=12106105"
+          },
+          {
+            "rel": "member_assignments",
+            "href": "https://api.teamsnap.com/v3/member_assignments/search?member_id=12106105"
+          },
+          {
+            "rel": "member_balances",
+            "href": "https://api.teamsnap.com/v3/member_balances/search?member_id=12106105"
+          },
+          {
+            "rel": "member_email_addresses",
+            "href": "https://api.teamsnap.com/v3/member_email_addresses/search?member_id=12106105"
+          },
+          {
+            "rel": "member_files",
+            "href": "https://api.teamsnap.com/v3/member_files/search?member_id=12106105"
+          },
+          {
+            "rel": "member_links",
+            "href": "https://api.teamsnap.com/v3/member_links/search?member_id=12106105"
+          },
+          {
+            "rel": "member_payments",
+            "href": "https://api.teamsnap.com/v3/member_payments/search?member_id=12106105"
+          },
+          {
+            "rel": "member_phone_numbers",
+            "href": "https://api.teamsnap.com/v3/member_phone_numbers/search?member_id=12106105"
+          },
+          {
+            "rel": "member_photo",
+            "href": "https://35b7f1d7d0790b02114c-1b8897185d70b198c119e1d2b7efd8a2.ssl.cf1.rackcdn.com/roster_full_photos/12106105/original/94804b74b75e5975b95236decf8a4dfd.jpg"
+          },
+          {
+            "rel": "member_photo_file",
+            "href": "https://api.teamsnap.com/v3/member_photo_files/12106105-1428092301"
+          },
+          {
+            "rel": "member_photos",
+            "href": "https://api.teamsnap.com/v3/member_photos/search?member_id=12106105"
+          },
+          {
+            "rel": "member_preferences",
+            "href": "https://api.teamsnap.com/v3/members_preferences/12106105"
+          },
+          {
+            "rel": "member_statistics",
+            "href": "https://api.teamsnap.com/v3/member_statistics/search?member_id=12106105"
+          },
+          {
+            "rel": "member_thumbnail",
+            "href": "https://35b7f1d7d0790b02114c-1b8897185d70b198c119e1d2b7efd8a2.ssl.cf1.rackcdn.com/roster_thumb_photos/12106105/thumb/ff6b81e3f95aa0bef1e04029600f9948.jpg"
+          },
+          {
+            "rel": "message_data",
+            "href": "https://api.teamsnap.com/v3/message_data/search?member_id=12106105"
+          },
+          {
+            "rel": "messages",
+            "href": "https://api.teamsnap.com/v3/messages/search?member_id=12106105"
+          },
+          {
+            "rel": "statistic_data",
+            "href": "https://api.teamsnap.com/v3/statistic_data/search?member_id=12106105"
+          },
+          {
+            "rel": "team",
+            "href": "https://api.teamsnap.com/v3/teams/72084"
+          },
+          {
+            "rel": "team_media",
+            "href": "https://api.teamsnap.com/v3/team_media/search?member_id=12106105"
+          },
+          {
+            "rel": "team_medium_comments",
+            "href": "https://api.teamsnap.com/v3/team_medium_comments/search?member_id=12106105"
+          },
+          {
+            "rel": "tracked_item_statuses",
+            "href": "https://api.teamsnap.com/v3/tracked_item_statuses/search?member_id=12106105"
+          },
+          {
+            "rel": "user",
+            "href": "https://api.teamsnap.com/v3/users/1925285"
+          }
+        ],
+        "rel": "member-12106105"
+      },
+      {
+        "href": "https://api.teamsnap.com/v3/members/12467753",
+        "data": [
+          {
+            "name": "id",
+            "value": 12467753
+          },
+          {
+            "name": "type",
+            "value": "member"
+          },
+          {
+            "name": "address_city",
+            "value": ""
+          },
+          {
+            "name": "address_state",
+            "value": ""
+          },
+          {
+            "name": "address_street1",
+            "value": ""
+          },
+          {
+            "name": "address_street2",
+            "value": null
+          },
+          {
+            "name": "address_zip",
+            "value": ""
+          },
+          {
+            "name": "birthday",
+            "value": ""
+          },
+          {
+            "name": "division_id",
+            "value": 3271
+          },
+          {
+            "name": "first_name",
+            "value": "Isaiah"
+          },
+          {
+            "name": "gender",
+            "value": null
+          },
+          {
+            "name": "has_facebook_post_scores_enabled",
+            "value": false
+          },
+          {
+            "name": "hide_address",
+            "value": false,
+            "deprecated": true,
+            "prompt": "hide_address is deprecated and will be removed in a future version, use is_address_hidden instead."
+          },
+          {
+            "name": "is_address_hidden",
+            "value": false
+          },
+          {
+            "name": "hide_age",
+            "value": false,
+            "deprecated": true,
+            "prompt": "hide_age is deprecated and will be removed in a future version, use is_age_hidden instead."
+          },
+          {
+            "name": "is_age_hidden",
+            "value": false
+          },
+          {
+            "name": "is_commissioner",
+            "value": false
+          },
+          {
+            "name": "invitation_code",
+            "value": "f49349f784fc8c6880a35f08"
+          },
+          {
+            "name": "invitation_declined",
+            "value": false
+          },
+          {
+            "name": "is_activated",
+            "value": true
+          },
+          {
+            "name": "is_pushable",
+            "value": false
+          },
+          {
+            "name": "is_alertable",
+            "value": false
+          },
+          {
+            "name": "is_emailable",
+            "value": true
+          },
+          {
+            "name": "is_invitable",
+            "value": false
+          },
+          {
+            "name": "is_invited",
+            "value": false
+          },
+          {
+            "name": "is_manager",
+            "value": true
+          },
+          {
+            "name": "is_non_player",
+            "value": true
+          },
+          {
+            "name": "is_owner",
+            "value": false
+          },
+          {
+            "name": "is_ownership_pending",
+            "value": null
+          },
+          {
+            "name": "jersey_number",
+            "value": ""
+          },
+          {
+            "name": "last_logged_in_at",
+            "value": null,
+            "deprecated": true,
+            "prompt": "%{field} is deprecated and has been removed.  Continued use of %{field} is not recommended it will no longer be stored."
+          },
+          {
+            "name": "last_name",
+            "value": "Schwerin"
+          },
+          {
+            "name": "position",
+            "value": "Coach"
+          },
+          {
+            "name": "team_id",
+            "value": 72084
+          },
+          {
+            "name": "user_id",
+            "value": 2146268
+          },
+          {
+            "name": "updated_at",
+            "value": "2016-09-17T02:28:30Z",
+            "type": "DateTime"
+          },
+          {
+            "name": "created_at",
+            "value": "2015-03-31T23:13:57Z",
+            "type": "DateTime"
+          }
+        ],
+        "links": [
+          {
+            "rel": "assignments",
+            "href": "https://api.teamsnap.com/v3/assignments/search?member_id=12467753"
+          },
+          {
+            "rel": "availabilities",
+            "href": "https://api.teamsnap.com/v3/availabilities/search?member_id=12467753"
+          },
+          {
+            "rel": "broadcast_email_attachments",
+            "href": "https://api.teamsnap.com/v3/broadcast_email_attachments/search?member_id=12467753"
+          },
+          {
+            "rel": "broadcast_emails",
+            "href": "https://api.teamsnap.com/v3/broadcast_emails/search?member_id=12467753"
+          },
+          {
+            "rel": "broadcast_alerts",
+            "href": "https://api.teamsnap.com/v3/broadcast_alerts/search?member_id=12467753"
+          },
+          {
+            "rel": "contact_email_addresses",
+            "href": "https://api.teamsnap.com/v3/contact_email_addresses/search?member_id=12467753"
+          },
+          {
+            "rel": "contact_phone_numbers",
+            "href": "https://api.teamsnap.com/v3/contact_phone_numbers/search?member_id=12467753"
+          },
+          {
+            "rel": "contacts",
+            "href": "https://api.teamsnap.com/v3/contacts/search?member_id=12467753"
+          },
+          {
+            "rel": "custom_data",
+            "href": "https://api.teamsnap.com/v3/custom_data/search?member_id=12467753"
+          },
+          {
+            "rel": "custom_fields",
+            "href": "https://api.teamsnap.com/v3/custom_fields/search?team_id=72084"
+          },
+          {
+            "rel": "division",
+            "href": "https://api.teamsnap.com/v3/divisions/3271"
+          },
+          {
+            "rel": "league_custom_data",
+            "href": "https://api.teamsnap.com/v3/league_custom_data/search?member_id=12467753"
+          },
+          {
+            "rel": "league_custom_fields",
+            "href": "https://api.teamsnap.com/v3/league_custom_fields/search?team_id=72084"
+          },
+          {
+            "rel": "forum_posts",
+            "href": "https://api.teamsnap.com/v3/forum_posts/search?member_id=12467753"
+          },
+          {
+            "rel": "forum_subscriptions",
+            "href": "https://api.teamsnap.com/v3/forum_subscriptions/search?member_id=12467753"
+          },
+          {
+            "rel": "forum_topics",
+            "href": "https://api.teamsnap.com/v3/forum_topics/search?team_id=72084"
+          },
+          {
+            "rel": "league_registrant_documents",
+            "href": "https://api.teamsnap.com/v3/league_registrant_documents/search?member_id=12467753"
+          },
+          {
+            "rel": "member_assignments",
+            "href": "https://api.teamsnap.com/v3/member_assignments/search?member_id=12467753"
+          },
+          {
+            "rel": "member_balances",
+            "href": "https://api.teamsnap.com/v3/member_balances/search?member_id=12467753"
+          },
+          {
+            "rel": "member_email_addresses",
+            "href": "https://api.teamsnap.com/v3/member_email_addresses/search?member_id=12467753"
+          },
+          {
+            "rel": "member_files",
+            "href": "https://api.teamsnap.com/v3/member_files/search?member_id=12467753"
+          },
+          {
+            "rel": "member_links",
+            "href": "https://api.teamsnap.com/v3/member_links/search?member_id=12467753"
+          },
+          {
+            "rel": "member_payments",
+            "href": "https://api.teamsnap.com/v3/member_payments/search?member_id=12467753"
+          },
+          {
+            "rel": "member_phone_numbers",
+            "href": "https://api.teamsnap.com/v3/member_phone_numbers/search?member_id=12467753"
+          },
+          {
+            "rel": "member_photos",
+            "href": "https://api.teamsnap.com/v3/member_photos/search?member_id=12467753"
+          },
+          {
+            "rel": "member_preferences",
+            "href": "https://api.teamsnap.com/v3/members_preferences/12467753"
+          },
+          {
+            "rel": "member_statistics",
+            "href": "https://api.teamsnap.com/v3/member_statistics/search?member_id=12467753"
+          },
+          {
+            "rel": "message_data",
+            "href": "https://api.teamsnap.com/v3/message_data/search?member_id=12467753"
+          },
+          {
+            "rel": "messages",
+            "href": "https://api.teamsnap.com/v3/messages/search?member_id=12467753"
+          },
+          {
+            "rel": "statistic_data",
+            "href": "https://api.teamsnap.com/v3/statistic_data/search?member_id=12467753"
+          },
+          {
+            "rel": "team",
+            "href": "https://api.teamsnap.com/v3/teams/72084"
+          },
+          {
+            "rel": "team_media",
+            "href": "https://api.teamsnap.com/v3/team_media/search?member_id=12467753"
+          },
+          {
+            "rel": "team_medium_comments",
+            "href": "https://api.teamsnap.com/v3/team_medium_comments/search?member_id=12467753"
+          },
+          {
+            "rel": "tracked_item_statuses",
+            "href": "https://api.teamsnap.com/v3/tracked_item_statuses/search?member_id=12467753"
+          },
+          {
+            "rel": "user",
+            "href": "https://api.teamsnap.com/v3/users/2146268"
+          }
+        ],
+        "rel": "member-12467753"
+      },
+      {
+        "href": "https://api.teamsnap.com/v3/members/12468232",
+        "data": [
+          {
+            "name": "id",
+            "value": 12468232
+          },
+          {
+            "name": "type",
+            "value": "member"
+          },
+          {
+            "name": "address_city",
+            "value": ""
+          },
+          {
+            "name": "address_state",
+            "value": ""
+          },
+          {
+            "name": "address_street1",
+            "value": ""
+          },
+          {
+            "name": "address_street2",
+            "value": null
+          },
+          {
+            "name": "address_zip",
+            "value": ""
+          },
+          {
+            "name": "birthday",
+            "value": "2004-05-04"
+          },
+          {
+            "name": "division_id",
+            "value": 3271
+          },
+          {
+            "name": "first_name",
+            "value": "Piper"
+          },
+          {
+            "name": "gender",
+            "value": "Female"
+          },
+          {
+            "name": "has_facebook_post_scores_enabled",
+            "value": false
+          },
+          {
+            "name": "hide_address",
+            "value": false,
+            "deprecated": true,
+            "prompt": "hide_address is deprecated and will be removed in a future version, use is_address_hidden instead."
+          },
+          {
+            "name": "is_address_hidden",
+            "value": false
+          },
+          {
+            "name": "hide_age",
+            "value": false,
+            "deprecated": true,
+            "prompt": "hide_age is deprecated and will be removed in a future version, use is_age_hidden instead."
+          },
+          {
+            "name": "is_age_hidden",
+            "value": false
+          },
+          {
+            "name": "is_commissioner",
+            "value": false
+          },
+          {
+            "name": "invitation_code",
+            "value": "7f7068f2ba69561045422684"
+          },
+          {
+            "name": "invitation_declined",
+            "value": false
+          },
+          {
+            "name": "is_activated",
+            "value": true
+          },
+          {
+            "name": "is_pushable",
+            "value": false
+          },
+          {
+            "name": "is_alertable",
+            "value": false
+          },
+          {
+            "name": "is_emailable",
+            "value": true
+          },
+          {
+            "name": "is_invitable",
+            "value": false
+          },
+          {
+            "name": "is_invited",
+            "value": false
+          },
+          {
+            "name": "is_manager",
+            "value": false
+          },
+          {
+            "name": "is_non_player",
+            "value": false
+          },
+          {
+            "name": "is_owner",
+            "value": false
+          },
+          {
+            "name": "is_ownership_pending",
+            "value": null
+          },
+          {
+            "name": "jersey_number",
+            "value": ""
+          },
+          {
+            "name": "last_logged_in_at",
+            "value": null,
+            "deprecated": true,
+            "prompt": "%{field} is deprecated and has been removed.  Continued use of %{field} is not recommended it will no longer be stored."
+          },
+          {
+            "name": "last_name",
+            "value": "Berger"
+          },
+          {
+            "name": "position",
+            "value": ""
+          },
+          {
+            "name": "team_id",
+            "value": 72084
+          },
+          {
+            "name": "user_id",
+            "value": 450957
+          },
+          {
+            "name": "updated_at",
+            "value": "2016-09-13T17:00:48Z",
+            "type": "DateTime"
+          },
+          {
+            "name": "created_at",
+            "value": "2015-03-31T23:35:01Z",
+            "type": "DateTime"
+          }
+        ],
+        "links": [
+          {
+            "rel": "assignments",
+            "href": "https://api.teamsnap.com/v3/assignments/search?member_id=12468232"
+          },
+          {
+            "rel": "availabilities",
+            "href": "https://api.teamsnap.com/v3/availabilities/search?member_id=12468232"
+          },
+          {
+            "rel": "broadcast_email_attachments",
+            "href": "https://api.teamsnap.com/v3/broadcast_email_attachments/search?member_id=12468232"
+          },
+          {
+            "rel": "broadcast_emails",
+            "href": "https://api.teamsnap.com/v3/broadcast_emails/search?member_id=12468232"
+          },
+          {
+            "rel": "broadcast_alerts",
+            "href": "https://api.teamsnap.com/v3/broadcast_alerts/search?member_id=12468232"
+          },
+          {
+            "rel": "contact_email_addresses",
+            "href": "https://api.teamsnap.com/v3/contact_email_addresses/search?member_id=12468232"
+          },
+          {
+            "rel": "contact_phone_numbers",
+            "href": "https://api.teamsnap.com/v3/contact_phone_numbers/search?member_id=12468232"
+          },
+          {
+            "rel": "contacts",
+            "href": "https://api.teamsnap.com/v3/contacts/search?member_id=12468232"
+          },
+          {
+            "rel": "custom_data",
+            "href": "https://api.teamsnap.com/v3/custom_data/search?member_id=12468232"
+          },
+          {
+            "rel": "custom_fields",
+            "href": "https://api.teamsnap.com/v3/custom_fields/search?team_id=72084"
+          },
+          {
+            "rel": "division",
+            "href": "https://api.teamsnap.com/v3/divisions/3271"
+          },
+          {
+            "rel": "league_custom_data",
+            "href": "https://api.teamsnap.com/v3/league_custom_data/search?member_id=12468232"
+          },
+          {
+            "rel": "league_custom_fields",
+            "href": "https://api.teamsnap.com/v3/league_custom_fields/search?team_id=72084"
+          },
+          {
+            "rel": "forum_posts",
+            "href": "https://api.teamsnap.com/v3/forum_posts/search?member_id=12468232"
+          },
+          {
+            "rel": "forum_subscriptions",
+            "href": "https://api.teamsnap.com/v3/forum_subscriptions/search?member_id=12468232"
+          },
+          {
+            "rel": "forum_topics",
+            "href": "https://api.teamsnap.com/v3/forum_topics/search?team_id=72084"
+          },
+          {
+            "rel": "league_registrant_documents",
+            "href": "https://api.teamsnap.com/v3/league_registrant_documents/search?member_id=12468232"
+          },
+          {
+            "rel": "member_assignments",
+            "href": "https://api.teamsnap.com/v3/member_assignments/search?member_id=12468232"
+          },
+          {
+            "rel": "member_balances",
+            "href": "https://api.teamsnap.com/v3/member_balances/search?member_id=12468232"
+          },
+          {
+            "rel": "member_email_addresses",
+            "href": "https://api.teamsnap.com/v3/member_email_addresses/search?member_id=12468232"
+          },
+          {
+            "rel": "member_files",
+            "href": "https://api.teamsnap.com/v3/member_files/search?member_id=12468232"
+          },
+          {
+            "rel": "member_links",
+            "href": "https://api.teamsnap.com/v3/member_links/search?member_id=12468232"
+          },
+          {
+            "rel": "member_payments",
+            "href": "https://api.teamsnap.com/v3/member_payments/search?member_id=12468232"
+          },
+          {
+            "rel": "member_phone_numbers",
+            "href": "https://api.teamsnap.com/v3/member_phone_numbers/search?member_id=12468232"
+          },
+          {
+            "rel": "member_photo",
+            "href": "https://35b7f1d7d0790b02114c-1b8897185d70b198c119e1d2b7efd8a2.ssl.cf1.rackcdn.com/roster_full_photos/12468232/original/6823367bbaecd8d7e7b55a5aa4fef863.jpg"
+          },
+          {
+            "rel": "member_photo_file",
+            "href": "https://api.teamsnap.com/v3/member_photo_files/12468232-1427914136"
+          },
+          {
+            "rel": "member_photos",
+            "href": "https://api.teamsnap.com/v3/member_photos/search?member_id=12468232"
+          },
+          {
+            "rel": "member_preferences",
+            "href": "https://api.teamsnap.com/v3/members_preferences/12468232"
+          },
+          {
+            "rel": "member_statistics",
+            "href": "https://api.teamsnap.com/v3/member_statistics/search?member_id=12468232"
+          },
+          {
+            "rel": "member_thumbnail",
+            "href": "https://35b7f1d7d0790b02114c-1b8897185d70b198c119e1d2b7efd8a2.ssl.cf1.rackcdn.com/roster_thumb_photos/12468232/thumb/a7eb6dac7a8f3f55e7d4e7e9642aa5ca.jpg"
+          },
+          {
+            "rel": "message_data",
+            "href": "https://api.teamsnap.com/v3/message_data/search?member_id=12468232"
+          },
+          {
+            "rel": "messages",
+            "href": "https://api.teamsnap.com/v3/messages/search?member_id=12468232"
+          },
+          {
+            "rel": "statistic_data",
+            "href": "https://api.teamsnap.com/v3/statistic_data/search?member_id=12468232"
+          },
+          {
+            "rel": "team",
+            "href": "https://api.teamsnap.com/v3/teams/72084"
+          },
+          {
+            "rel": "team_media",
+            "href": "https://api.teamsnap.com/v3/team_media/search?member_id=12468232"
+          },
+          {
+            "rel": "team_medium_comments",
+            "href": "https://api.teamsnap.com/v3/team_medium_comments/search?member_id=12468232"
+          },
+          {
+            "rel": "tracked_item_statuses",
+            "href": "https://api.teamsnap.com/v3/tracked_item_statuses/search?member_id=12468232"
+          },
+          {
+            "rel": "user",
+            "href": "https://api.teamsnap.com/v3/users/450957"
+          }
+        ],
+        "rel": "member-12468232"
+      },
+      {
+        "href": "https://api.teamsnap.com/v3/members/12468233",
+        "data": [
+          {
+            "name": "id",
+            "value": 12468233
+          },
+          {
+            "name": "type",
+            "value": "member"
+          },
+          {
+            "name": "address_city",
+            "value": null
+          },
+          {
+            "name": "address_state",
+            "value": null
+          },
+          {
+            "name": "address_street1",
+            "value": null
+          },
+          {
+            "name": "address_street2",
+            "value": null
+          },
+          {
+            "name": "address_zip",
+            "value": null
+          },
+          {
+            "name": "birthday",
+            "value": "2004-05-04"
+          },
+          {
+            "name": "division_id",
+            "value": 3271
+          },
+          {
+            "name": "first_name",
+            "value": "Sailor"
+          },
+          {
+            "name": "gender",
+            "value": "Female"
+          },
+          {
+            "name": "has_facebook_post_scores_enabled",
+            "value": false
+          },
+          {
+            "name": "hide_address",
+            "value": null,
+            "deprecated": true,
+            "prompt": "hide_address is deprecated and will be removed in a future version, use is_address_hidden instead."
+          },
+          {
+            "name": "is_address_hidden",
+            "value": null
+          },
+          {
+            "name": "hide_age",
+            "value": null,
+            "deprecated": true,
+            "prompt": "hide_age is deprecated and will be removed in a future version, use is_age_hidden instead."
+          },
+          {
+            "name": "is_age_hidden",
+            "value": null
+          },
+          {
+            "name": "is_commissioner",
+            "value": false
+          },
+          {
+            "name": "invitation_code",
+            "value": "0880486587c15cbc53336c07"
+          },
+          {
+            "name": "invitation_declined",
+            "value": false
+          },
+          {
+            "name": "is_activated",
+            "value": true
+          },
+          {
+            "name": "is_pushable",
+            "value": true
+          },
+          {
+            "name": "is_alertable",
+            "value": true
+          },
+          {
+            "name": "is_emailable",
+            "value": true
+          },
+          {
+            "name": "is_invitable",
+            "value": false
+          },
+          {
+            "name": "is_invited",
+            "value": false
+          },
+          {
+            "name": "is_manager",
+            "value": false
+          },
+          {
+            "name": "is_non_player",
+            "value": false
+          },
+          {
+            "name": "is_owner",
+            "value": false
+          },
+          {
+            "name": "is_ownership_pending",
+            "value": null
+          },
+          {
+            "name": "jersey_number",
+            "value": ""
+          },
+          {
+            "name": "last_logged_in_at",
+            "value": null,
+            "deprecated": true,
+            "prompt": "%{field} is deprecated and has been removed.  Continued use of %{field} is not recommended it will no longer be stored."
+          },
+          {
+            "name": "last_name",
+            "value": "Berger"
+          },
+          {
+            "name": "position",
+            "value": ""
+          },
+          {
+            "name": "team_id",
+            "value": 72084
+          },
+          {
+            "name": "user_id",
+            "value": 451399
+          },
+          {
+            "name": "updated_at",
+            "value": "2016-09-17T03:35:43Z",
+            "type": "DateTime"
+          },
+          {
+            "name": "created_at",
+            "value": "2015-03-31T23:35:01Z",
+            "type": "DateTime"
+          }
+        ],
+        "links": [
+          {
+            "rel": "assignments",
+            "href": "https://api.teamsnap.com/v3/assignments/search?member_id=12468233"
+          },
+          {
+            "rel": "availabilities",
+            "href": "https://api.teamsnap.com/v3/availabilities/search?member_id=12468233"
+          },
+          {
+            "rel": "broadcast_email_attachments",
+            "href": "https://api.teamsnap.com/v3/broadcast_email_attachments/search?member_id=12468233"
+          },
+          {
+            "rel": "broadcast_emails",
+            "href": "https://api.teamsnap.com/v3/broadcast_emails/search?member_id=12468233"
+          },
+          {
+            "rel": "broadcast_alerts",
+            "href": "https://api.teamsnap.com/v3/broadcast_alerts/search?member_id=12468233"
+          },
+          {
+            "rel": "contact_email_addresses",
+            "href": "https://api.teamsnap.com/v3/contact_email_addresses/search?member_id=12468233"
+          },
+          {
+            "rel": "contact_phone_numbers",
+            "href": "https://api.teamsnap.com/v3/contact_phone_numbers/search?member_id=12468233"
+          },
+          {
+            "rel": "contacts",
+            "href": "https://api.teamsnap.com/v3/contacts/search?member_id=12468233"
+          },
+          {
+            "rel": "custom_data",
+            "href": "https://api.teamsnap.com/v3/custom_data/search?member_id=12468233"
+          },
+          {
+            "rel": "custom_fields",
+            "href": "https://api.teamsnap.com/v3/custom_fields/search?team_id=72084"
+          },
+          {
+            "rel": "division",
+            "href": "https://api.teamsnap.com/v3/divisions/3271"
+          },
+          {
+            "rel": "league_custom_data",
+            "href": "https://api.teamsnap.com/v3/league_custom_data/search?member_id=12468233"
+          },
+          {
+            "rel": "league_custom_fields",
+            "href": "https://api.teamsnap.com/v3/league_custom_fields/search?team_id=72084"
+          },
+          {
+            "rel": "forum_posts",
+            "href": "https://api.teamsnap.com/v3/forum_posts/search?member_id=12468233"
+          },
+          {
+            "rel": "forum_subscriptions",
+            "href": "https://api.teamsnap.com/v3/forum_subscriptions/search?member_id=12468233"
+          },
+          {
+            "rel": "forum_topics",
+            "href": "https://api.teamsnap.com/v3/forum_topics/search?team_id=72084"
+          },
+          {
+            "rel": "league_registrant_documents",
+            "href": "https://api.teamsnap.com/v3/league_registrant_documents/search?member_id=12468233"
+          },
+          {
+            "rel": "member_assignments",
+            "href": "https://api.teamsnap.com/v3/member_assignments/search?member_id=12468233"
+          },
+          {
+            "rel": "member_balances",
+            "href": "https://api.teamsnap.com/v3/member_balances/search?member_id=12468233"
+          },
+          {
+            "rel": "member_email_addresses",
+            "href": "https://api.teamsnap.com/v3/member_email_addresses/search?member_id=12468233"
+          },
+          {
+            "rel": "member_files",
+            "href": "https://api.teamsnap.com/v3/member_files/search?member_id=12468233"
+          },
+          {
+            "rel": "member_links",
+            "href": "https://api.teamsnap.com/v3/member_links/search?member_id=12468233"
+          },
+          {
+            "rel": "member_payments",
+            "href": "https://api.teamsnap.com/v3/member_payments/search?member_id=12468233"
+          },
+          {
+            "rel": "member_phone_numbers",
+            "href": "https://api.teamsnap.com/v3/member_phone_numbers/search?member_id=12468233"
+          },
+          {
+            "rel": "member_photo",
+            "href": "https://35b7f1d7d0790b02114c-1b8897185d70b198c119e1d2b7efd8a2.ssl.cf1.rackcdn.com/roster_full_photos/12468233/original/3ffe3a841cfe8e1be5ed53e961fc1e8f.jpg"
+          },
+          {
+            "rel": "member_photo_file",
+            "href": "https://api.teamsnap.com/v3/member_photo_files/12468233-1427914169"
+          },
+          {
+            "rel": "member_photos",
+            "href": "https://api.teamsnap.com/v3/member_photos/search?member_id=12468233"
+          },
+          {
+            "rel": "member_preferences",
+            "href": "https://api.teamsnap.com/v3/members_preferences/12468233"
+          },
+          {
+            "rel": "member_statistics",
+            "href": "https://api.teamsnap.com/v3/member_statistics/search?member_id=12468233"
+          },
+          {
+            "rel": "member_thumbnail",
+            "href": "https://35b7f1d7d0790b02114c-1b8897185d70b198c119e1d2b7efd8a2.ssl.cf1.rackcdn.com/roster_thumb_photos/12468233/thumb/effafc820f1e0ab756a00218634a3b6d.jpg"
+          },
+          {
+            "rel": "message_data",
+            "href": "https://api.teamsnap.com/v3/message_data/search?member_id=12468233"
+          },
+          {
+            "rel": "messages",
+            "href": "https://api.teamsnap.com/v3/messages/search?member_id=12468233"
+          },
+          {
+            "rel": "statistic_data",
+            "href": "https://api.teamsnap.com/v3/statistic_data/search?member_id=12468233"
+          },
+          {
+            "rel": "team",
+            "href": "https://api.teamsnap.com/v3/teams/72084"
+          },
+          {
+            "rel": "team_media",
+            "href": "https://api.teamsnap.com/v3/team_media/search?member_id=12468233"
+          },
+          {
+            "rel": "team_medium_comments",
+            "href": "https://api.teamsnap.com/v3/team_medium_comments/search?member_id=12468233"
+          },
+          {
+            "rel": "tracked_item_statuses",
+            "href": "https://api.teamsnap.com/v3/tracked_item_statuses/search?member_id=12468233"
+          },
+          {
+            "rel": "user",
+            "href": "https://api.teamsnap.com/v3/users/451399"
+          }
+        ],
+        "rel": "member-12468233"
+      },
+      {
+        "href": "https://api.teamsnap.com/v3/members/12468236",
+        "data": [
+          {
+            "name": "id",
+            "value": 12468236
+          },
+          {
+            "name": "type",
+            "value": "member"
+          },
+          {
+            "name": "address_city",
+            "value": ""
+          },
+          {
+            "name": "address_state",
+            "value": ""
+          },
+          {
+            "name": "address_street1",
+            "value": ""
+          },
+          {
+            "name": "address_street2",
+            "value": null
+          },
+          {
+            "name": "address_zip",
+            "value": ""
+          },
+          {
+            "name": "birthday",
+            "value": ""
+          },
+          {
+            "name": "division_id",
+            "value": 3271
+          },
+          {
+            "name": "first_name",
+            "value": "Kaia"
+          },
+          {
+            "name": "gender",
+            "value": "Female"
+          },
+          {
+            "name": "has_facebook_post_scores_enabled",
+            "value": false
+          },
+          {
+            "name": "hide_address",
+            "value": false,
+            "deprecated": true,
+            "prompt": "hide_address is deprecated and will be removed in a future version, use is_address_hidden instead."
+          },
+          {
+            "name": "is_address_hidden",
+            "value": false
+          },
+          {
+            "name": "hide_age",
+            "value": false,
+            "deprecated": true,
+            "prompt": "hide_age is deprecated and will be removed in a future version, use is_age_hidden instead."
+          },
+          {
+            "name": "is_age_hidden",
+            "value": false
+          },
+          {
+            "name": "is_commissioner",
+            "value": false
+          },
+          {
+            "name": "invitation_code",
+            "value": "529ea5951f75a80ea435a281"
+          },
+          {
+            "name": "invitation_declined",
+            "value": false
+          },
+          {
+            "name": "is_activated",
+            "value": true
+          },
+          {
+            "name": "is_pushable",
+            "value": true
+          },
+          {
+            "name": "is_alertable",
+            "value": false
+          },
+          {
+            "name": "is_emailable",
+            "value": true
+          },
+          {
+            "name": "is_invitable",
+            "value": false
+          },
+          {
+            "name": "is_invited",
+            "value": false
+          },
+          {
+            "name": "is_manager",
+            "value": false
+          },
+          {
+            "name": "is_non_player",
+            "value": false
+          },
+          {
+            "name": "is_owner",
+            "value": false
+          },
+          {
+            "name": "is_ownership_pending",
+            "value": null
+          },
+          {
+            "name": "jersey_number",
+            "value": ""
+          },
+          {
+            "name": "last_logged_in_at",
+            "value": null,
+            "deprecated": true,
+            "prompt": "%{field} is deprecated and has been removed.  Continued use of %{field} is not recommended it will no longer be stored."
+          },
+          {
+            "name": "last_name",
+            "value": "Alpert"
+          },
+          {
+            "name": "position",
+            "value": ""
+          },
+          {
+            "name": "team_id",
+            "value": 72084
+          },
+          {
+            "name": "user_id",
+            "value": 825281
+          },
+          {
+            "name": "updated_at",
+            "value": "2016-09-16T22:40:38Z",
+            "type": "DateTime"
+          },
+          {
+            "name": "created_at",
+            "value": "2015-03-31T23:35:02Z",
+            "type": "DateTime"
+          }
+        ],
+        "links": [
+          {
+            "rel": "assignments",
+            "href": "https://api.teamsnap.com/v3/assignments/search?member_id=12468236"
+          },
+          {
+            "rel": "availabilities",
+            "href": "https://api.teamsnap.com/v3/availabilities/search?member_id=12468236"
+          },
+          {
+            "rel": "broadcast_email_attachments",
+            "href": "https://api.teamsnap.com/v3/broadcast_email_attachments/search?member_id=12468236"
+          },
+          {
+            "rel": "broadcast_emails",
+            "href": "https://api.teamsnap.com/v3/broadcast_emails/search?member_id=12468236"
+          },
+          {
+            "rel": "broadcast_alerts",
+            "href": "https://api.teamsnap.com/v3/broadcast_alerts/search?member_id=12468236"
+          },
+          {
+            "rel": "contact_email_addresses",
+            "href": "https://api.teamsnap.com/v3/contact_email_addresses/search?member_id=12468236"
+          },
+          {
+            "rel": "contact_phone_numbers",
+            "href": "https://api.teamsnap.com/v3/contact_phone_numbers/search?member_id=12468236"
+          },
+          {
+            "rel": "contacts",
+            "href": "https://api.teamsnap.com/v3/contacts/search?member_id=12468236"
+          },
+          {
+            "rel": "custom_data",
+            "href": "https://api.teamsnap.com/v3/custom_data/search?member_id=12468236"
+          },
+          {
+            "rel": "custom_fields",
+            "href": "https://api.teamsnap.com/v3/custom_fields/search?team_id=72084"
+          },
+          {
+            "rel": "division",
+            "href": "https://api.teamsnap.com/v3/divisions/3271"
+          },
+          {
+            "rel": "league_custom_data",
+            "href": "https://api.teamsnap.com/v3/league_custom_data/search?member_id=12468236"
+          },
+          {
+            "rel": "league_custom_fields",
+            "href": "https://api.teamsnap.com/v3/league_custom_fields/search?team_id=72084"
+          },
+          {
+            "rel": "forum_posts",
+            "href": "https://api.teamsnap.com/v3/forum_posts/search?member_id=12468236"
+          },
+          {
+            "rel": "forum_subscriptions",
+            "href": "https://api.teamsnap.com/v3/forum_subscriptions/search?member_id=12468236"
+          },
+          {
+            "rel": "forum_topics",
+            "href": "https://api.teamsnap.com/v3/forum_topics/search?team_id=72084"
+          },
+          {
+            "rel": "league_registrant_documents",
+            "href": "https://api.teamsnap.com/v3/league_registrant_documents/search?member_id=12468236"
+          },
+          {
+            "rel": "member_assignments",
+            "href": "https://api.teamsnap.com/v3/member_assignments/search?member_id=12468236"
+          },
+          {
+            "rel": "member_balances",
+            "href": "https://api.teamsnap.com/v3/member_balances/search?member_id=12468236"
+          },
+          {
+            "rel": "member_email_addresses",
+            "href": "https://api.teamsnap.com/v3/member_email_addresses/search?member_id=12468236"
+          },
+          {
+            "rel": "member_files",
+            "href": "https://api.teamsnap.com/v3/member_files/search?member_id=12468236"
+          },
+          {
+            "rel": "member_links",
+            "href": "https://api.teamsnap.com/v3/member_links/search?member_id=12468236"
+          },
+          {
+            "rel": "member_payments",
+            "href": "https://api.teamsnap.com/v3/member_payments/search?member_id=12468236"
+          },
+          {
+            "rel": "member_phone_numbers",
+            "href": "https://api.teamsnap.com/v3/member_phone_numbers/search?member_id=12468236"
+          },
+          {
+            "rel": "member_photo",
+            "href": "https://35b7f1d7d0790b02114c-1b8897185d70b198c119e1d2b7efd8a2.ssl.cf1.rackcdn.com/roster_full_photos/12468236/original/1597ca2fb269699add7e9dee19ecb68d.jpg"
+          },
+          {
+            "rel": "member_photo_file",
+            "href": "https://api.teamsnap.com/v3/member_photo_files/12468236-1427913964"
+          },
+          {
+            "rel": "member_photos",
+            "href": "https://api.teamsnap.com/v3/member_photos/search?member_id=12468236"
+          },
+          {
+            "rel": "member_preferences",
+            "href": "https://api.teamsnap.com/v3/members_preferences/12468236"
+          },
+          {
+            "rel": "member_statistics",
+            "href": "https://api.teamsnap.com/v3/member_statistics/search?member_id=12468236"
+          },
+          {
+            "rel": "member_thumbnail",
+            "href": "https://35b7f1d7d0790b02114c-1b8897185d70b198c119e1d2b7efd8a2.ssl.cf1.rackcdn.com/roster_thumb_photos/12468236/thumb/4ccb9815101a74df77e086c6739aba33.jpg"
+          },
+          {
+            "rel": "message_data",
+            "href": "https://api.teamsnap.com/v3/message_data/search?member_id=12468236"
+          },
+          {
+            "rel": "messages",
+            "href": "https://api.teamsnap.com/v3/messages/search?member_id=12468236"
+          },
+          {
+            "rel": "statistic_data",
+            "href": "https://api.teamsnap.com/v3/statistic_data/search?member_id=12468236"
+          },
+          {
+            "rel": "team",
+            "href": "https://api.teamsnap.com/v3/teams/72084"
+          },
+          {
+            "rel": "team_media",
+            "href": "https://api.teamsnap.com/v3/team_media/search?member_id=12468236"
+          },
+          {
+            "rel": "team_medium_comments",
+            "href": "https://api.teamsnap.com/v3/team_medium_comments/search?member_id=12468236"
+          },
+          {
+            "rel": "tracked_item_statuses",
+            "href": "https://api.teamsnap.com/v3/tracked_item_statuses/search?member_id=12468236"
+          },
+          {
+            "rel": "user",
+            "href": "https://api.teamsnap.com/v3/users/825281"
+          }
+        ],
+        "rel": "member-12468236"
+      },
+      {
+        "href": "https://api.teamsnap.com/v3/members/21893718",
+        "data": [
+          {
+            "name": "id",
+            "value": 21893718
+          },
+          {
+            "name": "type",
+            "value": "member"
+          },
+          {
+            "name": "address_city",
+            "value": null
+          },
+          {
+            "name": "address_state",
+            "value": null
+          },
+          {
+            "name": "address_street1",
+            "value": null
+          },
+          {
+            "name": "address_street2",
+            "value": null
+          },
+          {
+            "name": "address_zip",
+            "value": null
+          },
+          {
+            "name": "birthday",
+            "value": ""
+          },
+          {
+            "name": "division_id",
+            "value": 3271
+          },
+          {
+            "name": "first_name",
+            "value": "Abigail"
+          },
+          {
+            "name": "gender",
+            "value": "Female"
+          },
+          {
+            "name": "has_facebook_post_scores_enabled",
+            "value": false
+          },
+          {
+            "name": "hide_address",
+            "value": null,
+            "deprecated": true,
+            "prompt": "hide_address is deprecated and will be removed in a future version, use is_address_hidden instead."
+          },
+          {
+            "name": "is_address_hidden",
+            "value": null
+          },
+          {
+            "name": "hide_age",
+            "value": null,
+            "deprecated": true,
+            "prompt": "hide_age is deprecated and will be removed in a future version, use is_age_hidden instead."
+          },
+          {
+            "name": "is_age_hidden",
+            "value": null
+          },
+          {
+            "name": "is_commissioner",
+            "value": false
+          },
+          {
+            "name": "invitation_code",
+            "value": "d99fb15005d528206181fd5e"
+          },
+          {
+            "name": "invitation_declined",
+            "value": null
+          },
+          {
+            "name": "is_activated",
+            "value": true
+          },
+          {
+            "name": "is_pushable",
+            "value": false
+          },
+          {
+            "name": "is_alertable",
+            "value": true
+          },
+          {
+            "name": "is_emailable",
+            "value": true
+          },
+          {
+            "name": "is_invitable",
+            "value": false
+          },
+          {
+            "name": "is_invited",
+            "value": false
+          },
+          {
+            "name": "is_manager",
+            "value": false
+          },
+          {
+            "name": "is_non_player",
+            "value": false
+          },
+          {
+            "name": "is_owner",
+            "value": false
+          },
+          {
+            "name": "is_ownership_pending",
+            "value": null
+          },
+          {
+            "name": "jersey_number",
+            "value": null
+          },
+          {
+            "name": "last_logged_in_at",
+            "value": null,
+            "deprecated": true,
+            "prompt": "%{field} is deprecated and has been removed.  Continued use of %{field} is not recommended it will no longer be stored."
+          },
+          {
+            "name": "last_name",
+            "value": "Treves"
+          },
+          {
+            "name": "position",
+            "value": null
+          },
+          {
+            "name": "team_id",
+            "value": 72084
+          },
+          {
+            "name": "user_id",
+            "value": 7319256
+          },
+          {
+            "name": "updated_at",
+            "value": "2016-09-17T20:59:35Z",
+            "type": "DateTime"
+          },
+          {
+            "name": "created_at",
+            "value": "2016-03-22T06:26:37Z",
+            "type": "DateTime"
+          }
+        ],
+        "links": [
+          {
+            "rel": "assignments",
+            "href": "https://api.teamsnap.com/v3/assignments/search?member_id=21893718"
+          },
+          {
+            "rel": "availabilities",
+            "href": "https://api.teamsnap.com/v3/availabilities/search?member_id=21893718"
+          },
+          {
+            "rel": "broadcast_email_attachments",
+            "href": "https://api.teamsnap.com/v3/broadcast_email_attachments/search?member_id=21893718"
+          },
+          {
+            "rel": "broadcast_emails",
+            "href": "https://api.teamsnap.com/v3/broadcast_emails/search?member_id=21893718"
+          },
+          {
+            "rel": "broadcast_alerts",
+            "href": "https://api.teamsnap.com/v3/broadcast_alerts/search?member_id=21893718"
+          },
+          {
+            "rel": "contact_email_addresses",
+            "href": "https://api.teamsnap.com/v3/contact_email_addresses/search?member_id=21893718"
+          },
+          {
+            "rel": "contact_phone_numbers",
+            "href": "https://api.teamsnap.com/v3/contact_phone_numbers/search?member_id=21893718"
+          },
+          {
+            "rel": "contacts",
+            "href": "https://api.teamsnap.com/v3/contacts/search?member_id=21893718"
+          },
+          {
+            "rel": "custom_data",
+            "href": "https://api.teamsnap.com/v3/custom_data/search?member_id=21893718"
+          },
+          {
+            "rel": "custom_fields",
+            "href": "https://api.teamsnap.com/v3/custom_fields/search?team_id=72084"
+          },
+          {
+            "rel": "division",
+            "href": "https://api.teamsnap.com/v3/divisions/3271"
+          },
+          {
+            "rel": "league_custom_data",
+            "href": "https://api.teamsnap.com/v3/league_custom_data/search?member_id=21893718"
+          },
+          {
+            "rel": "league_custom_fields",
+            "href": "https://api.teamsnap.com/v3/league_custom_fields/search?team_id=72084"
+          },
+          {
+            "rel": "forum_posts",
+            "href": "https://api.teamsnap.com/v3/forum_posts/search?member_id=21893718"
+          },
+          {
+            "rel": "forum_subscriptions",
+            "href": "https://api.teamsnap.com/v3/forum_subscriptions/search?member_id=21893718"
+          },
+          {
+            "rel": "forum_topics",
+            "href": "https://api.teamsnap.com/v3/forum_topics/search?team_id=72084"
+          },
+          {
+            "rel": "league_registrant_documents",
+            "href": "https://api.teamsnap.com/v3/league_registrant_documents/search?member_id=21893718"
+          },
+          {
+            "rel": "member_assignments",
+            "href": "https://api.teamsnap.com/v3/member_assignments/search?member_id=21893718"
+          },
+          {
+            "rel": "member_balances",
+            "href": "https://api.teamsnap.com/v3/member_balances/search?member_id=21893718"
+          },
+          {
+            "rel": "member_email_addresses",
+            "href": "https://api.teamsnap.com/v3/member_email_addresses/search?member_id=21893718"
+          },
+          {
+            "rel": "member_files",
+            "href": "https://api.teamsnap.com/v3/member_files/search?member_id=21893718"
+          },
+          {
+            "rel": "member_links",
+            "href": "https://api.teamsnap.com/v3/member_links/search?member_id=21893718"
+          },
+          {
+            "rel": "member_payments",
+            "href": "https://api.teamsnap.com/v3/member_payments/search?member_id=21893718"
+          },
+          {
+            "rel": "member_phone_numbers",
+            "href": "https://api.teamsnap.com/v3/member_phone_numbers/search?member_id=21893718"
+          },
+          {
+            "rel": "member_photo",
+            "href": "https://35b7f1d7d0790b02114c-1b8897185d70b198c119e1d2b7efd8a2.ssl.cf1.rackcdn.com/roster_full_photos/21893718/original/29f91db0-0c0b-44b6-923d-0c6f69218774.jpg"
+          },
+          {
+            "rel": "member_photo_file",
+            "href": "https://api.teamsnap.com/v3/member_photo_files/21893718-1459014177"
+          },
+          {
+            "rel": "member_photos",
+            "href": "https://api.teamsnap.com/v3/member_photos/search?member_id=21893718"
+          },
+          {
+            "rel": "member_preferences",
+            "href": "https://api.teamsnap.com/v3/members_preferences/21893718"
+          },
+          {
+            "rel": "member_statistics",
+            "href": "https://api.teamsnap.com/v3/member_statistics/search?member_id=21893718"
+          },
+          {
+            "rel": "member_thumbnail",
+            "href": "https://35b7f1d7d0790b02114c-1b8897185d70b198c119e1d2b7efd8a2.ssl.cf1.rackcdn.com/roster_thumb_photos/21893718/thumb/29f91db0-0c0b-44b6-923d-0c6f69218774.jpg"
+          },
+          {
+            "rel": "message_data",
+            "href": "https://api.teamsnap.com/v3/message_data/search?member_id=21893718"
+          },
+          {
+            "rel": "messages",
+            "href": "https://api.teamsnap.com/v3/messages/search?member_id=21893718"
+          },
+          {
+            "rel": "statistic_data",
+            "href": "https://api.teamsnap.com/v3/statistic_data/search?member_id=21893718"
+          },
+          {
+            "rel": "team",
+            "href": "https://api.teamsnap.com/v3/teams/72084"
+          },
+          {
+            "rel": "team_media",
+            "href": "https://api.teamsnap.com/v3/team_media/search?member_id=21893718"
+          },
+          {
+            "rel": "team_medium_comments",
+            "href": "https://api.teamsnap.com/v3/team_medium_comments/search?member_id=21893718"
+          },
+          {
+            "rel": "tracked_item_statuses",
+            "href": "https://api.teamsnap.com/v3/tracked_item_statuses/search?member_id=21893718"
+          },
+          {
+            "rel": "user",
+            "href": "https://api.teamsnap.com/v3/users/7319256"
+          }
+        ],
+        "rel": "member-21893718"
+      },
+      {
+        "href": "https://api.teamsnap.com/v3/members/21893724",
+        "data": [
+          {
+            "name": "id",
+            "value": 21893724
+          },
+          {
+            "name": "type",
+            "value": "member"
+          },
+          {
+            "name": "address_city",
+            "value": "San Anselmo"
+          },
+          {
+            "name": "address_state",
+            "value": "CA"
+          },
+          {
+            "name": "address_street1",
+            "value": "53 Berkeley Ave"
+          },
+          {
+            "name": "address_street2",
+            "value": null
+          },
+          {
+            "name": "address_zip",
+            "value": "94960"
+          },
+          {
+            "name": "birthday",
+            "value": "0003-12-04"
+          },
+          {
+            "name": "division_id",
+            "value": 3271
+          },
+          {
+            "name": "first_name",
+            "value": "Charlotte"
+          },
+          {
+            "name": "gender",
+            "value": "Female"
+          },
+          {
+            "name": "has_facebook_post_scores_enabled",
+            "value": false
+          },
+          {
+            "name": "hide_address",
+            "value": false,
+            "deprecated": true,
+            "prompt": "hide_address is deprecated and will be removed in a future version, use is_address_hidden instead."
+          },
+          {
+            "name": "is_address_hidden",
+            "value": false
+          },
+          {
+            "name": "hide_age",
+            "value": false,
+            "deprecated": true,
+            "prompt": "hide_age is deprecated and will be removed in a future version, use is_age_hidden instead."
+          },
+          {
+            "name": "is_age_hidden",
+            "value": false
+          },
+          {
+            "name": "is_commissioner",
+            "value": false
+          },
+          {
+            "name": "invitation_code",
+            "value": "57a937c274721eb9581cfc26"
+          },
+          {
+            "name": "invitation_declined",
+            "value": null
+          },
+          {
+            "name": "is_activated",
+            "value": true
+          },
+          {
+            "name": "is_pushable",
+            "value": true
+          },
+          {
+            "name": "is_alertable",
+            "value": true
+          },
+          {
+            "name": "is_emailable",
+            "value": true
+          },
+          {
+            "name": "is_invitable",
+            "value": false
+          },
+          {
+            "name": "is_invited",
+            "value": false
+          },
+          {
+            "name": "is_manager",
+            "value": false
+          },
+          {
+            "name": "is_non_player",
+            "value": false
+          },
+          {
+            "name": "is_owner",
+            "value": false
+          },
+          {
+            "name": "is_ownership_pending",
+            "value": null
+          },
+          {
+            "name": "jersey_number",
+            "value": "12"
+          },
+          {
+            "name": "last_logged_in_at",
+            "value": null,
+            "deprecated": true,
+            "prompt": "%{field} is deprecated and has been removed.  Continued use of %{field} is not recommended it will no longer be stored."
+          },
+          {
+            "name": "last_name",
+            "value": "Block"
+          },
+          {
+            "name": "position",
+            "value": ""
+          },
+          {
+            "name": "team_id",
+            "value": 72084
+          },
+          {
+            "name": "user_id",
+            "value": 7333250
+          },
+          {
+            "name": "updated_at",
+            "value": "2016-09-16T14:41:48Z",
+            "type": "DateTime"
+          },
+          {
+            "name": "created_at",
+            "value": "2016-03-22T06:26:38Z",
+            "type": "DateTime"
+          }
+        ],
+        "links": [
+          {
+            "rel": "assignments",
+            "href": "https://api.teamsnap.com/v3/assignments/search?member_id=21893724"
+          },
+          {
+            "rel": "availabilities",
+            "href": "https://api.teamsnap.com/v3/availabilities/search?member_id=21893724"
+          },
+          {
+            "rel": "broadcast_email_attachments",
+            "href": "https://api.teamsnap.com/v3/broadcast_email_attachments/search?member_id=21893724"
+          },
+          {
+            "rel": "broadcast_emails",
+            "href": "https://api.teamsnap.com/v3/broadcast_emails/search?member_id=21893724"
+          },
+          {
+            "rel": "broadcast_alerts",
+            "href": "https://api.teamsnap.com/v3/broadcast_alerts/search?member_id=21893724"
+          },
+          {
+            "rel": "contact_email_addresses",
+            "href": "https://api.teamsnap.com/v3/contact_email_addresses/search?member_id=21893724"
+          },
+          {
+            "rel": "contact_phone_numbers",
+            "href": "https://api.teamsnap.com/v3/contact_phone_numbers/search?member_id=21893724"
+          },
+          {
+            "rel": "contacts",
+            "href": "https://api.teamsnap.com/v3/contacts/search?member_id=21893724"
+          },
+          {
+            "rel": "custom_data",
+            "href": "https://api.teamsnap.com/v3/custom_data/search?member_id=21893724"
+          },
+          {
+            "rel": "custom_fields",
+            "href": "https://api.teamsnap.com/v3/custom_fields/search?team_id=72084"
+          },
+          {
+            "rel": "division",
+            "href": "https://api.teamsnap.com/v3/divisions/3271"
+          },
+          {
+            "rel": "league_custom_data",
+            "href": "https://api.teamsnap.com/v3/league_custom_data/search?member_id=21893724"
+          },
+          {
+            "rel": "league_custom_fields",
+            "href": "https://api.teamsnap.com/v3/league_custom_fields/search?team_id=72084"
+          },
+          {
+            "rel": "forum_posts",
+            "href": "https://api.teamsnap.com/v3/forum_posts/search?member_id=21893724"
+          },
+          {
+            "rel": "forum_subscriptions",
+            "href": "https://api.teamsnap.com/v3/forum_subscriptions/search?member_id=21893724"
+          },
+          {
+            "rel": "forum_topics",
+            "href": "https://api.teamsnap.com/v3/forum_topics/search?team_id=72084"
+          },
+          {
+            "rel": "league_registrant_documents",
+            "href": "https://api.teamsnap.com/v3/league_registrant_documents/search?member_id=21893724"
+          },
+          {
+            "rel": "member_assignments",
+            "href": "https://api.teamsnap.com/v3/member_assignments/search?member_id=21893724"
+          },
+          {
+            "rel": "member_balances",
+            "href": "https://api.teamsnap.com/v3/member_balances/search?member_id=21893724"
+          },
+          {
+            "rel": "member_email_addresses",
+            "href": "https://api.teamsnap.com/v3/member_email_addresses/search?member_id=21893724"
+          },
+          {
+            "rel": "member_files",
+            "href": "https://api.teamsnap.com/v3/member_files/search?member_id=21893724"
+          },
+          {
+            "rel": "member_links",
+            "href": "https://api.teamsnap.com/v3/member_links/search?member_id=21893724"
+          },
+          {
+            "rel": "member_payments",
+            "href": "https://api.teamsnap.com/v3/member_payments/search?member_id=21893724"
+          },
+          {
+            "rel": "member_phone_numbers",
+            "href": "https://api.teamsnap.com/v3/member_phone_numbers/search?member_id=21893724"
+          },
+          {
+            "rel": "member_photo",
+            "href": "https://35b7f1d7d0790b02114c-1b8897185d70b198c119e1d2b7efd8a2.ssl.cf1.rackcdn.com/roster_full_photos/21893724/original/9620a2d8-b614-4981-b7a1-9d75aa5a609e.jpg"
+          },
+          {
+            "rel": "member_photo_file",
+            "href": "https://api.teamsnap.com/v3/member_photo_files/21893724-1472011806"
+          },
+          {
+            "rel": "member_photos",
+            "href": "https://api.teamsnap.com/v3/member_photos/search?member_id=21893724"
+          },
+          {
+            "rel": "member_preferences",
+            "href": "https://api.teamsnap.com/v3/members_preferences/21893724"
+          },
+          {
+            "rel": "member_statistics",
+            "href": "https://api.teamsnap.com/v3/member_statistics/search?member_id=21893724"
+          },
+          {
+            "rel": "member_thumbnail",
+            "href": "https://35b7f1d7d0790b02114c-1b8897185d70b198c119e1d2b7efd8a2.ssl.cf1.rackcdn.com/roster_thumb_photos/21893724/thumb/9620a2d8-b614-4981-b7a1-9d75aa5a609e.jpg"
+          },
+          {
+            "rel": "message_data",
+            "href": "https://api.teamsnap.com/v3/message_data/search?member_id=21893724"
+          },
+          {
+            "rel": "messages",
+            "href": "https://api.teamsnap.com/v3/messages/search?member_id=21893724"
+          },
+          {
+            "rel": "statistic_data",
+            "href": "https://api.teamsnap.com/v3/statistic_data/search?member_id=21893724"
+          },
+          {
+            "rel": "team",
+            "href": "https://api.teamsnap.com/v3/teams/72084"
+          },
+          {
+            "rel": "team_media",
+            "href": "https://api.teamsnap.com/v3/team_media/search?member_id=21893724"
+          },
+          {
+            "rel": "team_medium_comments",
+            "href": "https://api.teamsnap.com/v3/team_medium_comments/search?member_id=21893724"
+          },
+          {
+            "rel": "tracked_item_statuses",
+            "href": "https://api.teamsnap.com/v3/tracked_item_statuses/search?member_id=21893724"
+          },
+          {
+            "rel": "user",
+            "href": "https://api.teamsnap.com/v3/users/7333250"
+          }
+        ],
+        "rel": "member-21893724"
+      },
+      {
+        "href": "https://api.teamsnap.com/v3/members/21893726",
+        "data": [
+          {
+            "name": "id",
+            "value": 21893726
+          },
+          {
+            "name": "type",
+            "value": "member"
+          },
+          {
+            "name": "address_city",
+            "value": ""
+          },
+          {
+            "name": "address_state",
+            "value": ""
+          },
+          {
+            "name": "address_street1",
+            "value": ""
+          },
+          {
+            "name": "address_street2",
+            "value": null
+          },
+          {
+            "name": "address_zip",
+            "value": ""
+          },
+          {
+            "name": "birthday",
+            "value": ""
+          },
+          {
+            "name": "division_id",
+            "value": 3271
+          },
+          {
+            "name": "first_name",
+            "value": "Charlotte"
+          },
+          {
+            "name": "gender",
+            "value": "Female"
+          },
+          {
+            "name": "has_facebook_post_scores_enabled",
+            "value": false
+          },
+          {
+            "name": "hide_address",
+            "value": null,
+            "deprecated": true,
+            "prompt": "hide_address is deprecated and will be removed in a future version, use is_address_hidden instead."
+          },
+          {
+            "name": "is_address_hidden",
+            "value": null
+          },
+          {
+            "name": "hide_age",
+            "value": null,
+            "deprecated": true,
+            "prompt": "hide_age is deprecated and will be removed in a future version, use is_age_hidden instead."
+          },
+          {
+            "name": "is_age_hidden",
+            "value": null
+          },
+          {
+            "name": "is_commissioner",
+            "value": false
+          },
+          {
+            "name": "invitation_code",
+            "value": "a4908e787b18ed22c0a87192"
+          },
+          {
+            "name": "invitation_declined",
+            "value": null
+          },
+          {
+            "name": "is_activated",
+            "value": true
+          },
+          {
+            "name": "is_pushable",
+            "value": true
+          },
+          {
+            "name": "is_alertable",
+            "value": true
+          },
+          {
+            "name": "is_emailable",
+            "value": true
+          },
+          {
+            "name": "is_invitable",
+            "value": false
+          },
+          {
+            "name": "is_invited",
+            "value": false
+          },
+          {
+            "name": "is_manager",
+            "value": false
+          },
+          {
+            "name": "is_non_player",
+            "value": false
+          },
+          {
+            "name": "is_owner",
+            "value": false
+          },
+          {
+            "name": "is_ownership_pending",
+            "value": null
+          },
+          {
+            "name": "jersey_number",
+            "value": ""
+          },
+          {
+            "name": "last_logged_in_at",
+            "value": null,
+            "deprecated": true,
+            "prompt": "%{field} is deprecated and has been removed.  Continued use of %{field} is not recommended it will no longer be stored."
+          },
+          {
+            "name": "last_name",
+            "value": "Tuthill"
+          },
+          {
+            "name": "position",
+            "value": ""
+          },
+          {
+            "name": "team_id",
+            "value": 72084
+          },
+          {
+            "name": "user_id",
+            "value": 3763086
+          },
+          {
+            "name": "updated_at",
+            "value": "2016-09-17T14:10:48Z",
+            "type": "DateTime"
+          },
+          {
+            "name": "created_at",
+            "value": "2016-03-22T06:26:39Z",
+            "type": "DateTime"
+          }
+        ],
+        "links": [
+          {
+            "rel": "assignments",
+            "href": "https://api.teamsnap.com/v3/assignments/search?member_id=21893726"
+          },
+          {
+            "rel": "availabilities",
+            "href": "https://api.teamsnap.com/v3/availabilities/search?member_id=21893726"
+          },
+          {
+            "rel": "broadcast_email_attachments",
+            "href": "https://api.teamsnap.com/v3/broadcast_email_attachments/search?member_id=21893726"
+          },
+          {
+            "rel": "broadcast_emails",
+            "href": "https://api.teamsnap.com/v3/broadcast_emails/search?member_id=21893726"
+          },
+          {
+            "rel": "broadcast_alerts",
+            "href": "https://api.teamsnap.com/v3/broadcast_alerts/search?member_id=21893726"
+          },
+          {
+            "rel": "contact_email_addresses",
+            "href": "https://api.teamsnap.com/v3/contact_email_addresses/search?member_id=21893726"
+          },
+          {
+            "rel": "contact_phone_numbers",
+            "href": "https://api.teamsnap.com/v3/contact_phone_numbers/search?member_id=21893726"
+          },
+          {
+            "rel": "contacts",
+            "href": "https://api.teamsnap.com/v3/contacts/search?member_id=21893726"
+          },
+          {
+            "rel": "custom_data",
+            "href": "https://api.teamsnap.com/v3/custom_data/search?member_id=21893726"
+          },
+          {
+            "rel": "custom_fields",
+            "href": "https://api.teamsnap.com/v3/custom_fields/search?team_id=72084"
+          },
+          {
+            "rel": "division",
+            "href": "https://api.teamsnap.com/v3/divisions/3271"
+          },
+          {
+            "rel": "league_custom_data",
+            "href": "https://api.teamsnap.com/v3/league_custom_data/search?member_id=21893726"
+          },
+          {
+            "rel": "league_custom_fields",
+            "href": "https://api.teamsnap.com/v3/league_custom_fields/search?team_id=72084"
+          },
+          {
+            "rel": "forum_posts",
+            "href": "https://api.teamsnap.com/v3/forum_posts/search?member_id=21893726"
+          },
+          {
+            "rel": "forum_subscriptions",
+            "href": "https://api.teamsnap.com/v3/forum_subscriptions/search?member_id=21893726"
+          },
+          {
+            "rel": "forum_topics",
+            "href": "https://api.teamsnap.com/v3/forum_topics/search?team_id=72084"
+          },
+          {
+            "rel": "league_registrant_documents",
+            "href": "https://api.teamsnap.com/v3/league_registrant_documents/search?member_id=21893726"
+          },
+          {
+            "rel": "member_assignments",
+            "href": "https://api.teamsnap.com/v3/member_assignments/search?member_id=21893726"
+          },
+          {
+            "rel": "member_balances",
+            "href": "https://api.teamsnap.com/v3/member_balances/search?member_id=21893726"
+          },
+          {
+            "rel": "member_email_addresses",
+            "href": "https://api.teamsnap.com/v3/member_email_addresses/search?member_id=21893726"
+          },
+          {
+            "rel": "member_files",
+            "href": "https://api.teamsnap.com/v3/member_files/search?member_id=21893726"
+          },
+          {
+            "rel": "member_links",
+            "href": "https://api.teamsnap.com/v3/member_links/search?member_id=21893726"
+          },
+          {
+            "rel": "member_payments",
+            "href": "https://api.teamsnap.com/v3/member_payments/search?member_id=21893726"
+          },
+          {
+            "rel": "member_phone_numbers",
+            "href": "https://api.teamsnap.com/v3/member_phone_numbers/search?member_id=21893726"
+          },
+          {
+            "rel": "member_photos",
+            "href": "https://api.teamsnap.com/v3/member_photos/search?member_id=21893726"
+          },
+          {
+            "rel": "member_preferences",
+            "href": "https://api.teamsnap.com/v3/members_preferences/21893726"
+          },
+          {
+            "rel": "member_statistics",
+            "href": "https://api.teamsnap.com/v3/member_statistics/search?member_id=21893726"
+          },
+          {
+            "rel": "message_data",
+            "href": "https://api.teamsnap.com/v3/message_data/search?member_id=21893726"
+          },
+          {
+            "rel": "messages",
+            "href": "https://api.teamsnap.com/v3/messages/search?member_id=21893726"
+          },
+          {
+            "rel": "statistic_data",
+            "href": "https://api.teamsnap.com/v3/statistic_data/search?member_id=21893726"
+          },
+          {
+            "rel": "team",
+            "href": "https://api.teamsnap.com/v3/teams/72084"
+          },
+          {
+            "rel": "team_media",
+            "href": "https://api.teamsnap.com/v3/team_media/search?member_id=21893726"
+          },
+          {
+            "rel": "team_medium_comments",
+            "href": "https://api.teamsnap.com/v3/team_medium_comments/search?member_id=21893726"
+          },
+          {
+            "rel": "tracked_item_statuses",
+            "href": "https://api.teamsnap.com/v3/tracked_item_statuses/search?member_id=21893726"
+          },
+          {
+            "rel": "user",
+            "href": "https://api.teamsnap.com/v3/users/3763086"
+          }
+        ],
+        "rel": "member-21893726"
+      },
+      {
+        "href": "https://api.teamsnap.com/v3/members/21893727",
+        "data": [
+          {
+            "name": "id",
+            "value": 21893727
+          },
+          {
+            "name": "type",
+            "value": "member"
+          },
+          {
+            "name": "address_city",
+            "value": ""
+          },
+          {
+            "name": "address_state",
+            "value": ""
+          },
+          {
+            "name": "address_street1",
+            "value": ""
+          },
+          {
+            "name": "address_street2",
+            "value": null
+          },
+          {
+            "name": "address_zip",
+            "value": ""
+          },
+          {
+            "name": "birthday",
+            "value": "2004-02-10"
+          },
+          {
+            "name": "division_id",
+            "value": 3271
+          },
+          {
+            "name": "first_name",
+            "value": "Ella"
+          },
+          {
+            "name": "gender",
+            "value": "Female"
+          },
+          {
+            "name": "has_facebook_post_scores_enabled",
+            "value": false
+          },
+          {
+            "name": "hide_address",
+            "value": null,
+            "deprecated": true,
+            "prompt": "hide_address is deprecated and will be removed in a future version, use is_address_hidden instead."
+          },
+          {
+            "name": "is_address_hidden",
+            "value": null
+          },
+          {
+            "name": "hide_age",
+            "value": null,
+            "deprecated": true,
+            "prompt": "hide_age is deprecated and will be removed in a future version, use is_age_hidden instead."
+          },
+          {
+            "name": "is_age_hidden",
+            "value": null
+          },
+          {
+            "name": "is_commissioner",
+            "value": false
+          },
+          {
+            "name": "invitation_code",
+            "value": "37d8ac025c734e66e12c366f"
+          },
+          {
+            "name": "invitation_declined",
+            "value": null
+          },
+          {
+            "name": "is_activated",
+            "value": true
+          },
+          {
+            "name": "is_pushable",
+            "value": true
+          },
+          {
+            "name": "is_alertable",
+            "value": true
+          },
+          {
+            "name": "is_emailable",
+            "value": true
+          },
+          {
+            "name": "is_invitable",
+            "value": false
+          },
+          {
+            "name": "is_invited",
+            "value": false
+          },
+          {
+            "name": "is_manager",
+            "value": false
+          },
+          {
+            "name": "is_non_player",
+            "value": false
+          },
+          {
+            "name": "is_owner",
+            "value": false
+          },
+          {
+            "name": "is_ownership_pending",
+            "value": null
+          },
+          {
+            "name": "jersey_number",
+            "value": ""
+          },
+          {
+            "name": "last_logged_in_at",
+            "value": null,
+            "deprecated": true,
+            "prompt": "%{field} is deprecated and has been removed.  Continued use of %{field} is not recommended it will no longer be stored."
+          },
+          {
+            "name": "last_name",
+            "value": "Naish"
+          },
+          {
+            "name": "position",
+            "value": ""
+          },
+          {
+            "name": "team_id",
+            "value": 72084
+          },
+          {
+            "name": "user_id",
+            "value": 7319365
+          },
+          {
+            "name": "updated_at",
+            "value": "2016-09-17T20:55:14Z",
+            "type": "DateTime"
+          },
+          {
+            "name": "created_at",
+            "value": "2016-03-22T06:26:39Z",
+            "type": "DateTime"
+          }
+        ],
+        "links": [
+          {
+            "rel": "assignments",
+            "href": "https://api.teamsnap.com/v3/assignments/search?member_id=21893727"
+          },
+          {
+            "rel": "availabilities",
+            "href": "https://api.teamsnap.com/v3/availabilities/search?member_id=21893727"
+          },
+          {
+            "rel": "broadcast_email_attachments",
+            "href": "https://api.teamsnap.com/v3/broadcast_email_attachments/search?member_id=21893727"
+          },
+          {
+            "rel": "broadcast_emails",
+            "href": "https://api.teamsnap.com/v3/broadcast_emails/search?member_id=21893727"
+          },
+          {
+            "rel": "broadcast_alerts",
+            "href": "https://api.teamsnap.com/v3/broadcast_alerts/search?member_id=21893727"
+          },
+          {
+            "rel": "contact_email_addresses",
+            "href": "https://api.teamsnap.com/v3/contact_email_addresses/search?member_id=21893727"
+          },
+          {
+            "rel": "contact_phone_numbers",
+            "href": "https://api.teamsnap.com/v3/contact_phone_numbers/search?member_id=21893727"
+          },
+          {
+            "rel": "contacts",
+            "href": "https://api.teamsnap.com/v3/contacts/search?member_id=21893727"
+          },
+          {
+            "rel": "custom_data",
+            "href": "https://api.teamsnap.com/v3/custom_data/search?member_id=21893727"
+          },
+          {
+            "rel": "custom_fields",
+            "href": "https://api.teamsnap.com/v3/custom_fields/search?team_id=72084"
+          },
+          {
+            "rel": "division",
+            "href": "https://api.teamsnap.com/v3/divisions/3271"
+          },
+          {
+            "rel": "league_custom_data",
+            "href": "https://api.teamsnap.com/v3/league_custom_data/search?member_id=21893727"
+          },
+          {
+            "rel": "league_custom_fields",
+            "href": "https://api.teamsnap.com/v3/league_custom_fields/search?team_id=72084"
+          },
+          {
+            "rel": "forum_posts",
+            "href": "https://api.teamsnap.com/v3/forum_posts/search?member_id=21893727"
+          },
+          {
+            "rel": "forum_subscriptions",
+            "href": "https://api.teamsnap.com/v3/forum_subscriptions/search?member_id=21893727"
+          },
+          {
+            "rel": "forum_topics",
+            "href": "https://api.teamsnap.com/v3/forum_topics/search?team_id=72084"
+          },
+          {
+            "rel": "league_registrant_documents",
+            "href": "https://api.teamsnap.com/v3/league_registrant_documents/search?member_id=21893727"
+          },
+          {
+            "rel": "member_assignments",
+            "href": "https://api.teamsnap.com/v3/member_assignments/search?member_id=21893727"
+          },
+          {
+            "rel": "member_balances",
+            "href": "https://api.teamsnap.com/v3/member_balances/search?member_id=21893727"
+          },
+          {
+            "rel": "member_email_addresses",
+            "href": "https://api.teamsnap.com/v3/member_email_addresses/search?member_id=21893727"
+          },
+          {
+            "rel": "member_files",
+            "href": "https://api.teamsnap.com/v3/member_files/search?member_id=21893727"
+          },
+          {
+            "rel": "member_links",
+            "href": "https://api.teamsnap.com/v3/member_links/search?member_id=21893727"
+          },
+          {
+            "rel": "member_payments",
+            "href": "https://api.teamsnap.com/v3/member_payments/search?member_id=21893727"
+          },
+          {
+            "rel": "member_phone_numbers",
+            "href": "https://api.teamsnap.com/v3/member_phone_numbers/search?member_id=21893727"
+          },
+          {
+            "rel": "member_photo",
+            "href": "https://35b7f1d7d0790b02114c-1b8897185d70b198c119e1d2b7efd8a2.ssl.cf1.rackcdn.com/roster_full_photos/21893727/original/a2fbed6622418b39a9a19bd2a82b9fd3.jpg"
+          },
+          {
+            "rel": "member_photo_file",
+            "href": "https://api.teamsnap.com/v3/member_photo_files/21893727-1460232097"
+          },
+          {
+            "rel": "member_photos",
+            "href": "https://api.teamsnap.com/v3/member_photos/search?member_id=21893727"
+          },
+          {
+            "rel": "member_preferences",
+            "href": "https://api.teamsnap.com/v3/members_preferences/21893727"
+          },
+          {
+            "rel": "member_statistics",
+            "href": "https://api.teamsnap.com/v3/member_statistics/search?member_id=21893727"
+          },
+          {
+            "rel": "member_thumbnail",
+            "href": "https://35b7f1d7d0790b02114c-1b8897185d70b198c119e1d2b7efd8a2.ssl.cf1.rackcdn.com/roster_thumb_photos/21893727/thumb/ad5490e1bbb1a4529549668f661482e7.jpg"
+          },
+          {
+            "rel": "message_data",
+            "href": "https://api.teamsnap.com/v3/message_data/search?member_id=21893727"
+          },
+          {
+            "rel": "messages",
+            "href": "https://api.teamsnap.com/v3/messages/search?member_id=21893727"
+          },
+          {
+            "rel": "statistic_data",
+            "href": "https://api.teamsnap.com/v3/statistic_data/search?member_id=21893727"
+          },
+          {
+            "rel": "team",
+            "href": "https://api.teamsnap.com/v3/teams/72084"
+          },
+          {
+            "rel": "team_media",
+            "href": "https://api.teamsnap.com/v3/team_media/search?member_id=21893727"
+          },
+          {
+            "rel": "team_medium_comments",
+            "href": "https://api.teamsnap.com/v3/team_medium_comments/search?member_id=21893727"
+          },
+          {
+            "rel": "tracked_item_statuses",
+            "href": "https://api.teamsnap.com/v3/tracked_item_statuses/search?member_id=21893727"
+          },
+          {
+            "rel": "user",
+            "href": "https://api.teamsnap.com/v3/users/7319365"
+          }
+        ],
+        "rel": "member-21893727"
+      },
+      {
+        "href": "https://api.teamsnap.com/v3/members/21893732",
+        "data": [
+          {
+            "name": "id",
+            "value": 21893732
+          },
+          {
+            "name": "type",
+            "value": "member"
+          },
+          {
+            "name": "address_city",
+            "value": null
+          },
+          {
+            "name": "address_state",
+            "value": null
+          },
+          {
+            "name": "address_street1",
+            "value": null
+          },
+          {
+            "name": "address_street2",
+            "value": null
+          },
+          {
+            "name": "address_zip",
+            "value": null
+          },
+          {
+            "name": "birthday",
+            "value": "0003-06-04"
+          },
+          {
+            "name": "division_id",
+            "value": 3271
+          },
+          {
+            "name": "first_name",
+            "value": "harley"
+          },
+          {
+            "name": "gender",
+            "value": "Female"
+          },
+          {
+            "name": "has_facebook_post_scores_enabled",
+            "value": false
+          },
+          {
+            "name": "hide_address",
+            "value": null,
+            "deprecated": true,
+            "prompt": "hide_address is deprecated and will be removed in a future version, use is_address_hidden instead."
+          },
+          {
+            "name": "is_address_hidden",
+            "value": null
+          },
+          {
+            "name": "hide_age",
+            "value": null,
+            "deprecated": true,
+            "prompt": "hide_age is deprecated and will be removed in a future version, use is_age_hidden instead."
+          },
+          {
+            "name": "is_age_hidden",
+            "value": null
+          },
+          {
+            "name": "is_commissioner",
+            "value": false
+          },
+          {
+            "name": "invitation_code",
+            "value": "0836e18f9733a2125080a4d4"
+          },
+          {
+            "name": "invitation_declined",
+            "value": null
+          },
+          {
+            "name": "is_activated",
+            "value": true
+          },
+          {
+            "name": "is_pushable",
+            "value": false
+          },
+          {
+            "name": "is_alertable",
+            "value": true
+          },
+          {
+            "name": "is_emailable",
+            "value": true
+          },
+          {
+            "name": "is_invitable",
+            "value": false
+          },
+          {
+            "name": "is_invited",
+            "value": false
+          },
+          {
+            "name": "is_manager",
+            "value": false
+          },
+          {
+            "name": "is_non_player",
+            "value": false
+          },
+          {
+            "name": "is_owner",
+            "value": false
+          },
+          {
+            "name": "is_ownership_pending",
+            "value": null
+          },
+          {
+            "name": "jersey_number",
+            "value": null
+          },
+          {
+            "name": "last_logged_in_at",
+            "value": null,
+            "deprecated": true,
+            "prompt": "%{field} is deprecated and has been removed.  Continued use of %{field} is not recommended it will no longer be stored."
+          },
+          {
+            "name": "last_name",
+            "value": "debok"
+          },
+          {
+            "name": "position",
+            "value": null
+          },
+          {
+            "name": "team_id",
+            "value": 72084
+          },
+          {
+            "name": "user_id",
+            "value": 7329592
+          },
+          {
+            "name": "updated_at",
+            "value": "2016-09-17T20:58:30Z",
+            "type": "DateTime"
+          },
+          {
+            "name": "created_at",
+            "value": "2016-03-22T06:26:41Z",
+            "type": "DateTime"
+          }
+        ],
+        "links": [
+          {
+            "rel": "assignments",
+            "href": "https://api.teamsnap.com/v3/assignments/search?member_id=21893732"
+          },
+          {
+            "rel": "availabilities",
+            "href": "https://api.teamsnap.com/v3/availabilities/search?member_id=21893732"
+          },
+          {
+            "rel": "broadcast_email_attachments",
+            "href": "https://api.teamsnap.com/v3/broadcast_email_attachments/search?member_id=21893732"
+          },
+          {
+            "rel": "broadcast_emails",
+            "href": "https://api.teamsnap.com/v3/broadcast_emails/search?member_id=21893732"
+          },
+          {
+            "rel": "broadcast_alerts",
+            "href": "https://api.teamsnap.com/v3/broadcast_alerts/search?member_id=21893732"
+          },
+          {
+            "rel": "contact_email_addresses",
+            "href": "https://api.teamsnap.com/v3/contact_email_addresses/search?member_id=21893732"
+          },
+          {
+            "rel": "contact_phone_numbers",
+            "href": "https://api.teamsnap.com/v3/contact_phone_numbers/search?member_id=21893732"
+          },
+          {
+            "rel": "contacts",
+            "href": "https://api.teamsnap.com/v3/contacts/search?member_id=21893732"
+          },
+          {
+            "rel": "custom_data",
+            "href": "https://api.teamsnap.com/v3/custom_data/search?member_id=21893732"
+          },
+          {
+            "rel": "custom_fields",
+            "href": "https://api.teamsnap.com/v3/custom_fields/search?team_id=72084"
+          },
+          {
+            "rel": "division",
+            "href": "https://api.teamsnap.com/v3/divisions/3271"
+          },
+          {
+            "rel": "league_custom_data",
+            "href": "https://api.teamsnap.com/v3/league_custom_data/search?member_id=21893732"
+          },
+          {
+            "rel": "league_custom_fields",
+            "href": "https://api.teamsnap.com/v3/league_custom_fields/search?team_id=72084"
+          },
+          {
+            "rel": "forum_posts",
+            "href": "https://api.teamsnap.com/v3/forum_posts/search?member_id=21893732"
+          },
+          {
+            "rel": "forum_subscriptions",
+            "href": "https://api.teamsnap.com/v3/forum_subscriptions/search?member_id=21893732"
+          },
+          {
+            "rel": "forum_topics",
+            "href": "https://api.teamsnap.com/v3/forum_topics/search?team_id=72084"
+          },
+          {
+            "rel": "league_registrant_documents",
+            "href": "https://api.teamsnap.com/v3/league_registrant_documents/search?member_id=21893732"
+          },
+          {
+            "rel": "member_assignments",
+            "href": "https://api.teamsnap.com/v3/member_assignments/search?member_id=21893732"
+          },
+          {
+            "rel": "member_balances",
+            "href": "https://api.teamsnap.com/v3/member_balances/search?member_id=21893732"
+          },
+          {
+            "rel": "member_email_addresses",
+            "href": "https://api.teamsnap.com/v3/member_email_addresses/search?member_id=21893732"
+          },
+          {
+            "rel": "member_files",
+            "href": "https://api.teamsnap.com/v3/member_files/search?member_id=21893732"
+          },
+          {
+            "rel": "member_links",
+            "href": "https://api.teamsnap.com/v3/member_links/search?member_id=21893732"
+          },
+          {
+            "rel": "member_payments",
+            "href": "https://api.teamsnap.com/v3/member_payments/search?member_id=21893732"
+          },
+          {
+            "rel": "member_phone_numbers",
+            "href": "https://api.teamsnap.com/v3/member_phone_numbers/search?member_id=21893732"
+          },
+          {
+            "rel": "member_photo",
+            "href": "https://35b7f1d7d0790b02114c-1b8897185d70b198c119e1d2b7efd8a2.ssl.cf1.rackcdn.com/roster_full_photos/21893732/original/5008c020-81d0-4064-adcf-3eda8c33e083.jpg"
+          },
+          {
+            "rel": "member_photo_file",
+            "href": "https://api.teamsnap.com/v3/member_photo_files/21893732-1459119371"
+          },
+          {
+            "rel": "member_photos",
+            "href": "https://api.teamsnap.com/v3/member_photos/search?member_id=21893732"
+          },
+          {
+            "rel": "member_preferences",
+            "href": "https://api.teamsnap.com/v3/members_preferences/21893732"
+          },
+          {
+            "rel": "member_statistics",
+            "href": "https://api.teamsnap.com/v3/member_statistics/search?member_id=21893732"
+          },
+          {
+            "rel": "member_thumbnail",
+            "href": "https://35b7f1d7d0790b02114c-1b8897185d70b198c119e1d2b7efd8a2.ssl.cf1.rackcdn.com/roster_thumb_photos/21893732/thumb/5008c020-81d0-4064-adcf-3eda8c33e083.jpg"
+          },
+          {
+            "rel": "message_data",
+            "href": "https://api.teamsnap.com/v3/message_data/search?member_id=21893732"
+          },
+          {
+            "rel": "messages",
+            "href": "https://api.teamsnap.com/v3/messages/search?member_id=21893732"
+          },
+          {
+            "rel": "statistic_data",
+            "href": "https://api.teamsnap.com/v3/statistic_data/search?member_id=21893732"
+          },
+          {
+            "rel": "team",
+            "href": "https://api.teamsnap.com/v3/teams/72084"
+          },
+          {
+            "rel": "team_media",
+            "href": "https://api.teamsnap.com/v3/team_media/search?member_id=21893732"
+          },
+          {
+            "rel": "team_medium_comments",
+            "href": "https://api.teamsnap.com/v3/team_medium_comments/search?member_id=21893732"
+          },
+          {
+            "rel": "tracked_item_statuses",
+            "href": "https://api.teamsnap.com/v3/tracked_item_statuses/search?member_id=21893732"
+          },
+          {
+            "rel": "user",
+            "href": "https://api.teamsnap.com/v3/users/7329592"
+          }
+        ],
+        "rel": "member-21893732"
+      },
+      {
+        "href": "https://api.teamsnap.com/v3/members/21893741",
+        "data": [
+          {
+            "name": "id",
+            "value": 21893741
+          },
+          {
+            "name": "type",
+            "value": "member"
+          },
+          {
+            "name": "address_city",
+            "value": null
+          },
+          {
+            "name": "address_state",
+            "value": null
+          },
+          {
+            "name": "address_street1",
+            "value": null
+          },
+          {
+            "name": "address_street2",
+            "value": null
+          },
+          {
+            "name": "address_zip",
+            "value": null
+          },
+          {
+            "name": "birthday",
+            "value": ""
+          },
+          {
+            "name": "division_id",
+            "value": 3271
+          },
+          {
+            "name": "first_name",
+            "value": "Lucy"
+          },
+          {
+            "name": "gender",
+            "value": "Female"
+          },
+          {
+            "name": "has_facebook_post_scores_enabled",
+            "value": false
+          },
+          {
+            "name": "hide_address",
+            "value": null,
+            "deprecated": true,
+            "prompt": "hide_address is deprecated and will be removed in a future version, use is_address_hidden instead."
+          },
+          {
+            "name": "is_address_hidden",
+            "value": null
+          },
+          {
+            "name": "hide_age",
+            "value": null,
+            "deprecated": true,
+            "prompt": "hide_age is deprecated and will be removed in a future version, use is_age_hidden instead."
+          },
+          {
+            "name": "is_age_hidden",
+            "value": null
+          },
+          {
+            "name": "is_commissioner",
+            "value": false
+          },
+          {
+            "name": "invitation_code",
+            "value": "efeddc339be2ff241610b767"
+          },
+          {
+            "name": "invitation_declined",
+            "value": null
+          },
+          {
+            "name": "is_activated",
+            "value": true
+          },
+          {
+            "name": "is_pushable",
+            "value": true
+          },
+          {
+            "name": "is_alertable",
+            "value": true
+          },
+          {
+            "name": "is_emailable",
+            "value": true
+          },
+          {
+            "name": "is_invitable",
+            "value": false
+          },
+          {
+            "name": "is_invited",
+            "value": false
+          },
+          {
+            "name": "is_manager",
+            "value": false
+          },
+          {
+            "name": "is_non_player",
+            "value": false
+          },
+          {
+            "name": "is_owner",
+            "value": false
+          },
+          {
+            "name": "is_ownership_pending",
+            "value": null
+          },
+          {
+            "name": "jersey_number",
+            "value": null
+          },
+          {
+            "name": "last_logged_in_at",
+            "value": null,
+            "deprecated": true,
+            "prompt": "%{field} is deprecated and has been removed.  Continued use of %{field} is not recommended it will no longer be stored."
+          },
+          {
+            "name": "last_name",
+            "value": "Hinkelman"
+          },
+          {
+            "name": "position",
+            "value": null
+          },
+          {
+            "name": "team_id",
+            "value": 72084
+          },
+          {
+            "name": "user_id",
+            "value": 7319016
+          },
+          {
+            "name": "updated_at",
+            "value": "2016-09-12T03:05:01Z",
+            "type": "DateTime"
+          },
+          {
+            "name": "created_at",
+            "value": "2016-03-22T06:26:43Z",
+            "type": "DateTime"
+          }
+        ],
+        "links": [
+          {
+            "rel": "assignments",
+            "href": "https://api.teamsnap.com/v3/assignments/search?member_id=21893741"
+          },
+          {
+            "rel": "availabilities",
+            "href": "https://api.teamsnap.com/v3/availabilities/search?member_id=21893741"
+          },
+          {
+            "rel": "broadcast_email_attachments",
+            "href": "https://api.teamsnap.com/v3/broadcast_email_attachments/search?member_id=21893741"
+          },
+          {
+            "rel": "broadcast_emails",
+            "href": "https://api.teamsnap.com/v3/broadcast_emails/search?member_id=21893741"
+          },
+          {
+            "rel": "broadcast_alerts",
+            "href": "https://api.teamsnap.com/v3/broadcast_alerts/search?member_id=21893741"
+          },
+          {
+            "rel": "contact_email_addresses",
+            "href": "https://api.teamsnap.com/v3/contact_email_addresses/search?member_id=21893741"
+          },
+          {
+            "rel": "contact_phone_numbers",
+            "href": "https://api.teamsnap.com/v3/contact_phone_numbers/search?member_id=21893741"
+          },
+          {
+            "rel": "contacts",
+            "href": "https://api.teamsnap.com/v3/contacts/search?member_id=21893741"
+          },
+          {
+            "rel": "custom_data",
+            "href": "https://api.teamsnap.com/v3/custom_data/search?member_id=21893741"
+          },
+          {
+            "rel": "custom_fields",
+            "href": "https://api.teamsnap.com/v3/custom_fields/search?team_id=72084"
+          },
+          {
+            "rel": "division",
+            "href": "https://api.teamsnap.com/v3/divisions/3271"
+          },
+          {
+            "rel": "league_custom_data",
+            "href": "https://api.teamsnap.com/v3/league_custom_data/search?member_id=21893741"
+          },
+          {
+            "rel": "league_custom_fields",
+            "href": "https://api.teamsnap.com/v3/league_custom_fields/search?team_id=72084"
+          },
+          {
+            "rel": "forum_posts",
+            "href": "https://api.teamsnap.com/v3/forum_posts/search?member_id=21893741"
+          },
+          {
+            "rel": "forum_subscriptions",
+            "href": "https://api.teamsnap.com/v3/forum_subscriptions/search?member_id=21893741"
+          },
+          {
+            "rel": "forum_topics",
+            "href": "https://api.teamsnap.com/v3/forum_topics/search?team_id=72084"
+          },
+          {
+            "rel": "league_registrant_documents",
+            "href": "https://api.teamsnap.com/v3/league_registrant_documents/search?member_id=21893741"
+          },
+          {
+            "rel": "member_assignments",
+            "href": "https://api.teamsnap.com/v3/member_assignments/search?member_id=21893741"
+          },
+          {
+            "rel": "member_balances",
+            "href": "https://api.teamsnap.com/v3/member_balances/search?member_id=21893741"
+          },
+          {
+            "rel": "member_email_addresses",
+            "href": "https://api.teamsnap.com/v3/member_email_addresses/search?member_id=21893741"
+          },
+          {
+            "rel": "member_files",
+            "href": "https://api.teamsnap.com/v3/member_files/search?member_id=21893741"
+          },
+          {
+            "rel": "member_links",
+            "href": "https://api.teamsnap.com/v3/member_links/search?member_id=21893741"
+          },
+          {
+            "rel": "member_payments",
+            "href": "https://api.teamsnap.com/v3/member_payments/search?member_id=21893741"
+          },
+          {
+            "rel": "member_phone_numbers",
+            "href": "https://api.teamsnap.com/v3/member_phone_numbers/search?member_id=21893741"
+          },
+          {
+            "rel": "member_photo",
+            "href": "https://35b7f1d7d0790b02114c-1b8897185d70b198c119e1d2b7efd8a2.ssl.cf1.rackcdn.com/roster_full_photos/21893741/original/4a3eb9db-5409-4f1c-ac69-fb915d0250f0.jpg"
+          },
+          {
+            "rel": "member_photo_file",
+            "href": "https://api.teamsnap.com/v3/member_photo_files/21893741-1459291023"
+          },
+          {
+            "rel": "member_photos",
+            "href": "https://api.teamsnap.com/v3/member_photos/search?member_id=21893741"
+          },
+          {
+            "rel": "member_preferences",
+            "href": "https://api.teamsnap.com/v3/members_preferences/21893741"
+          },
+          {
+            "rel": "member_statistics",
+            "href": "https://api.teamsnap.com/v3/member_statistics/search?member_id=21893741"
+          },
+          {
+            "rel": "member_thumbnail",
+            "href": "https://35b7f1d7d0790b02114c-1b8897185d70b198c119e1d2b7efd8a2.ssl.cf1.rackcdn.com/roster_thumb_photos/21893741/thumb/4a3eb9db-5409-4f1c-ac69-fb915d0250f0.jpg"
+          },
+          {
+            "rel": "message_data",
+            "href": "https://api.teamsnap.com/v3/message_data/search?member_id=21893741"
+          },
+          {
+            "rel": "messages",
+            "href": "https://api.teamsnap.com/v3/messages/search?member_id=21893741"
+          },
+          {
+            "rel": "statistic_data",
+            "href": "https://api.teamsnap.com/v3/statistic_data/search?member_id=21893741"
+          },
+          {
+            "rel": "team",
+            "href": "https://api.teamsnap.com/v3/teams/72084"
+          },
+          {
+            "rel": "team_media",
+            "href": "https://api.teamsnap.com/v3/team_media/search?member_id=21893741"
+          },
+          {
+            "rel": "team_medium_comments",
+            "href": "https://api.teamsnap.com/v3/team_medium_comments/search?member_id=21893741"
+          },
+          {
+            "rel": "tracked_item_statuses",
+            "href": "https://api.teamsnap.com/v3/tracked_item_statuses/search?member_id=21893741"
+          },
+          {
+            "rel": "user",
+            "href": "https://api.teamsnap.com/v3/users/7319016"
+          }
+        ],
+        "rel": "member-21893741"
+      },
+      {
+        "href": "https://api.teamsnap.com/v3/members/21913980",
+        "data": [
+          {
+            "name": "id",
+            "value": 21913980
+          },
+          {
+            "name": "type",
+            "value": "member"
+          },
+          {
+            "name": "address_city",
+            "value": null
+          },
+          {
+            "name": "address_state",
+            "value": null
+          },
+          {
+            "name": "address_street1",
+            "value": null
+          },
+          {
+            "name": "address_street2",
+            "value": null
+          },
+          {
+            "name": "address_zip",
+            "value": null
+          },
+          {
+            "name": "birthday",
+            "value": "0009-10-04"
+          },
+          {
+            "name": "division_id",
+            "value": 3271
+          },
+          {
+            "name": "first_name",
+            "value": "Eleanor"
+          },
+          {
+            "name": "gender",
+            "value": "Female"
+          },
+          {
+            "name": "has_facebook_post_scores_enabled",
+            "value": false
+          },
+          {
+            "name": "hide_address",
+            "value": null,
+            "deprecated": true,
+            "prompt": "hide_address is deprecated and will be removed in a future version, use is_address_hidden instead."
+          },
+          {
+            "name": "is_address_hidden",
+            "value": null
+          },
+          {
+            "name": "hide_age",
+            "value": null,
+            "deprecated": true,
+            "prompt": "hide_age is deprecated and will be removed in a future version, use is_age_hidden instead."
+          },
+          {
+            "name": "is_age_hidden",
+            "value": null
+          },
+          {
+            "name": "is_commissioner",
+            "value": false
+          },
+          {
+            "name": "invitation_code",
+            "value": "46a037a8a78eb6dc381978c5"
+          },
+          {
+            "name": "invitation_declined",
+            "value": null
+          },
+          {
+            "name": "is_activated",
+            "value": true
+          },
+          {
+            "name": "is_pushable",
+            "value": false
+          },
+          {
+            "name": "is_alertable",
+            "value": true
+          },
+          {
+            "name": "is_emailable",
+            "value": true
+          },
+          {
+            "name": "is_invitable",
+            "value": false
+          },
+          {
+            "name": "is_invited",
+            "value": false
+          },
+          {
+            "name": "is_manager",
+            "value": false
+          },
+          {
+            "name": "is_non_player",
+            "value": false
+          },
+          {
+            "name": "is_owner",
+            "value": false
+          },
+          {
+            "name": "is_ownership_pending",
+            "value": null
+          },
+          {
+            "name": "jersey_number",
+            "value": null
+          },
+          {
+            "name": "last_logged_in_at",
+            "value": null,
+            "deprecated": true,
+            "prompt": "%{field} is deprecated and has been removed.  Continued use of %{field} is not recommended it will no longer be stored."
+          },
+          {
+            "name": "last_name",
+            "value": "Titcombe"
+          },
+          {
+            "name": "position",
+            "value": null
+          },
+          {
+            "name": "team_id",
+            "value": 72084
+          },
+          {
+            "name": "user_id",
+            "value": 3455104
+          },
+          {
+            "name": "updated_at",
+            "value": "2016-09-17T17:56:04Z",
+            "type": "DateTime"
+          },
+          {
+            "name": "created_at",
+            "value": "2016-03-22T18:43:28Z",
+            "type": "DateTime"
+          }
+        ],
+        "links": [
+          {
+            "rel": "assignments",
+            "href": "https://api.teamsnap.com/v3/assignments/search?member_id=21913980"
+          },
+          {
+            "rel": "availabilities",
+            "href": "https://api.teamsnap.com/v3/availabilities/search?member_id=21913980"
+          },
+          {
+            "rel": "broadcast_email_attachments",
+            "href": "https://api.teamsnap.com/v3/broadcast_email_attachments/search?member_id=21913980"
+          },
+          {
+            "rel": "broadcast_emails",
+            "href": "https://api.teamsnap.com/v3/broadcast_emails/search?member_id=21913980"
+          },
+          {
+            "rel": "broadcast_alerts",
+            "href": "https://api.teamsnap.com/v3/broadcast_alerts/search?member_id=21913980"
+          },
+          {
+            "rel": "contact_email_addresses",
+            "href": "https://api.teamsnap.com/v3/contact_email_addresses/search?member_id=21913980"
+          },
+          {
+            "rel": "contact_phone_numbers",
+            "href": "https://api.teamsnap.com/v3/contact_phone_numbers/search?member_id=21913980"
+          },
+          {
+            "rel": "contacts",
+            "href": "https://api.teamsnap.com/v3/contacts/search?member_id=21913980"
+          },
+          {
+            "rel": "custom_data",
+            "href": "https://api.teamsnap.com/v3/custom_data/search?member_id=21913980"
+          },
+          {
+            "rel": "custom_fields",
+            "href": "https://api.teamsnap.com/v3/custom_fields/search?team_id=72084"
+          },
+          {
+            "rel": "division",
+            "href": "https://api.teamsnap.com/v3/divisions/3271"
+          },
+          {
+            "rel": "league_custom_data",
+            "href": "https://api.teamsnap.com/v3/league_custom_data/search?member_id=21913980"
+          },
+          {
+            "rel": "league_custom_fields",
+            "href": "https://api.teamsnap.com/v3/league_custom_fields/search?team_id=72084"
+          },
+          {
+            "rel": "forum_posts",
+            "href": "https://api.teamsnap.com/v3/forum_posts/search?member_id=21913980"
+          },
+          {
+            "rel": "forum_subscriptions",
+            "href": "https://api.teamsnap.com/v3/forum_subscriptions/search?member_id=21913980"
+          },
+          {
+            "rel": "forum_topics",
+            "href": "https://api.teamsnap.com/v3/forum_topics/search?team_id=72084"
+          },
+          {
+            "rel": "league_registrant_documents",
+            "href": "https://api.teamsnap.com/v3/league_registrant_documents/search?member_id=21913980"
+          },
+          {
+            "rel": "member_assignments",
+            "href": "https://api.teamsnap.com/v3/member_assignments/search?member_id=21913980"
+          },
+          {
+            "rel": "member_balances",
+            "href": "https://api.teamsnap.com/v3/member_balances/search?member_id=21913980"
+          },
+          {
+            "rel": "member_email_addresses",
+            "href": "https://api.teamsnap.com/v3/member_email_addresses/search?member_id=21913980"
+          },
+          {
+            "rel": "member_files",
+            "href": "https://api.teamsnap.com/v3/member_files/search?member_id=21913980"
+          },
+          {
+            "rel": "member_links",
+            "href": "https://api.teamsnap.com/v3/member_links/search?member_id=21913980"
+          },
+          {
+            "rel": "member_payments",
+            "href": "https://api.teamsnap.com/v3/member_payments/search?member_id=21913980"
+          },
+          {
+            "rel": "member_phone_numbers",
+            "href": "https://api.teamsnap.com/v3/member_phone_numbers/search?member_id=21913980"
+          },
+          {
+            "rel": "member_photos",
+            "href": "https://api.teamsnap.com/v3/member_photos/search?member_id=21913980"
+          },
+          {
+            "rel": "member_preferences",
+            "href": "https://api.teamsnap.com/v3/members_preferences/21913980"
+          },
+          {
+            "rel": "member_statistics",
+            "href": "https://api.teamsnap.com/v3/member_statistics/search?member_id=21913980"
+          },
+          {
+            "rel": "message_data",
+            "href": "https://api.teamsnap.com/v3/message_data/search?member_id=21913980"
+          },
+          {
+            "rel": "messages",
+            "href": "https://api.teamsnap.com/v3/messages/search?member_id=21913980"
+          },
+          {
+            "rel": "statistic_data",
+            "href": "https://api.teamsnap.com/v3/statistic_data/search?member_id=21913980"
+          },
+          {
+            "rel": "team",
+            "href": "https://api.teamsnap.com/v3/teams/72084"
+          },
+          {
+            "rel": "team_media",
+            "href": "https://api.teamsnap.com/v3/team_media/search?member_id=21913980"
+          },
+          {
+            "rel": "team_medium_comments",
+            "href": "https://api.teamsnap.com/v3/team_medium_comments/search?member_id=21913980"
+          },
+          {
+            "rel": "tracked_item_statuses",
+            "href": "https://api.teamsnap.com/v3/tracked_item_statuses/search?member_id=21913980"
+          },
+          {
+            "rel": "user",
+            "href": "https://api.teamsnap.com/v3/users/3455104"
+          }
+        ],
+        "rel": "member-21913980"
+      },
+      {
+        "href": "https://api.teamsnap.com/v3/members/22032921",
+        "data": [
+          {
+            "name": "id",
+            "value": 22032921
+          },
+          {
+            "name": "type",
+            "value": "member"
+          },
+          {
+            "name": "address_city",
+            "value": ""
+          },
+          {
+            "name": "address_state",
+            "value": ""
+          },
+          {
+            "name": "address_street1",
+            "value": ""
+          },
+          {
+            "name": "address_street2",
+            "value": null
+          },
+          {
+            "name": "address_zip",
+            "value": ""
+          },
+          {
+            "name": "birthday",
+            "value": ""
+          },
+          {
+            "name": "division_id",
+            "value": 3271
+          },
+          {
+            "name": "first_name",
+            "value": "Lisa"
+          },
+          {
+            "name": "gender",
+            "value": null
+          },
+          {
+            "name": "has_facebook_post_scores_enabled",
+            "value": false
+          },
+          {
+            "name": "hide_address",
+            "value": false,
+            "deprecated": true,
+            "prompt": "hide_address is deprecated and will be removed in a future version, use is_address_hidden instead."
+          },
+          {
+            "name": "is_address_hidden",
+            "value": false
+          },
+          {
+            "name": "hide_age",
+            "value": false,
+            "deprecated": true,
+            "prompt": "hide_age is deprecated and will be removed in a future version, use is_age_hidden instead."
+          },
+          {
+            "name": "is_age_hidden",
+            "value": false
+          },
+          {
+            "name": "is_commissioner",
+            "value": false
+          },
+          {
+            "name": "invitation_code",
+            "value": "ced5a063fe5149fa44207299"
+          },
+          {
+            "name": "invitation_declined",
+            "value": null
+          },
+          {
+            "name": "is_activated",
+            "value": true
+          },
+          {
+            "name": "is_pushable",
+            "value": true
+          },
+          {
+            "name": "is_alertable",
+            "value": true
+          },
+          {
+            "name": "is_emailable",
+            "value": true
+          },
+          {
+            "name": "is_invitable",
+            "value": false
+          },
+          {
+            "name": "is_invited",
+            "value": false
+          },
+          {
+            "name": "is_manager",
+            "value": true
+          },
+          {
+            "name": "is_non_player",
+            "value": true
+          },
+          {
+            "name": "is_owner",
+            "value": true
+          },
+          {
+            "name": "is_ownership_pending",
+            "value": false
+          },
+          {
+            "name": "jersey_number",
+            "value": ""
+          },
+          {
+            "name": "last_logged_in_at",
+            "value": null,
+            "deprecated": true,
+            "prompt": "%{field} is deprecated and has been removed.  Continued use of %{field} is not recommended it will no longer be stored."
+          },
+          {
+            "name": "last_name",
+            "value": "Wing"
+          },
+          {
+            "name": "position",
+            "value": ""
+          },
+          {
+            "name": "team_id",
+            "value": 72084
+          },
+          {
+            "name": "user_id",
+            "value": 825281
+          },
+          {
+            "name": "updated_at",
+            "value": "2016-09-16T22:40:33Z",
+            "type": "DateTime"
+          },
+          {
+            "name": "created_at",
+            "value": "2016-03-25T16:11:16Z",
+            "type": "DateTime"
+          }
+        ],
+        "links": [
+          {
+            "rel": "assignments",
+            "href": "https://api.teamsnap.com/v3/assignments/search?member_id=22032921"
+          },
+          {
+            "rel": "availabilities",
+            "href": "https://api.teamsnap.com/v3/availabilities/search?member_id=22032921"
+          },
+          {
+            "rel": "broadcast_email_attachments",
+            "href": "https://api.teamsnap.com/v3/broadcast_email_attachments/search?member_id=22032921"
+          },
+          {
+            "rel": "broadcast_emails",
+            "href": "https://api.teamsnap.com/v3/broadcast_emails/search?member_id=22032921"
+          },
+          {
+            "rel": "broadcast_alerts",
+            "href": "https://api.teamsnap.com/v3/broadcast_alerts/search?member_id=22032921"
+          },
+          {
+            "rel": "contact_email_addresses",
+            "href": "https://api.teamsnap.com/v3/contact_email_addresses/search?member_id=22032921"
+          },
+          {
+            "rel": "contact_phone_numbers",
+            "href": "https://api.teamsnap.com/v3/contact_phone_numbers/search?member_id=22032921"
+          },
+          {
+            "rel": "contacts",
+            "href": "https://api.teamsnap.com/v3/contacts/search?member_id=22032921"
+          },
+          {
+            "rel": "custom_data",
+            "href": "https://api.teamsnap.com/v3/custom_data/search?member_id=22032921"
+          },
+          {
+            "rel": "custom_fields",
+            "href": "https://api.teamsnap.com/v3/custom_fields/search?team_id=72084"
+          },
+          {
+            "rel": "division",
+            "href": "https://api.teamsnap.com/v3/divisions/3271"
+          },
+          {
+            "rel": "league_custom_data",
+            "href": "https://api.teamsnap.com/v3/league_custom_data/search?member_id=22032921"
+          },
+          {
+            "rel": "league_custom_fields",
+            "href": "https://api.teamsnap.com/v3/league_custom_fields/search?team_id=72084"
+          },
+          {
+            "rel": "forum_posts",
+            "href": "https://api.teamsnap.com/v3/forum_posts/search?member_id=22032921"
+          },
+          {
+            "rel": "forum_subscriptions",
+            "href": "https://api.teamsnap.com/v3/forum_subscriptions/search?member_id=22032921"
+          },
+          {
+            "rel": "forum_topics",
+            "href": "https://api.teamsnap.com/v3/forum_topics/search?team_id=72084"
+          },
+          {
+            "rel": "league_registrant_documents",
+            "href": "https://api.teamsnap.com/v3/league_registrant_documents/search?member_id=22032921"
+          },
+          {
+            "rel": "member_assignments",
+            "href": "https://api.teamsnap.com/v3/member_assignments/search?member_id=22032921"
+          },
+          {
+            "rel": "member_balances",
+            "href": "https://api.teamsnap.com/v3/member_balances/search?member_id=22032921"
+          },
+          {
+            "rel": "member_email_addresses",
+            "href": "https://api.teamsnap.com/v3/member_email_addresses/search?member_id=22032921"
+          },
+          {
+            "rel": "member_files",
+            "href": "https://api.teamsnap.com/v3/member_files/search?member_id=22032921"
+          },
+          {
+            "rel": "member_links",
+            "href": "https://api.teamsnap.com/v3/member_links/search?member_id=22032921"
+          },
+          {
+            "rel": "member_payments",
+            "href": "https://api.teamsnap.com/v3/member_payments/search?member_id=22032921"
+          },
+          {
+            "rel": "member_phone_numbers",
+            "href": "https://api.teamsnap.com/v3/member_phone_numbers/search?member_id=22032921"
+          },
+          {
+            "rel": "member_photos",
+            "href": "https://api.teamsnap.com/v3/member_photos/search?member_id=22032921"
+          },
+          {
+            "rel": "member_preferences",
+            "href": "https://api.teamsnap.com/v3/members_preferences/22032921"
+          },
+          {
+            "rel": "member_statistics",
+            "href": "https://api.teamsnap.com/v3/member_statistics/search?member_id=22032921"
+          },
+          {
+            "rel": "message_data",
+            "href": "https://api.teamsnap.com/v3/message_data/search?member_id=22032921"
+          },
+          {
+            "rel": "messages",
+            "href": "https://api.teamsnap.com/v3/messages/search?member_id=22032921"
+          },
+          {
+            "rel": "statistic_data",
+            "href": "https://api.teamsnap.com/v3/statistic_data/search?member_id=22032921"
+          },
+          {
+            "rel": "team",
+            "href": "https://api.teamsnap.com/v3/teams/72084"
+          },
+          {
+            "rel": "team_media",
+            "href": "https://api.teamsnap.com/v3/team_media/search?member_id=22032921"
+          },
+          {
+            "rel": "team_medium_comments",
+            "href": "https://api.teamsnap.com/v3/team_medium_comments/search?member_id=22032921"
+          },
+          {
+            "rel": "tracked_item_statuses",
+            "href": "https://api.teamsnap.com/v3/tracked_item_statuses/search?member_id=22032921"
+          },
+          {
+            "rel": "user",
+            "href": "https://api.teamsnap.com/v3/users/825281"
+          }
+        ],
+        "rel": "member-22032921"
+      },
+      {
+        "href": "https://api.teamsnap.com/v3/members/23685437",
+        "data": [
+          {
+            "name": "id",
+            "value": 23685437
+          },
+          {
+            "name": "type",
+            "value": "member"
+          },
+          {
+            "name": "address_city",
+            "value": ""
+          },
+          {
+            "name": "address_state",
+            "value": ""
+          },
+          {
+            "name": "address_street1",
+            "value": ""
+          },
+          {
+            "name": "address_street2",
+            "value": null
+          },
+          {
+            "name": "address_zip",
+            "value": ""
+          },
+          {
+            "name": "birthday",
+            "value": ""
+          },
+          {
+            "name": "division_id",
+            "value": 3271
+          },
+          {
+            "name": "first_name",
+            "value": "Gia"
+          },
+          {
+            "name": "gender",
+            "value": "Female"
+          },
+          {
+            "name": "has_facebook_post_scores_enabled",
+            "value": false
+          },
+          {
+            "name": "hide_address",
+            "value": false,
+            "deprecated": true,
+            "prompt": "hide_address is deprecated and will be removed in a future version, use is_address_hidden instead."
+          },
+          {
+            "name": "is_address_hidden",
+            "value": false
+          },
+          {
+            "name": "hide_age",
+            "value": false,
+            "deprecated": true,
+            "prompt": "hide_age is deprecated and will be removed in a future version, use is_age_hidden instead."
+          },
+          {
+            "name": "is_age_hidden",
+            "value": false
+          },
+          {
+            "name": "is_commissioner",
+            "value": false
+          },
+          {
+            "name": "invitation_code",
+            "value": "69eadebcce7c48eb3e977841"
+          },
+          {
+            "name": "invitation_declined",
+            "value": null
+          },
+          {
+            "name": "is_activated",
+            "value": true
+          },
+          {
+            "name": "is_pushable",
+            "value": true
+          },
+          {
+            "name": "is_alertable",
+            "value": true
+          },
+          {
+            "name": "is_emailable",
+            "value": true
+          },
+          {
+            "name": "is_invitable",
+            "value": false
+          },
+          {
+            "name": "is_invited",
+            "value": false
+          },
+          {
+            "name": "is_manager",
+            "value": false
+          },
+          {
+            "name": "is_non_player",
+            "value": false
+          },
+          {
+            "name": "is_owner",
+            "value": false
+          },
+          {
+            "name": "is_ownership_pending",
+            "value": false
+          },
+          {
+            "name": "jersey_number",
+            "value": ""
+          },
+          {
+            "name": "last_logged_in_at",
+            "value": null,
+            "deprecated": true,
+            "prompt": "%{field} is deprecated and has been removed.  Continued use of %{field} is not recommended it will no longer be stored."
+          },
+          {
+            "name": "last_name",
+            "value": "Fisher"
+          },
+          {
+            "name": "position",
+            "value": ""
+          },
+          {
+            "name": "team_id",
+            "value": 72084
+          },
+          {
+            "name": "user_id",
+            "value": 1918127
+          },
+          {
+            "name": "updated_at",
+            "value": "2016-09-16T18:28:25Z",
+            "type": "DateTime"
+          },
+          {
+            "name": "created_at",
+            "value": "2016-05-07T01:26:41Z",
+            "type": "DateTime"
+          }
+        ],
+        "links": [
+          {
+            "rel": "assignments",
+            "href": "https://api.teamsnap.com/v3/assignments/search?member_id=23685437"
+          },
+          {
+            "rel": "availabilities",
+            "href": "https://api.teamsnap.com/v3/availabilities/search?member_id=23685437"
+          },
+          {
+            "rel": "broadcast_email_attachments",
+            "href": "https://api.teamsnap.com/v3/broadcast_email_attachments/search?member_id=23685437"
+          },
+          {
+            "rel": "broadcast_emails",
+            "href": "https://api.teamsnap.com/v3/broadcast_emails/search?member_id=23685437"
+          },
+          {
+            "rel": "broadcast_alerts",
+            "href": "https://api.teamsnap.com/v3/broadcast_alerts/search?member_id=23685437"
+          },
+          {
+            "rel": "contact_email_addresses",
+            "href": "https://api.teamsnap.com/v3/contact_email_addresses/search?member_id=23685437"
+          },
+          {
+            "rel": "contact_phone_numbers",
+            "href": "https://api.teamsnap.com/v3/contact_phone_numbers/search?member_id=23685437"
+          },
+          {
+            "rel": "contacts",
+            "href": "https://api.teamsnap.com/v3/contacts/search?member_id=23685437"
+          },
+          {
+            "rel": "custom_data",
+            "href": "https://api.teamsnap.com/v3/custom_data/search?member_id=23685437"
+          },
+          {
+            "rel": "custom_fields",
+            "href": "https://api.teamsnap.com/v3/custom_fields/search?team_id=72084"
+          },
+          {
+            "rel": "division",
+            "href": "https://api.teamsnap.com/v3/divisions/3271"
+          },
+          {
+            "rel": "league_custom_data",
+            "href": "https://api.teamsnap.com/v3/league_custom_data/search?member_id=23685437"
+          },
+          {
+            "rel": "league_custom_fields",
+            "href": "https://api.teamsnap.com/v3/league_custom_fields/search?team_id=72084"
+          },
+          {
+            "rel": "forum_posts",
+            "href": "https://api.teamsnap.com/v3/forum_posts/search?member_id=23685437"
+          },
+          {
+            "rel": "forum_subscriptions",
+            "href": "https://api.teamsnap.com/v3/forum_subscriptions/search?member_id=23685437"
+          },
+          {
+            "rel": "forum_topics",
+            "href": "https://api.teamsnap.com/v3/forum_topics/search?team_id=72084"
+          },
+          {
+            "rel": "league_registrant_documents",
+            "href": "https://api.teamsnap.com/v3/league_registrant_documents/search?member_id=23685437"
+          },
+          {
+            "rel": "member_assignments",
+            "href": "https://api.teamsnap.com/v3/member_assignments/search?member_id=23685437"
+          },
+          {
+            "rel": "member_balances",
+            "href": "https://api.teamsnap.com/v3/member_balances/search?member_id=23685437"
+          },
+          {
+            "rel": "member_email_addresses",
+            "href": "https://api.teamsnap.com/v3/member_email_addresses/search?member_id=23685437"
+          },
+          {
+            "rel": "member_files",
+            "href": "https://api.teamsnap.com/v3/member_files/search?member_id=23685437"
+          },
+          {
+            "rel": "member_links",
+            "href": "https://api.teamsnap.com/v3/member_links/search?member_id=23685437"
+          },
+          {
+            "rel": "member_payments",
+            "href": "https://api.teamsnap.com/v3/member_payments/search?member_id=23685437"
+          },
+          {
+            "rel": "member_phone_numbers",
+            "href": "https://api.teamsnap.com/v3/member_phone_numbers/search?member_id=23685437"
+          },
+          {
+            "rel": "member_photos",
+            "href": "https://api.teamsnap.com/v3/member_photos/search?member_id=23685437"
+          },
+          {
+            "rel": "member_preferences",
+            "href": "https://api.teamsnap.com/v3/members_preferences/23685437"
+          },
+          {
+            "rel": "member_statistics",
+            "href": "https://api.teamsnap.com/v3/member_statistics/search?member_id=23685437"
+          },
+          {
+            "rel": "message_data",
+            "href": "https://api.teamsnap.com/v3/message_data/search?member_id=23685437"
+          },
+          {
+            "rel": "messages",
+            "href": "https://api.teamsnap.com/v3/messages/search?member_id=23685437"
+          },
+          {
+            "rel": "statistic_data",
+            "href": "https://api.teamsnap.com/v3/statistic_data/search?member_id=23685437"
+          },
+          {
+            "rel": "team",
+            "href": "https://api.teamsnap.com/v3/teams/72084"
+          },
+          {
+            "rel": "team_media",
+            "href": "https://api.teamsnap.com/v3/team_media/search?member_id=23685437"
+          },
+          {
+            "rel": "team_medium_comments",
+            "href": "https://api.teamsnap.com/v3/team_medium_comments/search?member_id=23685437"
+          },
+          {
+            "rel": "tracked_item_statuses",
+            "href": "https://api.teamsnap.com/v3/tracked_item_statuses/search?member_id=23685437"
+          },
+          {
+            "rel": "user",
+            "href": "https://api.teamsnap.com/v3/users/1918127"
+          }
+        ],
+        "rel": "member-23685437"
+      },
+      {
+        "href": "https://api.teamsnap.com/v3/members/23685442",
+        "data": [
+          {
+            "name": "id",
+            "value": 23685442
+          },
+          {
+            "name": "type",
+            "value": "member"
+          },
+          {
+            "name": "address_city",
+            "value": ""
+          },
+          {
+            "name": "address_state",
+            "value": ""
+          },
+          {
+            "name": "address_street1",
+            "value": ""
+          },
+          {
+            "name": "address_street2",
+            "value": null
+          },
+          {
+            "name": "address_zip",
+            "value": ""
+          },
+          {
+            "name": "birthday",
+            "value": "2004-05-04"
+          },
+          {
+            "name": "division_id",
+            "value": 3271
+          },
+          {
+            "name": "first_name",
+            "value": "Maya"
+          },
+          {
+            "name": "gender",
+            "value": "Female"
+          },
+          {
+            "name": "has_facebook_post_scores_enabled",
+            "value": false
+          },
+          {
+            "name": "hide_address",
+            "value": false,
+            "deprecated": true,
+            "prompt": "hide_address is deprecated and will be removed in a future version, use is_address_hidden instead."
+          },
+          {
+            "name": "is_address_hidden",
+            "value": false
+          },
+          {
+            "name": "hide_age",
+            "value": true,
+            "deprecated": true,
+            "prompt": "hide_age is deprecated and will be removed in a future version, use is_age_hidden instead."
+          },
+          {
+            "name": "is_age_hidden",
+            "value": true
+          },
+          {
+            "name": "is_commissioner",
+            "value": false
+          },
+          {
+            "name": "invitation_code",
+            "value": "6cc6f671b27d51c0f8a19928"
+          },
+          {
+            "name": "invitation_declined",
+            "value": null
+          },
+          {
+            "name": "is_activated",
+            "value": true
+          },
+          {
+            "name": "is_pushable",
+            "value": false
+          },
+          {
+            "name": "is_alertable",
+            "value": true
+          },
+          {
+            "name": "is_emailable",
+            "value": true
+          },
+          {
+            "name": "is_invitable",
+            "value": false
+          },
+          {
+            "name": "is_invited",
+            "value": false
+          },
+          {
+            "name": "is_manager",
+            "value": false
+          },
+          {
+            "name": "is_non_player",
+            "value": false
+          },
+          {
+            "name": "is_owner",
+            "value": false
+          },
+          {
+            "name": "is_ownership_pending",
+            "value": false
+          },
+          {
+            "name": "jersey_number",
+            "value": "23"
+          },
+          {
+            "name": "last_logged_in_at",
+            "value": null,
+            "deprecated": true,
+            "prompt": "%{field} is deprecated and has been removed.  Continued use of %{field} is not recommended it will no longer be stored."
+          },
+          {
+            "name": "last_name",
+            "value": "Lynch"
+          },
+          {
+            "name": "position",
+            "value": ""
+          },
+          {
+            "name": "team_id",
+            "value": 72084
+          },
+          {
+            "name": "user_id",
+            "value": 7866210
+          },
+          {
+            "name": "updated_at",
+            "value": "2016-09-17T17:46:34Z",
+            "type": "DateTime"
+          },
+          {
+            "name": "created_at",
+            "value": "2016-05-07T01:27:14Z",
+            "type": "DateTime"
+          }
+        ],
+        "links": [
+          {
+            "rel": "assignments",
+            "href": "https://api.teamsnap.com/v3/assignments/search?member_id=23685442"
+          },
+          {
+            "rel": "availabilities",
+            "href": "https://api.teamsnap.com/v3/availabilities/search?member_id=23685442"
+          },
+          {
+            "rel": "broadcast_email_attachments",
+            "href": "https://api.teamsnap.com/v3/broadcast_email_attachments/search?member_id=23685442"
+          },
+          {
+            "rel": "broadcast_emails",
+            "href": "https://api.teamsnap.com/v3/broadcast_emails/search?member_id=23685442"
+          },
+          {
+            "rel": "broadcast_alerts",
+            "href": "https://api.teamsnap.com/v3/broadcast_alerts/search?member_id=23685442"
+          },
+          {
+            "rel": "contact_email_addresses",
+            "href": "https://api.teamsnap.com/v3/contact_email_addresses/search?member_id=23685442"
+          },
+          {
+            "rel": "contact_phone_numbers",
+            "href": "https://api.teamsnap.com/v3/contact_phone_numbers/search?member_id=23685442"
+          },
+          {
+            "rel": "contacts",
+            "href": "https://api.teamsnap.com/v3/contacts/search?member_id=23685442"
+          },
+          {
+            "rel": "custom_data",
+            "href": "https://api.teamsnap.com/v3/custom_data/search?member_id=23685442"
+          },
+          {
+            "rel": "custom_fields",
+            "href": "https://api.teamsnap.com/v3/custom_fields/search?team_id=72084"
+          },
+          {
+            "rel": "division",
+            "href": "https://api.teamsnap.com/v3/divisions/3271"
+          },
+          {
+            "rel": "league_custom_data",
+            "href": "https://api.teamsnap.com/v3/league_custom_data/search?member_id=23685442"
+          },
+          {
+            "rel": "league_custom_fields",
+            "href": "https://api.teamsnap.com/v3/league_custom_fields/search?team_id=72084"
+          },
+          {
+            "rel": "forum_posts",
+            "href": "https://api.teamsnap.com/v3/forum_posts/search?member_id=23685442"
+          },
+          {
+            "rel": "forum_subscriptions",
+            "href": "https://api.teamsnap.com/v3/forum_subscriptions/search?member_id=23685442"
+          },
+          {
+            "rel": "forum_topics",
+            "href": "https://api.teamsnap.com/v3/forum_topics/search?team_id=72084"
+          },
+          {
+            "rel": "league_registrant_documents",
+            "href": "https://api.teamsnap.com/v3/league_registrant_documents/search?member_id=23685442"
+          },
+          {
+            "rel": "member_assignments",
+            "href": "https://api.teamsnap.com/v3/member_assignments/search?member_id=23685442"
+          },
+          {
+            "rel": "member_balances",
+            "href": "https://api.teamsnap.com/v3/member_balances/search?member_id=23685442"
+          },
+          {
+            "rel": "member_email_addresses",
+            "href": "https://api.teamsnap.com/v3/member_email_addresses/search?member_id=23685442"
+          },
+          {
+            "rel": "member_files",
+            "href": "https://api.teamsnap.com/v3/member_files/search?member_id=23685442"
+          },
+          {
+            "rel": "member_links",
+            "href": "https://api.teamsnap.com/v3/member_links/search?member_id=23685442"
+          },
+          {
+            "rel": "member_payments",
+            "href": "https://api.teamsnap.com/v3/member_payments/search?member_id=23685442"
+          },
+          {
+            "rel": "member_phone_numbers",
+            "href": "https://api.teamsnap.com/v3/member_phone_numbers/search?member_id=23685442"
+          },
+          {
+            "rel": "member_photo",
+            "href": "https://35b7f1d7d0790b02114c-1b8897185d70b198c119e1d2b7efd8a2.ssl.cf1.rackcdn.com/roster_full_photos/23685442/original/38fbc25f-90be-4dfa-a35b-575c9aabca45.jpg"
+          },
+          {
+            "rel": "member_photo_file",
+            "href": "https://api.teamsnap.com/v3/member_photo_files/23685442-1462756054"
+          },
+          {
+            "rel": "member_photos",
+            "href": "https://api.teamsnap.com/v3/member_photos/search?member_id=23685442"
+          },
+          {
+            "rel": "member_preferences",
+            "href": "https://api.teamsnap.com/v3/members_preferences/23685442"
+          },
+          {
+            "rel": "member_statistics",
+            "href": "https://api.teamsnap.com/v3/member_statistics/search?member_id=23685442"
+          },
+          {
+            "rel": "member_thumbnail",
+            "href": "https://35b7f1d7d0790b02114c-1b8897185d70b198c119e1d2b7efd8a2.ssl.cf1.rackcdn.com/roster_thumb_photos/23685442/thumb/99ea3cd6-bf8e-43b3-968b-ecfaf026425e.jpg"
+          },
+          {
+            "rel": "message_data",
+            "href": "https://api.teamsnap.com/v3/message_data/search?member_id=23685442"
+          },
+          {
+            "rel": "messages",
+            "href": "https://api.teamsnap.com/v3/messages/search?member_id=23685442"
+          },
+          {
+            "rel": "statistic_data",
+            "href": "https://api.teamsnap.com/v3/statistic_data/search?member_id=23685442"
+          },
+          {
+            "rel": "team",
+            "href": "https://api.teamsnap.com/v3/teams/72084"
+          },
+          {
+            "rel": "team_media",
+            "href": "https://api.teamsnap.com/v3/team_media/search?member_id=23685442"
+          },
+          {
+            "rel": "team_medium_comments",
+            "href": "https://api.teamsnap.com/v3/team_medium_comments/search?member_id=23685442"
+          },
+          {
+            "rel": "tracked_item_statuses",
+            "href": "https://api.teamsnap.com/v3/tracked_item_statuses/search?member_id=23685442"
+          },
+          {
+            "rel": "user",
+            "href": "https://api.teamsnap.com/v3/users/7866210"
+          }
+        ],
+        "rel": "member-23685442"
+      },
+      {
+        "href": "https://api.teamsnap.com/v3/members/23685491",
+        "data": [
+          {
+            "name": "id",
+            "value": 23685491
+          },
+          {
+            "name": "type",
+            "value": "member"
+          },
+          {
+            "name": "address_city",
+            "value": ""
+          },
+          {
+            "name": "address_state",
+            "value": ""
+          },
+          {
+            "name": "address_street1",
+            "value": ""
+          },
+          {
+            "name": "address_street2",
+            "value": null
+          },
+          {
+            "name": "address_zip",
+            "value": ""
+          },
+          {
+            "name": "birthday",
+            "value": "2004-02-28"
+          },
+          {
+            "name": "division_id",
+            "value": 3271
+          },
+          {
+            "name": "first_name",
+            "value": "Makena"
+          },
+          {
+            "name": "gender",
+            "value": "Female"
+          },
+          {
+            "name": "has_facebook_post_scores_enabled",
+            "value": false
+          },
+          {
+            "name": "hide_address",
+            "value": true,
+            "deprecated": true,
+            "prompt": "hide_address is deprecated and will be removed in a future version, use is_address_hidden instead."
+          },
+          {
+            "name": "is_address_hidden",
+            "value": true
+          },
+          {
+            "name": "hide_age",
+            "value": true,
+            "deprecated": true,
+            "prompt": "hide_age is deprecated and will be removed in a future version, use is_age_hidden instead."
+          },
+          {
+            "name": "is_age_hidden",
+            "value": true
+          },
+          {
+            "name": "is_commissioner",
+            "value": false
+          },
+          {
+            "name": "invitation_code",
+            "value": "69217b289441644f18dcedab"
+          },
+          {
+            "name": "invitation_declined",
+            "value": null
+          },
+          {
+            "name": "is_activated",
+            "value": true
+          },
+          {
+            "name": "is_pushable",
+            "value": false
+          },
+          {
+            "name": "is_alertable",
+            "value": true
+          },
+          {
+            "name": "is_emailable",
+            "value": true
+          },
+          {
+            "name": "is_invitable",
+            "value": false
+          },
+          {
+            "name": "is_invited",
+            "value": false
+          },
+          {
+            "name": "is_manager",
+            "value": false
+          },
+          {
+            "name": "is_non_player",
+            "value": false
+          },
+          {
+            "name": "is_owner",
+            "value": false
+          },
+          {
+            "name": "is_ownership_pending",
+            "value": false
+          },
+          {
+            "name": "jersey_number",
+            "value": ""
+          },
+          {
+            "name": "last_logged_in_at",
+            "value": null,
+            "deprecated": true,
+            "prompt": "%{field} is deprecated and has been removed.  Continued use of %{field} is not recommended it will no longer be stored."
+          },
+          {
+            "name": "last_name",
+            "value": "Corsiglia"
+          },
+          {
+            "name": "position",
+            "value": ""
+          },
+          {
+            "name": "team_id",
+            "value": 72084
+          },
+          {
+            "name": "user_id",
+            "value": 7864378
+          },
+          {
+            "name": "updated_at",
+            "value": "2016-08-30T13:57:08Z",
+            "type": "DateTime"
+          },
+          {
+            "name": "created_at",
+            "value": "2016-05-07T01:28:21Z",
+            "type": "DateTime"
+          }
+        ],
+        "links": [
+          {
+            "rel": "assignments",
+            "href": "https://api.teamsnap.com/v3/assignments/search?member_id=23685491"
+          },
+          {
+            "rel": "availabilities",
+            "href": "https://api.teamsnap.com/v3/availabilities/search?member_id=23685491"
+          },
+          {
+            "rel": "broadcast_email_attachments",
+            "href": "https://api.teamsnap.com/v3/broadcast_email_attachments/search?member_id=23685491"
+          },
+          {
+            "rel": "broadcast_emails",
+            "href": "https://api.teamsnap.com/v3/broadcast_emails/search?member_id=23685491"
+          },
+          {
+            "rel": "broadcast_alerts",
+            "href": "https://api.teamsnap.com/v3/broadcast_alerts/search?member_id=23685491"
+          },
+          {
+            "rel": "contact_email_addresses",
+            "href": "https://api.teamsnap.com/v3/contact_email_addresses/search?member_id=23685491"
+          },
+          {
+            "rel": "contact_phone_numbers",
+            "href": "https://api.teamsnap.com/v3/contact_phone_numbers/search?member_id=23685491"
+          },
+          {
+            "rel": "contacts",
+            "href": "https://api.teamsnap.com/v3/contacts/search?member_id=23685491"
+          },
+          {
+            "rel": "custom_data",
+            "href": "https://api.teamsnap.com/v3/custom_data/search?member_id=23685491"
+          },
+          {
+            "rel": "custom_fields",
+            "href": "https://api.teamsnap.com/v3/custom_fields/search?team_id=72084"
+          },
+          {
+            "rel": "division",
+            "href": "https://api.teamsnap.com/v3/divisions/3271"
+          },
+          {
+            "rel": "league_custom_data",
+            "href": "https://api.teamsnap.com/v3/league_custom_data/search?member_id=23685491"
+          },
+          {
+            "rel": "league_custom_fields",
+            "href": "https://api.teamsnap.com/v3/league_custom_fields/search?team_id=72084"
+          },
+          {
+            "rel": "forum_posts",
+            "href": "https://api.teamsnap.com/v3/forum_posts/search?member_id=23685491"
+          },
+          {
+            "rel": "forum_subscriptions",
+            "href": "https://api.teamsnap.com/v3/forum_subscriptions/search?member_id=23685491"
+          },
+          {
+            "rel": "forum_topics",
+            "href": "https://api.teamsnap.com/v3/forum_topics/search?team_id=72084"
+          },
+          {
+            "rel": "league_registrant_documents",
+            "href": "https://api.teamsnap.com/v3/league_registrant_documents/search?member_id=23685491"
+          },
+          {
+            "rel": "member_assignments",
+            "href": "https://api.teamsnap.com/v3/member_assignments/search?member_id=23685491"
+          },
+          {
+            "rel": "member_balances",
+            "href": "https://api.teamsnap.com/v3/member_balances/search?member_id=23685491"
+          },
+          {
+            "rel": "member_email_addresses",
+            "href": "https://api.teamsnap.com/v3/member_email_addresses/search?member_id=23685491"
+          },
+          {
+            "rel": "member_files",
+            "href": "https://api.teamsnap.com/v3/member_files/search?member_id=23685491"
+          },
+          {
+            "rel": "member_links",
+            "href": "https://api.teamsnap.com/v3/member_links/search?member_id=23685491"
+          },
+          {
+            "rel": "member_payments",
+            "href": "https://api.teamsnap.com/v3/member_payments/search?member_id=23685491"
+          },
+          {
+            "rel": "member_phone_numbers",
+            "href": "https://api.teamsnap.com/v3/member_phone_numbers/search?member_id=23685491"
+          },
+          {
+            "rel": "member_photo",
+            "href": "https://35b7f1d7d0790b02114c-1b8897185d70b198c119e1d2b7efd8a2.ssl.cf1.rackcdn.com/roster_full_photos/23685491/original/b23d0303a450e9d4fc19a0189054fa39.jpg"
+          },
+          {
+            "rel": "member_photo_file",
+            "href": "https://api.teamsnap.com/v3/member_photo_files/23685491-1462752854"
+          },
+          {
+            "rel": "member_photos",
+            "href": "https://api.teamsnap.com/v3/member_photos/search?member_id=23685491"
+          },
+          {
+            "rel": "member_preferences",
+            "href": "https://api.teamsnap.com/v3/members_preferences/23685491"
+          },
+          {
+            "rel": "member_statistics",
+            "href": "https://api.teamsnap.com/v3/member_statistics/search?member_id=23685491"
+          },
+          {
+            "rel": "member_thumbnail",
+            "href": "https://35b7f1d7d0790b02114c-1b8897185d70b198c119e1d2b7efd8a2.ssl.cf1.rackcdn.com/roster_thumb_photos/23685491/thumb/6883a0038b0f7e627693cf89cec36001.jpg"
+          },
+          {
+            "rel": "message_data",
+            "href": "https://api.teamsnap.com/v3/message_data/search?member_id=23685491"
+          },
+          {
+            "rel": "messages",
+            "href": "https://api.teamsnap.com/v3/messages/search?member_id=23685491"
+          },
+          {
+            "rel": "statistic_data",
+            "href": "https://api.teamsnap.com/v3/statistic_data/search?member_id=23685491"
+          },
+          {
+            "rel": "team",
+            "href": "https://api.teamsnap.com/v3/teams/72084"
+          },
+          {
+            "rel": "team_media",
+            "href": "https://api.teamsnap.com/v3/team_media/search?member_id=23685491"
+          },
+          {
+            "rel": "team_medium_comments",
+            "href": "https://api.teamsnap.com/v3/team_medium_comments/search?member_id=23685491"
+          },
+          {
+            "rel": "tracked_item_statuses",
+            "href": "https://api.teamsnap.com/v3/tracked_item_statuses/search?member_id=23685491"
+          },
+          {
+            "rel": "user",
+            "href": "https://api.teamsnap.com/v3/users/7864378"
+          }
+        ],
+        "rel": "member-23685491"
+      }
+    ]
+  }
+}

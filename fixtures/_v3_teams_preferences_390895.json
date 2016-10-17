@@ -1,0 +1,538 @@
+{
+  "collection": {
+    "version": "3.329.3",
+    "href": "https://api.teamsnap.com/v3/teams_preferences",
+    "rel": "teams_preferences",
+    "template": {
+      "data": [
+        {
+          "name": "age_group",
+          "value": null,
+          "prompt": "Valid age groups when skill_level is '', 'Recreational' or 'Competitive' are: '5 & under', '6 & under', '7 & under', '8 & under', '9 & under', '10 & under', '11 & under', '12 & under', '13 & under', '14 & under', '15 & under', '16 & under', '17 & under', '18 & under' and '19 & under'.  Valid age groups when skill_level is 'School' are: 'College/University', 'High School', 'Middle School/Jr. High', '6th Grade', '5th Grade', '4th Grade', '3rd Grade', '2nd Grade', '1st Grade' and 'Kindergarten or earlier'."
+        },
+        {
+          "name": "alternate_sport_name",
+          "value": null
+        },
+        {
+          "name": "announcement_above_home_photo",
+          "value": null
+        },
+        {
+          "name": "assignments_enable_for_code",
+          "value": null
+        },
+        {
+          "name": "assignments_show_tab",
+          "value": null
+        },
+        {
+          "name": "availabilities_show_tab",
+          "value": null
+        },
+        {
+          "name": "availabilities_sort_order",
+          "value": null,
+          "prompt": "Valid sort orders are 'jersey', 'name', and 'date'."
+        },
+        {
+          "name": "availability_event_cutoff",
+          "value": null
+        },
+        {
+          "name": "availability_game_cutoff",
+          "value": null
+        },
+        {
+          "name": "color_scheme_cd",
+          "value": null
+        },
+        {
+          "name": "currency_symbol",
+          "value": null
+        },
+        {
+          "name": "files_show_tab",
+          "value": null,
+          "deprecated": true,
+          "prompt": "files_show_tab is deprecated and will be removed in a future version, use team_media_show_tab instead."
+        },
+        {
+          "name": "team_media_show_tab",
+          "value": null
+        },
+        {
+          "name": "gender",
+          "value": null,
+          "prompt": "Valid genders are: 'Men', 'Women' and 'Coed'."
+        },
+        {
+          "name": "global_uniform_away",
+          "value": null
+        },
+        {
+          "name": "global_uniform_home",
+          "value": null
+        },
+        {
+          "name": "global_use_international_date",
+          "value": null
+        },
+        {
+          "name": "global_use_international_time",
+          "value": null
+        },
+        {
+          "name": "hide_header",
+          "value": null
+        },
+        {
+          "name": "introduction_text",
+          "value": null,
+          "deprecated": true,
+          "prompt": "introduction_text is deprecated and has been removed.  Continued use of introduction_text is not recommended it will no longer be stored."
+        },
+        {
+          "name": "is_coed",
+          "value": null
+        },
+        {
+          "name": "is_payments_private",
+          "value": null
+        },
+        {
+          "name": "is_tracked_items_private",
+          "value": null
+        },
+        {
+          "name": "is_youth",
+          "value": null
+        },
+        {
+          "name": "manager_default_availability",
+          "value": null
+        },
+        {
+          "name": "marketplace_show_tab",
+          "value": null
+        },
+        {
+          "name": "member_sort_order",
+          "value": null
+        },
+        {
+          "name": "payments_ignore_non_players",
+          "value": null
+        },
+        {
+          "name": "payments_show_tab",
+          "value": null
+        },
+        {
+          "name": "reminders_send_event",
+          "value": null
+        },
+        {
+          "name": "reminders_send_game",
+          "value": null
+        },
+        {
+          "name": "skill_level",
+          "value": null,
+          "prompt": "Valid skill levels are: 'Recreational', 'Competitive' and 'School'."
+        },
+        {
+          "name": "share_availability_notes",
+          "value": null
+        },
+        {
+          "name": "show_division_standings",
+          "value": null
+        },
+        {
+          "name": "statistics_show_tab",
+          "value": null
+        },
+        {
+          "name": "team_headline",
+          "value": null
+        },
+        {
+          "name": "team_message",
+          "value": null
+        },
+        {
+          "name": "tracked_items_ignore_non_players",
+          "value": null
+        },
+        {
+          "name": "tracked_items_is_private",
+          "value": null,
+          "deprecated": true,
+          "prompt": "tracked_items_is_private is deprecated and will be removed in a future version, use is_tracked_items_private instead."
+        },
+        {
+          "name": "tracked_items_show_tab",
+          "value": null
+        },
+        {
+          "name": "tracks_points",
+          "value": null
+        },
+        {
+          "name": "type",
+          "value": "team_preferences"
+        }
+      ]
+    },
+    "links": [
+      {
+        "rel": "team",
+        "href": "https://api.teamsnap.com/v3/teams"
+      },
+      {
+        "rel": "root",
+        "href": "https://api.teamsnap.com/v3/"
+      },
+      {
+        "rel": "self",
+        "href": "https://api.teamsnap.com/v3/teams_preferences/390895"
+      }
+    ],
+    "queries": [
+      {
+        "rel": "search",
+        "href": "https://api.teamsnap.com/v3/teams_preferences/search",
+        "data": [
+          {
+            "name": "id",
+            "value": null
+          },
+          {
+            "name": "team_id",
+            "value": null
+          },
+          {
+            "name": "user_id",
+            "value": null
+          },
+          {
+            "name": "page_size",
+            "value": null,
+            "prompt": "The number of items to return for each page. Sending this parameter with the query will enable paging for the returned collection."
+          },
+          {
+            "name": "page_number",
+            "value": null,
+            "prompt": "The number of the page to be returned. This requires that paging be turned on by also providing the page_size parameter."
+          }
+        ]
+      }
+    ],
+    "commands": [
+      {
+        "rel": "upload_team_logo",
+        "href": "https://api.teamsnap.com/v3/teams_preferences/upload_team_logo",
+        "prompt": "Upload a team logo. This must be a multi-part POST.",
+        "data": [
+          {
+            "name": "team_preferences_id",
+            "value": null
+          },
+          {
+            "name": "file",
+            "value": null
+          }
+        ]
+      },
+      {
+        "rel": "remove_team_logo",
+        "href": "https://api.teamsnap.com/v3/teams_preferences/remove_team_logo",
+        "prompt": "Remove a team logo.",
+        "data": [
+          {
+            "name": "team_preferences_id",
+            "value": null
+          }
+        ]
+      },
+      {
+        "rel": "upload_team_photo",
+        "href": "https://api.teamsnap.com/v3/teams_preferences/upload_team_photo",
+        "prompt": "Upload a team photo. This must be a multi-part POST.",
+        "data": [
+          {
+            "name": "team_preferences_id",
+            "value": null
+          },
+          {
+            "name": "file",
+            "value": null
+          }
+        ]
+      },
+      {
+        "rel": "remove_team_photo",
+        "href": "https://api.teamsnap.com/v3/teams_preferences/remove_team_photo",
+        "prompt": "Remove a team photo.",
+        "data": [
+          {
+            "name": "team_preferences_id",
+            "value": null
+          }
+        ]
+      }
+    ],
+    "items": [
+      {
+        "href": "https://api.teamsnap.com/v3/teams_preferences/390895",
+        "data": [
+          {
+            "name": "id",
+            "value": 390895
+          },
+          {
+            "name": "type",
+            "value": "team_preferences"
+          },
+          {
+            "name": "age_group",
+            "value": ""
+          },
+          {
+            "name": "alternate_sport_name",
+            "value": ""
+          },
+          {
+            "name": "announcement_above_home_photo",
+            "value": true
+          },
+          {
+            "name": "assignments_enable_for",
+            "value": "Games and Events"
+          },
+          {
+            "name": "assignments_enable_for_code",
+            "value": 0
+          },
+          {
+            "name": "assignments_show_tab",
+            "value": false
+          },
+          {
+            "name": "availabilities_show_tab",
+            "value": false
+          },
+          {
+            "name": "availabilities_sort_order",
+            "value": "jersey"
+          },
+          {
+            "name": "availability_event_cutoff",
+            "value": null
+          },
+          {
+            "name": "availability_game_cutoff",
+            "value": null
+          },
+          {
+            "name": "color_scheme_cd",
+            "value": 3
+          },
+          {
+            "name": "created_at",
+            "value": "2014-02-28T19:35:09Z",
+            "type": "DateTime"
+          },
+          {
+            "name": "currency_symbol",
+            "value": "$"
+          },
+          {
+            "name": "files_show_tab",
+            "value": true,
+            "deprecated": true,
+            "prompt": "files_show_tab is deprecated and will be removed in a future version, use team_media_show_tab instead."
+          },
+          {
+            "name": "gender",
+            "value": "Women"
+          },
+          {
+            "name": "global_uniform_away",
+            "value": "WHITE JERSEY BLUE SOCKS"
+          },
+          {
+            "name": "global_uniform_home",
+            "value": "BLUE JERSEY WHITE SOCKS"
+          },
+          {
+            "name": "global_use_international_date",
+            "value": false
+          },
+          {
+            "name": "global_use_international_time",
+            "value": false
+          },
+          {
+            "name": "hide_header",
+            "value": false
+          },
+          {
+            "name": "is_coed",
+            "value": false
+          },
+          {
+            "name": "is_payments_private",
+            "value": true
+          },
+          {
+            "name": "is_tsl_enabled",
+            "value": true
+          },
+          {
+            "name": "is_tsl_push_enabled",
+            "value": true
+          },
+          {
+            "name": "is_tsl_score_push_enabled",
+            "value": true
+          },
+          {
+            "name": "is_tracked_items_private",
+            "value": null
+          },
+          {
+            "name": "is_youth",
+            "value": true
+          },
+          {
+            "name": "league_controlled_settings",
+            "value": false
+          },
+          {
+            "name": "manager_default_availability",
+            "value": false
+          },
+          {
+            "name": "marketplace_show_tab",
+            "value": false
+          },
+          {
+            "name": "member_sort_order",
+            "value": "last"
+          },
+          {
+            "name": "payments_ignore_non_players",
+            "value": false
+          },
+          {
+            "name": "payments_show_tab",
+            "value": true
+          },
+          {
+            "name": "reminders_send_event",
+            "value": false
+          },
+          {
+            "name": "reminders_send_game",
+            "value": false
+          },
+          {
+            "name": "share_availability_notes",
+            "value": false
+          },
+          {
+            "name": "show_division_standings",
+            "value": false
+          },
+          {
+            "name": "skill_level",
+            "value": ""
+          },
+          {
+            "name": "statistics_show_tab",
+            "value": true
+          },
+          {
+            "name": "team_headline",
+            "value": null
+          },
+          {
+            "name": "team_id",
+            "value": 390895
+          },
+          {
+            "name": "team_media_show_tab",
+            "value": true
+          },
+          {
+            "name": "team_message",
+            "value": null,
+            "skip_sanitation": true
+          },
+          {
+            "name": "tracked_items_ignore_non_players",
+            "value": false
+          },
+          {
+            "name": "tracked_items_is_private",
+            "value": null,
+            "deprecated": true,
+            "prompt": "tracked_items_is_private is deprecated and will be removed in a future version, use is_tracked_items_private instead."
+          },
+          {
+            "name": "tracked_items_show_tab",
+            "value": true
+          },
+          {
+            "name": "tracks_points",
+            "value": true
+          },
+          {
+            "name": "tsl_enabled",
+            "value": true,
+            "deprecated": true,
+            "prompt": "tsl_enabled is deprecated and will be removed in a future version, use is_tsl_enabled instead."
+          },
+          {
+            "name": "tsl_push_enabled",
+            "value": true,
+            "deprecated": true,
+            "prompt": "tsl_push_enabled is deprecated and will be removed in a future version, use is_tsl_push_enabled instead."
+          },
+          {
+            "name": "tsl_score_push_enabled",
+            "value": true,
+            "deprecated": true,
+            "prompt": "tsl_score_push_enabled is deprecated and will be removed in a future version, use is_tsl_score_push_enabled instead."
+          },
+          {
+            "name": "updated_at",
+            "value": "2016-09-17T20:57:08Z",
+            "type": "DateTime"
+          }
+        ],
+        "links": [
+          {
+            "rel": "team",
+            "href": "https://api.teamsnap.com/v3/teams/390895"
+          },
+          {
+            "rel": "team_logo_thumbnail",
+            "href": "https://35b7f1d7d0790b02114c-1b8897185d70b198c119e1d2b7efd8a2.ssl.cf1.rackcdn.com/sport_logos/logo-soccer.png"
+          },
+          {
+            "rel": "team_photo",
+            "href": "https://35b7f1d7d0790b02114c-1b8897185d70b198c119e1d2b7efd8a2.ssl.cf1.rackcdn.com/team_photo/390895/original/a9e4d4fa-d8d9-4c88-815b-abd76cb6ee55.jpg"
+          },
+          {
+            "rel": "team_photos",
+            "href": "https://api.teamsnap.com/v3/team_photos/search?team_id=390895"
+          }
+        ],
+        "rel": "team_preferences-390895"
+      }
+    ]
+  }
+}

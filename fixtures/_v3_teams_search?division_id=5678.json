@@ -1,0 +1,159 @@
+{
+  "collection": {
+    "version": "3.329.3",
+    "href": "https://api.teamsnap.com/v3/teams",
+    "rel": "teams",
+    "items": [
+      {
+        "href": "https://api.teamsnap.com/v3/teams/72084",
+        "data": [
+          {
+            "name": "id",
+            "value": 72084
+          },
+          {
+            "name": "type",
+            "value": "team"
+          },
+          {
+            "name": "active_season_team_id",
+            "value": null
+          },
+          {
+            "name": "is_archived_season",
+            "value": false
+          },
+          {
+            "name": "is_retired",
+            "value": false
+          },
+          {
+            "name": "is_in_league",
+            "value": true
+          },
+          {
+            "name": "name",
+            "value": "2016 Central Marin U13 / '04 Girls Red"
+          },
+          {
+            "name": "updated_at",
+            "value": "2016-09-17T20:59:35Z",
+            "type": "DateTime"
+          },
+          {
+            "name": "created_at",
+            "value": "2012-03-31T23:41:06Z",
+            "type": "DateTime"
+          },
+          {
+            "name": "last_accessed_at",
+            "value": "2016-09-17T16:03:14Z",
+            "type": "DateTime"
+          }
+        ],
+        "links": [
+          {
+            "rel": "events",
+            "href": "https://api.teamsnap.com/v3/events/search?team_id=72084"
+          },
+          {
+            "rel": "locations",
+            "href": "https://api.teamsnap.com/v3/locations/search?team_id=72084"
+          },
+          {
+            "rel": "managers",
+            "href": "https://api.teamsnap.com/v3/members/managers?team_id=72084"
+          },
+          {
+            "rel": "member_email_addresses",
+            "href": "https://api.teamsnap.com/v3/member_email_addresses/search?team_id=72084"
+          },
+          {
+            "rel": "members",
+            "href": "https://api.teamsnap.com/v3/members/search?team_id=72084"
+          },
+          {
+            "rel": "team_preferences",
+            "href": "https://api.teamsnap.com/v3/teams_preferences/72084"
+          }
+        ],
+        "rel": "team-72084"
+      },
+      {
+        "href": "https://api.teamsnap.com/v3/teams/390895",
+        "data": [
+          {
+            "name": "id",
+            "value": 390895
+          },
+          {
+            "name": "type",
+            "value": "team"
+          },
+          {
+            "name": "active_season_team_id",
+            "value": null
+          },
+          {
+            "name": "is_archived_season",
+            "value": false
+          },
+          {
+            "name": "is_retired",
+            "value": false
+          },
+          {
+            "name": "is_in_league",
+            "value": true
+          },
+          {
+            "name": "name",
+            "value": "2016 CENTRAL MARIN BLUE MAGIC 2004"
+          },
+          {
+            "name": "updated_at",
+            "value": "2016-09-17T20:57:08Z",
+            "type": "DateTime"
+          },
+          {
+            "name": "created_at",
+            "value": "2014-02-28T19:35:09Z",
+            "type": "DateTime"
+          },
+          {
+            "name": "last_accessed_at",
+            "value": "2016-09-17T20:57:08Z",
+            "type": "DateTime"
+          }
+        ],
+        "links": [
+          {
+            "rel": "events",
+            "href": "https://api.teamsnap.com/v3/events/search?team_id=390895"
+          },
+          {
+            "rel": "locations",
+            "href": "https://api.teamsnap.com/v3/locations/search?team_id=390895"
+          },
+          {
+            "rel": "managers",
+            "href": "https://api.teamsnap.com/v3/members/managers?team_id=390895"
+          },
+          {
+            "rel": "member_email_addresses",
+            "href": "https://api.teamsnap.com/v3/member_email_addresses/search?team_id=390895"
+          },
+          {
+            "rel": "members",
+            "href": "https://api.teamsnap.com/v3/members/search?team_id=390895"
+          },
+          {
+            "rel": "team_preferences",
+            "href": "https://api.teamsnap.com/v3/teams_preferences/390895"
+          }
+        ],
+        "rel": "team-390895"
+      }
+    ]
+  }
+}

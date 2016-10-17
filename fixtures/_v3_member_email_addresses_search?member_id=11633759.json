@@ -1,0 +1,184 @@
+{
+  "collection": {
+    "version": "3.329.3",
+    "href": "https://api.teamsnap.com/v3/member_email_addresses",
+    "rel": "member_email_addresses",
+    "template": {
+      "data": [
+        {
+          "name": "member_id",
+          "value": null
+        },
+        {
+          "name": "label",
+          "value": null
+        },
+        {
+          "name": "email",
+          "value": null
+        },
+        {
+          "name": "receives_team_emails",
+          "value": null
+        },
+        {
+          "name": "is_hidden",
+          "value": null
+        },
+        {
+          "name": "type",
+          "value": "member_email_address"
+        }
+      ]
+    },
+    "links": [
+      {
+        "rel": "member",
+        "href": "https://api.teamsnap.com/v3/members"
+      },
+      {
+        "rel": "team",
+        "href": "https://api.teamsnap.com/v3/teams"
+      },
+      {
+        "rel": "root",
+        "href": "https://api.teamsnap.com/v3/"
+      },
+      {
+        "rel": "self",
+        "href": "https://api.teamsnap.com/v3/member_email_addresses/search?member_id=11633759"
+      }
+    ],
+    "queries": [
+      {
+        "rel": "search",
+        "href": "https://api.teamsnap.com/v3/member_email_addresses/search",
+        "data": [
+          {
+            "name": "team_id",
+            "value": null
+          },
+          {
+            "name": "member_id",
+            "value": null
+          },
+          {
+            "name": "id",
+            "value": null
+          },
+          {
+            "name": "page_size",
+            "value": null,
+            "prompt": "The number of items to return for each page. Sending this parameter with the query will enable paging for the returned collection."
+          },
+          {
+            "name": "page_number",
+            "value": null,
+            "prompt": "The number of the page to be returned. This requires that paging be turned on by also providing the page_size parameter."
+          }
+        ]
+      }
+    ],
+    "commands": [
+      {
+        "rel": "invite",
+        "href": "https://api.teamsnap.com/v3/member_email_addresses/invite",
+        "prompt": "BETA: Invite member email addresses to join TeamSnap.",
+        "data": [
+          {
+            "name": "team_id",
+            "value": null
+          },
+          {
+            "name": "member_id",
+            "value": null
+          },
+          {
+            "name": "member_email_address_ids",
+            "value": null
+          },
+          {
+            "name": "introduction",
+            "value": null
+          },
+          {
+            "name": "notify_as_member_id",
+            "value": null
+          }
+        ]
+      }
+    ],
+    "items": [
+      {
+        "href": "https://api.teamsnap.com/v3/member_email_addresses/15083075",
+        "data": [
+          {
+            "name": "id",
+            "value": 15083075
+          },
+          {
+            "name": "type",
+            "value": "member_email_address"
+          },
+          {
+            "name": "email",
+            "value": "intasummers@gmail.com"
+          },
+          {
+            "name": "is_hidden",
+            "value": false
+          },
+          {
+            "name": "is_invited",
+            "value": false
+          },
+          {
+            "name": "invitation_code",
+            "value": null
+          },
+          {
+            "name": "invitation_state",
+            "value": "not_invitable"
+          },
+          {
+            "name": "label",
+            "value": ""
+          },
+          {
+            "name": "member_id",
+            "value": 11633759
+          },
+          {
+            "name": "team_id",
+            "value": 390895
+          },
+          {
+            "name": "receives_team_emails",
+            "value": true
+          },
+          {
+            "name": "created_at",
+            "value": "2015-03-04T21:47:57Z",
+            "type": "DateTime"
+          },
+          {
+            "name": "updated_at",
+            "value": "2015-03-04T21:47:57Z",
+            "type": "DateTime"
+          }
+        ],
+        "links": [
+          {
+            "rel": "member",
+            "href": "https://api.teamsnap.com/v3/members/11633759"
+          },
+          {
+            "rel": "team",
+            "href": "https://api.teamsnap.com/v3/teams/390895"
+          }
+        ],
+        "rel": "member_email_address-15083075"
+      }
+    ]
+  }
+}

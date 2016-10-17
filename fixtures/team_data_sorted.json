@@ -1,0 +1,7 @@
+[
+  {"id": "1235", "gender": "boys", "year": 2001, "name": "01 Boys Blue"},
+  {"id": "1234", "gender": "boys", "year": 2001, "name": "01 Boys Red"},
+  {"id": "1298", "gender": "girls", "year": 2002, "name": "02 Girls Blue"},
+  {"id": "1298", "gender": "girls", "year": 2002, "name": "02 Girls Red"},
+  {"id": "1298", "gender": "girls", "year": 1999, "name": "99 Girls Blue"}
+]
