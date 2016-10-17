@@ -3,6 +3,7 @@ team
 *.json
 tscurl.sh
 dump/
+.wercker/
 
 # Compiled Object files, Static and Dynamic libs (Shared Objects)
 *.o
