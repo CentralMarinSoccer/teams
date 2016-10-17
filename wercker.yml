@@ -1,23 +1,32 @@
-box: golang
+box: 
+  id: golang
+  ports:
+    - "8080"
+
 
 dev:
   steps:
     - internal/watch:
       code: |
+        go get ./...
         go build ./...
         ./teams
       reload: true
 
 build:
   steps:
-    - setup-go-workspace
-    - wercker/golint
+    - wercker/setup-go-workspace:
+      package-dir: github.com/centralmarinsoccer/teams
 
     # Gets the dependencies
     - script:
         name: go get
         code: |
-          go get
+          cd $WERCKER_SOURCE_DIR
+          go version
+          go get -t ./...
+
+    - wercker/golint
 
     # Build the project
     - script:
