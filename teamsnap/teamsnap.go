@@ -105,7 +105,6 @@ func New(configuration *Configuration) (*TeamSnap, error) {
 	if err := cache.Load(defaultFilename, &ts.clubData); err == nil {
 		dataLoaded = true
 	}
-	log.Printf("Data: %v\n", ts.clubData)
 
 	if !dataLoaded {
 		log.Printf("TeamSnap cache '%s' does not exist or failed to load. Building initial version\n", defaultFilename)
