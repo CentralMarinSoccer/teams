@@ -14,16 +14,16 @@ const dataCacheFolder = "data-cache"
 func Load(filename string, structure interface{}) error {
 
 	os.MkdirAll(dataCacheFolder, os.ModePerm)
-	newpath := filepath.Join(dataCacheFolder, filename)
+	newPath := filepath.Join(dataCacheFolder, filename)
 
-	if _, err := os.Stat(newpath); err != nil {
+	if _, err := os.Stat(newPath); err != nil {
 		log.Printf("Cache file '%s' doesn't exist.\n", filename)
 		return err
 	}
 
 	var data []byte
 	var err error
-	if data, err = ioutil.ReadFile(newpath); err != nil {
+	if data, err = ioutil.ReadFile(newPath); err != nil {
 		log.Printf("Failed to loading data from cache file '%s'.\n", filename)
 		return err
 	}
@@ -46,8 +46,8 @@ func Save(filename string, structure interface{}) error {
 		return err
 	}
 
-	newpath := filepath.Join(dataCacheFolder, filename)
-	if err := ioutil.WriteFile(newpath, resultJSON, os.ModePerm); err != nil {
+	newPath := filepath.Join(dataCacheFolder, filename)
+	if err := ioutil.WriteFile(newPath, resultJSON, os.ModePerm); err != nil {
 		log.Printf("Warning: Unable to save cache data to file '%s'. Error: %v\n", filename, err)
 		return err
 	}

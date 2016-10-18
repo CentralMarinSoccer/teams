@@ -76,7 +76,7 @@ func New(key string) (Geocoder) {
 		cache: make(map[string] Address),
 	}
 
-	cache.Load(defaultFilename, geocoder.cache)
+	cache.Load(defaultFilename, &geocoder.cache)
 
 	return geocoder
 }
