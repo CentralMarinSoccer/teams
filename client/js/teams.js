@@ -73,7 +73,7 @@ var Teams = (function() {
                         // Add the count to the marker icon
                         var len = marker.games.length;
                         if (len > 1) {
-                            marker.setIcon('http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=' + len + '|FE7569');
+                            marker.setIcon('https://chart.googleapis.com/chart?chst=d_map_pin_letter&chld=' + len + '|FE7569');
                         }
                         markers.push(marker);
                     }
@@ -179,6 +179,23 @@ var Teams = (function() {
         return team.year + " " + team.gender + " " + team.level;
     };
 
+    // Create the XHR object.
+    function createCORSRequest(method, url) {
+      var xhr = new XMLHttpRequest();
+      if ("withCredentials" in xhr) {
+        // XHR for Chrome/Firefox/Opera/Safari.
+        xhr.open(method, url, true);
+      } else if (typeof XDomainRequest != "undefined") {
+        // XDomainRequest for IE.
+        xhr = new XDomainRequest();
+        xhr.open(method, url);
+      } else {
+        // CORS not supported.
+        xhr = null;
+      }
+      return xhr;
+    }
+
     var initMap = function() {
 
         _infoWindow = new google.maps.InfoWindow();
@@ -196,26 +213,25 @@ var Teams = (function() {
 
     var getTeamsJSON = function (successHandler, errorHandler) {
 
-        var xhr = new XMLHttpRequest();
         var data;
         var status;
+        var xhr = createCORSRequest('GET', 'https://api.centralmarinsoccer.com/teams/');
+        if (!xhr) {
+            alert('CORS not supported');
+            return;
+        }
 
-        xhr.open('Get', 'http://api.centralmarinsoccer.com/teams/');
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4) {
-                status = xhr.status;
-                if (status == 200) {
-                    data = JSON.parse(xhr.responseText);
-                    successHandler && successHandler(data);
-                } else {
-                    errorHandler && errorHandler(status);
-                }
-            }
+        xhr.onload = function() {
+            data = JSON.parse(xhr.responseText);
+            successHandler && successHandler(data); 
+        };
+
+        xhr.onerror = function() {
+          errorHandler && errorHandler(xhr.status);
         };
 
         xhr.send();
     };
-
     var processData = function (data) {
 
         var dates = {};
@@ -267,20 +283,20 @@ var Teams = (function() {
         updateMap(availableDates[0]);
 
         // Sort and Display teams
+/*
         teams.sort(function(team1, team2) {
             if (team1.gender > team2.gender) return 1;
-            else if (team1.gender < team2.gender) return -1;
-            else {
-                if (team1.year > team2.year) return 1;
-                else if (team1.year < team2.year) return -1;
-                else {
-                    if (team1.level > team2.level) return 1;
-                    else if (team1.level < team2.level) return -1;
-                }
-            }
+            if (team1.gender < team2.gender) return -1;
+
+            if (team1.year > team2.year) return 1;
+            if (team1.year < team2.year) return -1;
+
+            if (team1.level > team2.level) return 1;
+            if (team1.level < team2.level) return -1;
 
             return 0;
         });
+*/
     };
 
     // TODO: use a templating engine (https://github.com/olado/doT)
@@ -298,7 +314,7 @@ var Teams = (function() {
     var updateMap = function (dateObj) {
 
         if (markerCluster == undefined) {
-            markerCluster = new MarkerClusterer(_map, null, {imagePath: 'team/client/images/m'});
+            markerCluster = new MarkerClusterer(_map, null, {imagePath: 'https://api.centralmarinsoccer.com/images/m'});
         }
         // Clear existing markers
         activeMarkers.forEach(function(marker) {
