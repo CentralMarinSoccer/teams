@@ -113,7 +113,7 @@ func (g Geocoder) Lookup(address string) (*Address) {
 	}
 
 	if response.Status != "OK" {
-		log.Printf("Geocoder service error: %s\n", response.Status)
+		log.Printf("Geocoder service error: %s for address: %s\n", response.Status, address)
 		return nil
 	}
 
