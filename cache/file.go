@@ -5,18 +5,25 @@ import (
 	"os"
 	"log"
 	"io/ioutil"
+	"path/filepath"
 )
+
+const dataCacheFolder = "data-cache"
 
 // Load loads the cache file from disk using specified filename
 func Load(filename string, structure interface{}) error {
-	if _, err := os.Stat(filename); err != nil {
+
+	os.MkdirAll(dataCacheFolder, os.ModePerm)
+	newpath := filepath.Join(dataCacheFolder, filename)
+
+	if _, err := os.Stat(newpath); err != nil {
 		log.Printf("Cache file '%s' doesn't exist.\n", filename)
 		return err
 	}
 
 	var data []byte
 	var err error
-	if data, err = ioutil.ReadFile(filename); err != nil {
+	if data, err = ioutil.ReadFile(newpath); err != nil {
 		log.Printf("Failed to loading data from cache file '%s'.\n", filename)
 		return err
 	}
@@ -39,7 +46,8 @@ func Save(filename string, structure interface{}) error {
 		return err
 	}
 
-	if err := ioutil.WriteFile(filename, resultJSON, 0644); err != nil {
+	newpath := filepath.Join(dataCacheFolder, filename)
+	if err := ioutil.WriteFile(newpath, resultJSON, os.ModePerm); err != nil {
 		log.Printf("Warning: Unable to save cache data to file '%s'. Error: %v\n", filename, err)
 		return err
 	}
