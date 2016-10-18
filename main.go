@@ -65,18 +65,19 @@ func main() {
 	mux.Handle(urlPath, h)
 	mux.Handle("/metrics", prometheus.Handler()) // Add Metrics Handler
 
-	log.Printf("Starting up server at %s%s\n", env.URL, urlPath)
+	log.Printf("Starting up server at %s%s with data refresh interval of %d for TeamSnap division %d\n", env.URL, urlPath, env.RefreshInterval, env.Division)
 
 	ticker := time.NewTicker(env.RefreshInterval * time.Minute)
 	go func() {
 		for {
 			select {
 			case <- ticker.C:
+				log.Println("Updating data")
 				if ok := ts.Update(); ok {
 					update <- true
-					log.Printf("Updated TeamSnap Data")
+					log.Println("Complete")
 				} else {
-					log.Printf("Failed to update TeamSnap Data")
+					log.Println("Failed to update data")
 				}
 			}
 		}
