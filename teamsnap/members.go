@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"strconv"
 	"strings"
+	"log"
 )
 
 func (ts TeamSnap) members(links relHrefDatas) ([]TeamMember, int) {
@@ -31,8 +32,10 @@ func teamYear(birthday string, year *int) {
 		y, _ = strconv.Atoi(birthday[:4])
 	}
 
-	if y > *year {
+	log.Printf("Birthday: %v, Year: %d, Current Year: %d\n", birthday, y, *year)
+	if y > 1990 && (y < *year || *year == 0) {
 		*year = y
+		log.Println("NEW YEAR Selected")
 	}
 }
 
