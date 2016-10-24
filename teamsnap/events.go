@@ -25,6 +25,8 @@ func (ts TeamSnap) events(links relHrefDatas) []TeamEvent {
 	return events
 }
 
+// Show games that started two hours before now
+const pastGameTime = -2
 func (ts TeamSnap) event(e relHrefData, locs map[string]TeamEventLocation) (TeamEvent, bool) {
 
 	if results, ok := e.Data.findValues("is_game", "name", "arrival_date", "duration_in_minutes", "division_location_id", "location_id", "minutes_to_arrive_early"); ok {
@@ -48,7 +50,7 @@ func (ts TeamSnap) event(e relHrefData, locs map[string]TeamEventLocation) (Team
 
 		// Only add events if they're for today or the future
 		diff := start.Sub(time.Now())
-		if diff.Hours() > -16 {
+		if diff.Hours() > pastGameTime {
 
 			var event =  TeamEvent{
 				Start:    start,
