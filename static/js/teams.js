@@ -174,7 +174,7 @@ var Teams = (function() {
     var _teams  = []
 
     var teamsFn = doT.template("<table><tr><td><ul>{{~it :value:index}} <li data-index='{{=index}}'>{{=value.year}} {{=value.gender}} {{=value.level}} - {{=value.name}}</li> {{~}}</ul></td><td valign='top'><div id='team'/></td></tr></table>");
-    var teamFn = doT.template("<ul>{{~it :value:index}} <li data-index='{{=index}}'>{{=value.name}} {{=value.type}}</li> {{~}}");
+    var teamFn = doT.template("{{?it.image_url}}<img src='{{=it.image_url}}' width='300'/>{{?}}<ul>{{~it.members :value:index}} <li data-index='{{=index}}'>{{=value.name}} {{=value.type}}</li> {{~}}");
 
     var teamName = function(team) {
         return team.year + " " + team.gender + " " + team.level;
@@ -319,7 +319,7 @@ var Teams = (function() {
               return 0;
           });
 
-          _teamId.innerHTML = teamFn(team.members);
+          _teamId.innerHTML = teamFn(team);
         });
     };
 
