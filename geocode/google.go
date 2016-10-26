@@ -4,9 +4,9 @@ import (
 	"net/http"
 	"net/url"
 	"strings"
-	"log"
 	"encoding/json"
 	"github.com/centralmarinsoccer/teams/cache"
+	log "github.com/Sirupsen/logrus"
 )
 
 // Geocoder holds the Google key and a cache of address string to geocoded information
@@ -101,19 +101,19 @@ func (g Geocoder) Lookup(address string) (*Address) {
 
 	resp, err := http.Get("https://maps.googleapis.com/maps/api/geocode/json?sensor=false&key=" + g.googleAPIKey + "&address=" + url.QueryEscape(strings.TrimSpace(address)))
 	if err != nil {
-		log.Println("Unable to contact Google. Error: " + err.Error())
+		log.WithFields(log.Fields{"package":"geocode"}).Warnf("Unable to contact Google. Error: " + err.Error())
 		return nil
 	}
 	defer resp.Body.Close()
 
 	var response = new(Response)
 	if err = json.NewDecoder(resp.Body).Decode(response); err != nil {
-		log.Println("Unable to parse Google API response. Error: " + err.Error())
+		log.WithFields(log.Fields{"package":"geocode"}).Warnf("Unable to parse Google API response. Error: " + err.Error())
 		return nil
 	}
 
 	if response.Status != "OK" {
-		log.Printf("Geocoder service error: %s for address: %s\n", response.Status, address)
+		log.WithFields(log.Fields{"package":"geocode"}).Warnf("Geocoder service error: %s for address: %s", response.Status, address)
 		return nil
 	}
 

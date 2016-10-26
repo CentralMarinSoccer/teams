@@ -2,7 +2,7 @@ package teamsnap
 
 import (
 	"encoding/json"
-	"log"
+	log "github.com/Sirupsen/logrus"
 	"strconv"
 )
 
@@ -37,7 +37,7 @@ func (links relHrefDatas) findRelLink(rel string) (string, bool) {
 		}
 	}
 
-	log.Printf("Unable to find Rel link '%s'", rel)
+	log.WithFields(log.Fields{"package":"teamsnap"}).Warnf("Unable to find Rel link '%s'", rel)
 	return "", false
 }
 
@@ -81,7 +81,7 @@ func (nvps nameValuePrompts) findValues(names ...string) (nameValueResults, bool
 					case int:
 						results[name] = strconv.FormatInt(int64(nvp.Value.(int)), 10)
 					default:
-						log.Printf("Unknown value: %v for name: %s\n", nvp.Value, name)
+						log.WithFields(log.Fields{"package":"teamsnap"}).Warnf("Unknown value: %v for name: %s", nvp.Value, name)
 					}
 				} else {
 					results[name] = ""

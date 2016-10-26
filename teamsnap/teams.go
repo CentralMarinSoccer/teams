@@ -2,6 +2,7 @@ package teamsnap
 
 import (
 	"fmt"
+	log "github.com/Sirupsen/logrus"
 )
 
 func (ts TeamSnap) teams() (Teams, bool) {
@@ -41,6 +42,9 @@ func (ts TeamSnap) team(team relHrefData) (Team, bool) {
 		if results["is_archived_season"] == "true" || results["is_retired"] == "true" {
 			return t, false
 		}
+
+		log.WithFields(log.Fields{"package":"teamsnap"}).Infof("Processing Team: %s", results["name"])
+
 		t.Name = results["name"]
 		t.Level = results["division_name"]
 		t.ID = generateHash(string(division), results["id"])

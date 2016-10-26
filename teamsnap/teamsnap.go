@@ -2,7 +2,7 @@ package teamsnap
 
 import (
 	"errors"
-	"log"
+	log "github.com/Sirupsen/logrus"
 	"github.com/centralmarinsoccer/teams/filesystem"
 	"time"
 	"github.com/centralmarinsoccer/teams/geocode"
@@ -107,7 +107,7 @@ func New(configuration *Configuration) (*TeamSnap, error) {
 	}
 
 	if !dataLoaded {
-		log.Printf("TeamSnap cache '%s' does not exist or failed to load. Building initial version\n", defaultFilename)
+		log.WithFields(log.Fields{"package":"teamsnap"}).Warnf("TeamSnap cache '%s' does not exist or failed to load. Building initial version", defaultFilename)
 		dataLoaded = ts.loadTeamSnapData()
 	}
 
@@ -124,7 +124,7 @@ func (ts *TeamSnap) loadTeamSnapData() bool {
 	// Load data from TeamSnap web API
 	teams, ok := ts.teams()
 	if !ok {
-		log.Println("Unable to retrieve data from TeamSnap. Check previous errors")
+		log.WithFields(log.Fields{"package":"teamsnap"}).Warnf("Unable to retrieve data from TeamSnap. Check previous errors")
 		return false
 	}
 

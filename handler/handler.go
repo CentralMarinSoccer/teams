@@ -3,11 +3,11 @@ package handler
 import (
 	"encoding/json"
 	"net/http"
-	"github.com/centralmarinsoccer/teams/teamsnap"
 	"sort"
 	"strings"
-	"log"
 	"sync"
+	log "github.com/Sirupsen/logrus"
+	"github.com/centralmarinsoccer/teams/teamsnap"
 )
 
 const defaultPath = "/teams/"
@@ -40,7 +40,7 @@ func New(clubData teamsnap.ClubDataInterface, updateData chan bool) (http.Handle
 		for {
 			<-team.updateData
 			team.optimizeFormats()
-			log.Println("Updated Club Data")
+			log.WithFields(log.Fields{"package":"handler"}).Info("Updated Club Data")
 		}
 	}()
 

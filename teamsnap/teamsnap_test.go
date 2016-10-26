@@ -24,7 +24,7 @@ func fixtureJson(urlPath string) ([]byte, int) {
 	fullpath := fmt.Sprintf("../fixtures/%s.json", filename)
 	fileJson, err := ioutil.ReadFile(fullpath)
 	if err != nil {
-		log.Printf("Failed to read file: %s. Error: %v\n", fullpath, err)
+		log.Printf("Failed to read file: %s. Error: %v", fullpath, err)
 		return nil, http.StatusNotFound
 	}
 

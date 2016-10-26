@@ -3,6 +3,8 @@ package teamsnap
 import (
 	"time"
 	"fmt"
+	log "github.com/Sirupsen/logrus"
+
 )
 
 func (ts TeamSnap) events(links relHrefDatas) []TeamEvent {
@@ -67,6 +69,9 @@ func (ts TeamSnap) event(e relHrefData, locs map[string]TeamEventLocation) (Team
 				event.Location.Address = address.FormattedAddress
 				event.Location.Latitude = address.Lat
 				event.Location.Longitude = address.Lng
+			} else {
+				log.WithFields(log.Fields{"package":"teamsnap"}).Warnf("Unable to geocode address: %s for %s", loc.Address, loc.Name)
+
 			}
 
 			return event, true

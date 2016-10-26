@@ -2,17 +2,18 @@ package main
 
 import (
 	"fmt"
-	"log"
 	"os"
 	"strconv"
 	"net/http"
 	"time"
+	"flag"
 
 	"github.com/centralmarinsoccer/teams/geocode"
 	"github.com/centralmarinsoccer/teams/handler"
 	"github.com/centralmarinsoccer/teams/teamsnap"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/gorilla/mux"
+	log "github.com/Sirupsen/logrus"
 )
 
 const defaultPort = 8080
@@ -28,12 +29,22 @@ type Environment struct {
 	GoogleAPIKey	string
 }
 
+func init() {
+	loglevel := flag.Int("loglevel", 1, "Valid levels are: 1 Info, 2 Debug")
+	flag.Parse()
+
+	if *loglevel == 2 {
+		log.Println("Setting Debug logging level")
+		log.SetLevel(log.DebugLevel)
+	}
+}
+
 func main() {
 	// Make sure we have the appropriate environment variables
 	var env Environment
 	var ok bool
 	if env, ok = ValidateEnvs(); !ok {
-		os.Exit(-2)
+		log.Errorln("Missing required environment variables")
 	}
 
 	// Create a geocoder
@@ -45,8 +56,7 @@ func main() {
 		Geocoder:  geocoder,
 	})
 	if err != nil {
-		log.Printf("Failed to create a new TeamSnap. Error: %v\n", err)
-		os.Exit(-1)
+		log.Errorf("Failed to create a new TeamSnap. Error: %v", err)
 	}
 
 	// create a channel to update TeamSnap data
@@ -55,8 +65,7 @@ func main() {
 	// Setup our HTTP Server
 	h, err := handler.New(ts, update)
 	if err != nil {
-		log.Printf("Handlers error: %v\n", err)
-		os.Exit(-2)
+		log.Errorf("Handlers error: %v", err)
 	}
 
 	r := mux.NewRouter()
@@ -71,18 +80,18 @@ func main() {
 		for {
 			select {
 			case <- ticker.C:
-				log.Println("Updating team data")
+				log.Infoln("Updating team data")
 				if ok := ts.Update(); ok {
 					update <- true
-					log.Println("Complete")
+					log.Infoln("Complete")
 				} else {
-					log.Println("Failed to update data")
+					log.Warnln("Failed to update data")
 				}
 			}
 		}
 	}()
 
-	log.Printf("Starting up server at %s%s with data refresh interval of %d for TeamSnap division %d\n", env.URL, urlPath, env.RefreshInterval, env.Division)
+	log.Infof("Starting up server at %s%s with data refresh interval of %d for TeamSnap division %d", env.URL, urlPath, env.RefreshInterval, env.Division)
 	srv := &http.Server{
 		Handler:      r,
 		Addr:         env.URL,
@@ -141,7 +150,7 @@ func getEnvString(name string, defaultVal string, required bool) (string, bool) 
 	val := os.Getenv(name)
 	if val == "" {
 		if required {
-			log.Printf("Missing required environment variable '%s'\n", name)
+			log.Warnf("Missing required environment variable '%s'", name)
 			return "", false
 		}
 		return defaultVal, true
@@ -159,7 +168,7 @@ func getEnvInt(name string, defaultVal int, required bool) (int, bool) {
 
 		i, err := strconv.Atoi(val)
 		if err != nil {
-			log.Printf("%s's value %s is not an integer.\n", name, val)
+			log.Warnf("%s's value %s is not an integer.", name, val)
 			return -1, false
 		}
 		return i, true
