@@ -328,7 +328,7 @@ var Teams = (function() {
     var updateMap = function (dateObj) {
 
         if (markerCluster == undefined) {
-            markerCluster = new MarkerClusterer(_map, null, {imagePath: 'https://api.centralmarinsoccer.com/images/m'});
+            markerCluster = new MarkerClusterer(_map, null, {imagePath: 'https://api.centralmarinsoccer.com/teams/static/images/m'});
         }
         // Clear existing markers
         activeMarkers.forEach(function(marker) {
