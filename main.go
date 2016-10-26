@@ -64,6 +64,7 @@ func main() {
 
 	r := mux.NewRouter()
 	r.HandleFunc("/teams/", h)
+	r.HandleFunc("/teams/{ID}", h)
 	r.Handle("/metrics", prometheus.Handler()) // Add Metrics Handler
 
 	log.Printf("Starting up server at %s%s with data refresh interval of %d for TeamSnap division %d\n", env.URL, urlPath, env.RefreshInterval, env.Division)
