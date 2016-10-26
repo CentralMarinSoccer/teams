@@ -59,22 +59,19 @@ func main() {
 		os.Exit(-2)
 	}
 
-	//mux.Handle(urlPath, h)
-	//mux.Handle("/metrics", prometheus.Handler()) // Add Metrics Handler
-
 	r := mux.NewRouter()
 	r.HandleFunc("/teams/", h)
 	r.HandleFunc("/teams/{ID}", h)
 	r.Handle("/metrics", prometheus.Handler()) // Add Metrics Handler
+	r.PathPrefix("/teams/static/").Handler(http.StripPrefix("/teams/static/", http.FileServer(http.Dir("static"))))
 
-	log.Printf("Starting up server at %s%s with data refresh interval of %d for TeamSnap division %d\n", env.URL, urlPath, env.RefreshInterval, env.Division)
-
+	// Setup timer to refresh TeamSnap data
 	ticker := time.NewTicker(env.RefreshInterval * time.Minute)
 	go func() {
 		for {
 			select {
 			case <- ticker.C:
-				log.Println("Updating data")
+				log.Println("Updating team data")
 				if ok := ts.Update(); ok {
 					update <- true
 					log.Println("Complete")
@@ -85,9 +82,16 @@ func main() {
 		}
 	}()
 
-//	http.ListenAndServe(env.URL, mux)
-	http.ListenAndServe(env.URL, r)
+	log.Printf("Starting up server at %s%s with data refresh interval of %d for TeamSnap division %d\n", env.URL, urlPath, env.RefreshInterval, env.Division)
+	srv := &http.Server{
+		Handler:      r,
+		Addr:         env.URL,
+		// Good practice: enforce timeouts for servers you create!
+		WriteTimeout: 5 * time.Second,
+		ReadTimeout:  5 * time.Second,
+	}
 
+	log.Fatal(srv.ListenAndServe())
 }
 
 // ValidateEnvs checks to make sure the necessary environment variables are set
