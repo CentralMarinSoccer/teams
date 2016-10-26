@@ -1,8 +1,6 @@
 
 // TODO: Handle service down
 // TODO: Need to handle no dates (no scheduled events)
-// TODO: Move to SSL for API call
-// TODO: Move to DOM elements already existing in page (loadMap) and hookup callback from page
 
 ////////////////////////////////////////////
 //
@@ -175,6 +173,9 @@ var Teams = (function() {
     var _locations = Locations; // All locations
     var _teams  = []
 
+    var teamsFn = doT.template("<table><tr><td><ul>{{~it :value:index}} <li data-index='{{=index}}'>{{=value.year}} {{=value.gender}} {{=value.level}} - {{=value.name}}</li> {{~}}</ul></td><td valign='top'><div id='team'/></td></tr></table>");
+    var teamFn = doT.template("<ul>{{~it :value:index}} <li data-index='{{=index}}'>{{=value.name}} {{=value.type}}</li> {{~}}");
+
     var teamName = function(team) {
         return team.year + " " + team.gender + " " + team.level;
     };
@@ -283,8 +284,7 @@ var Teams = (function() {
         updateMap(availableDates[0]);
 
         // Sort and Display teams
-/*
-        teams.sort(function(team1, team2) {
+        _teams.sort(function(team1, team2) {
             if (team1.gender > team2.gender) return 1;
             if (team1.gender < team2.gender) return -1;
 
@@ -296,17 +296,31 @@ var Teams = (function() {
 
             return 0;
         });
-*/
+        displayTeams();
     };
 
-    // TODO: use a templating engine (https://github.com/olado/doT)
     var displayTeams = function() {
         var teams = document.getElementById("teams");
-        var html = "";
-        _teams.forEach(function(team) {
+        teams.innerHTML = teamsFn(_teams);
+	var _teamId = document.getElementById("team");
 
+        teams.addEventListener('click', function (event) {
+          var index = event.target.getAttribute('data-index');
+          var team = _teams[index];
+
+          team.members.sort(function(member1, member2) {
+              // sort on type first
+              if (member1.type > member2.type) return 1;
+              if (member1.type < member2.type) return -1;
+
+              if (member1.name > member2.name) return 1;
+              if (member1.name < member2.name) return -1;
+
+              return 0;
+          });
+
+          _teamId.innerHTML = teamFn(team.members);
         });
-        teams.innerHTML(html);
     };
 
     var activeMarkers = [];
