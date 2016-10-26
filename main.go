@@ -5,15 +5,14 @@ import (
 	"log"
 	"os"
 	"strconv"
-
-	"github.com/prometheus/client_golang/prometheus"
-
-	"github.com/centralmarinsoccer/teams/handler"
-	"github.com/centralmarinsoccer/teams/teamsnap"
-
 	"net/http"
 	"time"
+
 	"github.com/centralmarinsoccer/teams/geocode"
+	"github.com/centralmarinsoccer/teams/handler"
+	"github.com/centralmarinsoccer/teams/teamsnap"
+	"github.com/prometheus/client_golang/prometheus"
+	"github.com/gorilla/mux"
 )
 
 const defaultPort = 8080
@@ -54,16 +53,18 @@ func main() {
 	update := make(chan bool)
 
 	// Setup our HTTP Server
-	mux := http.NewServeMux()
 	h, err := handler.New(ts, update)
-
 	if err != nil {
 		log.Printf("Handlers error: %v\n", err)
 		os.Exit(-2)
 	}
 
-	mux.Handle(urlPath, h)
-	mux.Handle("/metrics", prometheus.Handler()) // Add Metrics Handler
+	//mux.Handle(urlPath, h)
+	//mux.Handle("/metrics", prometheus.Handler()) // Add Metrics Handler
+
+	r := mux.NewRouter()
+	r.HandleFunc("/teams/", h)
+	r.Handle("/metrics", prometheus.Handler()) // Add Metrics Handler
 
 	log.Printf("Starting up server at %s%s with data refresh interval of %d for TeamSnap division %d\n", env.URL, urlPath, env.RefreshInterval, env.Division)
 
@@ -83,7 +84,8 @@ func main() {
 		}
 	}()
 
-	http.ListenAndServe(env.URL, mux)
+//	http.ListenAndServe(env.URL, mux)
+	http.ListenAndServe(env.URL, r)
 
 }
 
