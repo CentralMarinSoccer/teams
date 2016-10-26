@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>Hello</title>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <select id="map-date-picker"></select>
+    <div id="map"></div>
+    <div id="teams"></div>
+</div>
+
+<script type="text/javascript" src="/teams/static/js/doT.min.js"></script>
+<script type="text/javascript" src="/teams/static/js/teams.js"></script>
+<script type="text/javascript" src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDX_StXtOoH-lt4qm0neF16QX_7x7GyWIg&v=3.exp&callback=Teams.initMap'></script>
+<script type="text/javascript" src="/teams/static/js/markerclusterer.js"></script>
+</body>
+</html>
