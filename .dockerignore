@@ -1,2 +1,7 @@
-.git
+.wercker
 .gitignore
+.git
+.env
+.dockerignore
+**/*.json
+**/*.go
