@@ -1,8 +1,6 @@
-FROM golang
-Add . /go/src/github.com/centralmarinsoccer/teams
-WORKDIR /go/src/github.com/centralmarinsoccer/teams
-RUN go get ./...
-VOLUME ["/go/src/github.com/centralmarinsoccer/teams/data-cache"]
-
-ENTRYPOINT /go/bin/teams
+FROM scratch
+ADD ca-certificates.crt /etc/ssl/certs/
+ADD teams /
+VOLUME ["/data-cache"]
 EXPOSE 8080
+CMD ["/teams"]
