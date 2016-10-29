@@ -16,6 +16,7 @@ func Load(filename string, structure interface{}) error {
 	os.MkdirAll(dataCacheFolder, os.ModePerm)
 	newPath := filepath.Join(dataCacheFolder, filename)
 
+	log.WithFields(log.Fields{"package":"cache"}).Debugf("Loading cache file: %s", newPath)
 	if _, err := os.Stat(newPath); err != nil {
 		log.WithFields(log.Fields{"package":"cache"}).Warnf("Cache file '%s' doesn't exist.", filename)
 		return err
@@ -33,6 +34,8 @@ func Load(filename string, structure interface{}) error {
 		return err
 	}
 
+	log.WithFields(log.Fields{"package":"cache"}).Debugf("Cache file data: %s", data)
+
 	return nil
 }
 
@@ -46,11 +49,15 @@ func Save(filename string, structure interface{}) error {
 		return err
 	}
 
+	log.WithFields(log.Fields{"package":"cache"}).Debugf("Data to save to cache: %s", resultJSON)
+
 	newPath := filepath.Join(dataCacheFolder, filename)
 	if err := ioutil.WriteFile(newPath, resultJSON, os.ModePerm); err != nil {
 		log.WithFields(log.Fields{"package":"cache"}).Warnf("Unable to save cache data to file '%s'. Error: %v", filename, err)
 		return err
 	}
+
+	log.WithFields(log.Fields{"package":"cache"}).Debugf("Cache file: %s", newPath)
 
 	return nil
 }

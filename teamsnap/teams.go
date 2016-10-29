@@ -14,7 +14,6 @@ type itemProcesserFunc func(results nameValueResults, ts TeamSnap, team *Team) b
 
 type itemType struct {
 	itemNames     []string
-	isLink        bool
 	itemProcessor itemProcesserFunc
 }
 
@@ -22,37 +21,30 @@ type itemType struct {
 var categories = map[string]itemType{
 	"member": {
 		[]string{"first_name", "last_name", "birthday", "is_manager", "is_non_player", "is_owner", "position"},
-		false,
 		processMember,
 	},
 	"event": {
 		[]string{"is_game", "name", "arrival_date", "duration_in_minutes", "division_location_id", "location_id", "minutes_to_arrive_early", "opponent_id"},
-		false,
 		processEvent,
 	},
 	"team_preferences": {
 		[]string{"gender"},
-		false,
 		processTeamPreferences,
 	},
 	"team_photo": {
-		[]string{"team_photo"},
-		true,
-		processTeamPhoto,
+		nil,
+		nil,
 	},
 	"opponent": {
-		[]string{"name"},
-		false,
+		[]string{"id", "name"},
 		nil,
 	},
 	"location": {
 		[]string{"id", "name", "address"},
-		false,
 		nil,
 	},
 	"division_location": {
 		[]string{"id", "name", "address"},
-		false,
 		nil,
 	},
 }
@@ -79,7 +71,10 @@ func (ts TeamSnap) teams() (Teams, bool) {
 	var teams Teams
 	for _, item := range tr.Collection.Items {
 		if t, ok := ts.team(item); ok {
+			log.Debugf("Successfully built team: %v", t)
 			teams = append(teams, t)
+		} else {
+			log.Warnf("Failed to build team: %v", item)
 		}
 	}
 
@@ -100,6 +95,7 @@ func (ts TeamSnap) team(team relHrefData) (Team, bool) {
 
 	// Determine if we should process this team
 	if results["is_archived_season"] == "true" || results["is_retired"] == "true" {
+		log.WithFields(log.Fields{"package": "teamsnap"}).Debugf("Skipping team because it's either archived: %s or retired: %s", results["is_archived_season"], results["is_retired"])
 		return t, false
 	}
 
@@ -133,8 +129,6 @@ func (ts TeamSnap) bulkLoadTeam(id string, team *Team) bool {
 	}
 	bulkURL := fmt.Sprintf("%s?team_id=%s&types=%s", href, id, url.QueryEscape(strings.Join(s, ",")))
 
-	log.WithFields(log.Fields{"package": "teamsnap"}).Debugf("Bulk load URL: %s", bulkURL)
-
 	tr, ok := ts.makeRequest(bulkURL)
 	if !ok {
 		return false
@@ -165,6 +159,8 @@ func (ts TeamSnap) bulkLoadTeam(id string, team *Team) bool {
 				ts.divisionLocations = make(map[string]TeamEventLocation)
 			}
 			ts.divisionLocations[id] = location
+		case "team_photo":
+			processTeamPhoto(item, team)
 		}
 	}
 
@@ -174,8 +170,6 @@ func (ts TeamSnap) bulkLoadTeam(id string, team *Team) bool {
 			return false
 		}
 	}
-
-	// TODO: Stitch together the records
 
 	// TODO: Sort items
 	// TODO: Sort members
@@ -202,7 +196,7 @@ func getItemType(item relHrefData) (string, bool) {
 func loadFields(category itemType, item relHrefData) (nameValueResults, bool) {
 
 	names := category.itemNames
-	if !category.isLink {
+	if names != nil {
 		// Load the needed fields based on the type
 		results, ok := item.Data.findValues(names...)
 		if !ok {
@@ -212,14 +206,7 @@ func loadFields(category itemType, item relHrefData) (nameValueResults, bool) {
 
 	}
 
-	href, ok := item.Links.findRelLink(names[0])
-	if !ok {
-		return nil, ok
-	}
-
-	return nameValueResults{
-		"href": href,
-	}, ok
+	return nameValueResults{}, false
 }
 
 func (ts TeamSnap) processItem(item relHrefData, team *Team) bool {
@@ -236,15 +223,16 @@ func (ts TeamSnap) processItem(item relHrefData, team *Team) bool {
 		return false
 	}
 
-	// Load the values
-	results, ok := loadFields(category, item)
-	if !ok {
-		return false
-	}
-
 	// Check if we care about this item
 	if category.itemProcessor == nil {
 		return true
+	}
+
+	// Load the values
+	results, ok := loadFields(category, item)
+	if !ok {
+		log.WithFields(log.Fields{"package": "teamsnap"}).Warnf("Failed to load requested fields: %v from: %v", category, item)
+		return false
 	}
 
 	// process the data
@@ -279,9 +267,12 @@ func processOpponent(results nameValueResults) (string, string) {
 	return results["id"], results["name"]
 }
 
-func processTeamPhoto(data nameValueResults, _ TeamSnap, team *Team) bool {
+func processTeamPhoto(data relHrefData, team *Team) bool {
 
-	team.PhotoURL = data["href"]
+	href, _ := data.Links.findRelLink("image_url")
+	team.PhotoURL = href
+
+	log.Debugf("Team photo: %s", team.PhotoURL)
 
 	return true
 }
