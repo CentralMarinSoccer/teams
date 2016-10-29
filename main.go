@@ -1,19 +1,19 @@
 package main
 
 import (
+	"flag"
 	"fmt"
+	"net/http"
 	"os"
 	"strconv"
-	"net/http"
 	"time"
-	"flag"
 
+	log "github.com/Sirupsen/logrus"
 	"github.com/centralmarinsoccer/teams/geocode"
 	"github.com/centralmarinsoccer/teams/handler"
 	"github.com/centralmarinsoccer/teams/teamsnap"
-	"github.com/prometheus/client_golang/prometheus"
 	"github.com/gorilla/mux"
-	log "github.com/Sirupsen/logrus"
+	"github.com/prometheus/client_golang/prometheus"
 )
 
 const defaultPort = 8080
@@ -26,7 +26,7 @@ type Environment struct {
 	Division        int
 	URL             string
 	RefreshInterval time.Duration
-	GoogleAPIKey	string
+	GoogleAPIKey    string
 }
 
 func init() {
@@ -51,9 +51,9 @@ func main() {
 	geocoder := geocode.New(env.GoogleAPIKey)
 
 	ts, err := teamsnap.New(&teamsnap.Configuration{
-		Division:      env.Division,
-		Token:         env.Token,
-		Geocoder:  geocoder,
+		Division: env.Division,
+		Token:    env.Token,
+		Geocoder: geocoder,
 	})
 	if err != nil {
 		log.Errorf("Failed to create a new TeamSnap. Error: %v", err)
@@ -79,7 +79,7 @@ func main() {
 	go func() {
 		for {
 			select {
-			case <- ticker.C:
+			case <-ticker.C:
 				log.Infoln("Updating team data")
 				if ok := ts.Update(); ok {
 					update <- true
@@ -93,8 +93,8 @@ func main() {
 
 	log.Infof("Starting up server at %s%s with data refresh interval of %d for TeamSnap division %d", env.URL, urlPath, env.RefreshInterval, env.Division)
 	srv := &http.Server{
-		Handler:      r,
-		Addr:         env.URL,
+		Handler: r,
+		Addr:    env.URL,
 		// Good practice: enforce timeouts for servers you create!
 		WriteTimeout: 5 * time.Second,
 		ReadTimeout:  5 * time.Second,
