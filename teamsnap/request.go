@@ -4,11 +4,11 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
 	log "github.com/Sirupsen/logrus"
+	"io/ioutil"
 	"net/http"
-	"strings"
 	"os"
+	"strings"
 )
 
 func (r TeamSnap) makeRequest(url string) (teamSnapResult, bool) {
@@ -20,23 +20,23 @@ func (r TeamSnap) makeRequest(url string) (teamSnapResult, bool) {
 	client := &http.Client{}
 	req, err := http.NewRequest("GET", url, nil)
 	if err != nil {
-		log.WithFields(log.Fields{"package":"teamsnap"}).Warnf("Failed to create new request for url %s", url)
+		log.WithFields(log.Fields{"package": "teamsnap"}).Warnf("Failed to create new request for url %s", url)
 		return teamSnapResult{}, false
 	}
 	req.Header.Set("Authorization", auth)
 	req.Header.Set("Content-Type", "application/json")
 
-	log.WithFields(log.Fields{"package":"teamsnap"}).Debugf("Requesting TeamSnap URL: %s", url)
+	log.WithFields(log.Fields{"package": "teamsnap"}).Debugf("Requesting TeamSnap URL: %s", url)
 	res, err := client.Do(req)
 	if err != nil {
-		log.WithFields(log.Fields{"package":"teamsnap"}).Warnf("Error requesting URL: %s. Error: %v", url, err)
+		log.WithFields(log.Fields{"package": "teamsnap"}).Warnf("Error requesting URL: %s. Error: %v", url, err)
 		return teamSnapResult{}, false
 	}
 	defer res.Body.Close()
 
 	body, err := ioutil.ReadAll(res.Body)
 	if err != nil {
-		log.WithFields(log.Fields{"package":"teamsnap"}).Warn("Failed to read complete response body")
+		log.WithFields(log.Fields{"package": "teamsnap"}).Warn("Failed to read complete response body")
 		return teamSnapResult{}, false
 	}
 
@@ -52,7 +52,7 @@ func (r TeamSnap) makeRequest(url string) (teamSnapResult, bool) {
 	}
 
 	if res.StatusCode != http.StatusOK {
-		log.WithFields(log.Fields{"package":"teamsnap"}).Warnf("Request failed. Code: %d Message: %s", res.StatusCode, string(body[:]))
+		log.WithFields(log.Fields{"package": "teamsnap"}).Warnf("Request failed. Code: %d Message: %s", res.StatusCode, string(body[:]))
 		return teamSnapResult{}, false
 	}
 
@@ -60,7 +60,7 @@ func (r TeamSnap) makeRequest(url string) (teamSnapResult, bool) {
 	d.UseNumber()
 	var tr teamSnapResult
 	if err := d.Decode(&tr); err != nil {
-		log.WithFields(log.Fields{"package":"teamsnap"}).Warnf("TeamSnap JSON Root - Could not parse: %v", err)
+		log.WithFields(log.Fields{"package": "teamsnap"}).Warnf("TeamSnap JSON Root - Could not parse: %v", err)
 		return teamSnapResult{}, false
 	}
 

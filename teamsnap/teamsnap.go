@@ -3,10 +3,10 @@ package teamsnap
 import (
 	"errors"
 	log "github.com/Sirupsen/logrus"
-	"github.com/centralmarinsoccer/teams/filesystem"
-	"time"
-	"github.com/centralmarinsoccer/teams/geocode"
 	"github.com/centralmarinsoccer/teams/cache"
+	"github.com/centralmarinsoccer/teams/filesystem"
+	"github.com/centralmarinsoccer/teams/geocode"
+	"time"
 )
 
 // ClubDataInterface provides a mechanism to retrieve club data
@@ -16,20 +16,22 @@ type ClubDataInterface interface {
 
 // TeamSnap provides a mechanism to configure and cache team data stored in TeamSnap.com website
 type TeamSnap struct {
-	root          teamSnapResult
-	locations     map[string]TeamEventLocation
-	clubData      ClubData
-	configuration Configuration
+	root               teamSnapResult
+	divisionLocations map[string]TeamEventLocation
+	locations          map[string]TeamEventLocation
+	opponents          map[string]string
+	clubData           ClubData
+	configuration      Configuration
 }
 
 // Configuration defines how TeamSnap information should be accessed
 type Configuration struct {
-	Token           string
-	Division        int
-	Geocoder	geocode.Geocoder
-	FileSystem      filesystem.LocalDiskInterface
-	TeamSnapServer  string
-	DumpJSON        bool
+	Token          string
+	Division       int
+	Geocoder       geocode.Geocoder
+	FileSystem     filesystem.LocalDiskInterface
+	TeamSnapServer string
+	DumpJSON       bool
 }
 
 // ClubData is the data returned from TeamSnap
@@ -56,6 +58,7 @@ type Team struct {
 const memberTypePlayer = "player"
 const memberTypeCoach = "coach"
 const memberTypeManager = "manager"
+const memberTypeAssistantManager = "assistant manager"
 
 // TeamMember holds the text and metadata for a team member
 type TeamMember struct {
@@ -65,18 +68,18 @@ type TeamMember struct {
 
 // TeamEvent contains all of the data that makes up an event
 type TeamEvent struct {
-	Start     time.Time            `json:"start"`
-	Opponent  string               `json:"opponent"`
-	Duration  string               `json:"duration"`
-	Location  TeamEventLocation    `json:"location"`
+	Start    time.Time         `json:"start"`
+	Opponent string            `json:"opponent"`
+	Duration string            `json:"duration"`
+	Location TeamEventLocation `json:"location"`
 }
 
 // TeamEventLocation contains all of the data that makes up an event location
 type TeamEventLocation struct {
-	Name    string    `json:"name"`
-	Address string    `json:"address"`
-	Latitude float64   `json:"latitude,omitempty"`
-        Longitude float64  `json:"longitude,omitempty"`
+	Name      string  `json:"name"`
+	Address   string  `json:"address"`
+	Latitude  float64 `json:"latitude,omitempty"`
+	Longitude float64 `json:"longitude,omitempty"`
 }
 
 const defaultServer = "https://api.teamsnap.com"
@@ -97,7 +100,7 @@ func New(configuration *Configuration) (*TeamSnap, error) {
 
 	ts := &TeamSnap{
 		configuration: *configuration,
-		locations: make(map[string]TeamEventLocation),
+		locations:     make(map[string]TeamEventLocation),
 	}
 
 	// Check if the file exists
@@ -107,7 +110,7 @@ func New(configuration *Configuration) (*TeamSnap, error) {
 	}
 
 	if !dataLoaded {
-		log.WithFields(log.Fields{"package":"teamsnap"}).Warnf("TeamSnap cache '%s' does not exist or failed to load. Building initial version", defaultFilename)
+		log.WithFields(log.Fields{"package": "teamsnap"}).Warnf("TeamSnap cache '%s' does not exist or failed to load. Building initial version", defaultFilename)
 		dataLoaded = ts.loadTeamSnapData()
 	}
 
@@ -124,7 +127,7 @@ func (ts *TeamSnap) loadTeamSnapData() bool {
 	// Load data from TeamSnap web API
 	teams, ok := ts.teams()
 	if !ok {
-		log.WithFields(log.Fields{"package":"teamsnap"}).Warnf("Unable to retrieve data from TeamSnap. Check previous errors")
+		log.WithFields(log.Fields{"package": "teamsnap"}).Warnf("Unable to retrieve data from TeamSnap. Check previous errors")
 		return false
 	}
 

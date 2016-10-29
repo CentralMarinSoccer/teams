@@ -2,25 +2,54 @@ package teamsnap
 
 import (
 	"fmt"
+	log "github.com/Sirupsen/logrus"
 	"strconv"
 	"strings"
 )
 
-func (ts TeamSnap) members(links relHrefDatas) ([]TeamMember, int) {
-	year := 0
-	var members []TeamMember
+func processMember(data nameValueResults, _ TeamSnap, team *Team) bool {
+	log.WithFields(log.Fields{"package": "teamsnap"}).Debugf("Processing Member: %v", data)
 
-	if href, ok := links.findRelLink("members"); ok {
-		tr, _ := ts.makeRequest(href)
-		for _, m := range tr.Collection.Items {
-			m1, birthday := ts.member(m)
-			members = append(members, m1)
+	mt := memberType(data)
 
-			teamYear(birthday, &year)
-		}
+	// update the team year
+	teamYear(data["birthday"], &team.Year)
+
+	// Add the member
+	team.Members = append(team.Members, TeamMember{
+		Name:       name(data["first_name"], data["last_name"], mt),
+		MemberType: mt,
+	})
+
+	return true
+}
+
+func memberType(results nameValueResults) string {
+	if results["is_non_player"] == "false" {
+		return memberTypePlayer
 	}
 
-	return members, year
+	// Determine if this is a coach
+	if strings.EqualFold(results["position"], "coach") {
+		return memberTypeCoach
+	}
+
+	if results["is_owner"] == "true" {
+		return memberTypeManager
+	}
+
+	return memberTypeAssistantManager
+}
+
+func name(first string, last string, mt string) string {
+
+	// Only show initial for last name for players
+	if mt == memberTypePlayer && len(last) > 0 {
+		// Just show the first initial of the last name
+		last = last[0:1]
+	}
+
+	return fmt.Sprintf("%s %s", first, last)
 }
 
 // Use birthday to determine the team's player year, e.g. 2008
@@ -34,62 +63,4 @@ func teamYear(birthday string, year *int) {
 	if y > 1990 && (y < *year || *year == 0) {
 		*year = y
 	}
-}
-
-func (ts TeamSnap) member(m relHrefData) (TeamMember, string) {
-	href := emailHref(m.Links)
-	if results, ok := m.Data.findValues("first_name", "last_name", "birthday", "is_manager", "is_non_player", "is_owner"); ok {
-		mt := ts.memberType(href, results)
-		return TeamMember{
-			Name:       name(results["first_name"], results["last_name"], mt),
-			MemberType: mt,
-		}, results["birthday"]
-	}
-	return TeamMember{}, ""
-}
-
-func (ts TeamSnap) memberType(href string, results nameValueResults) string {
-	if results["is_non_player"] == "false" {
-		return memberTypePlayer
-	}
-
-	// Determine if this is a coach
-	if tr, ok := ts.makeRequest(href); ok {
-		for _, e := range tr.Collection.Items {
-			if l, ok := e.Data.findValues("label"); ok {
-				if caseInsensitiveContains(l["label"], "coach") {
-					return memberTypeCoach
-				}
-			}
-		}
-	}
-
-	return memberTypeManager
-}
-
-func name(first string, last string, mt string) string {
-	switch mt {
-	case memberTypeCoach, memberTypeManager:
-		// Show full last name, so nothing to do
-	case memberTypePlayer:
-		if len(last) > 0 {
-			// Just show the first initial of the last name
-			last = last[0:1]
-		}
-	}
-
-	return fmt.Sprintf("%s %s", first, last)
-}
-
-func emailHref(links relHrefDatas) string {
-	// find the emails link
-	if href, ok := links.findRelLink("member_email_addresses"); ok {
-		return href
-	}
-
-	return ""
-}
-
-func caseInsensitiveContains(a, b string) bool {
-	return strings.Contains(strings.ToUpper(a), strings.ToUpper(b))
 }

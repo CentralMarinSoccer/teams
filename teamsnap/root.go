@@ -10,7 +10,6 @@ const basePath = "/v3/"
 
 func (r TeamSnap) loadRoot() teamSnapResult {
 
-
 	tr, ok := r.makeRequest(r.buildTeamSnapURL(basePath))
 	if !ok {
 		panic("Banana - Failed to get TeamSnap root")
@@ -36,4 +35,3 @@ func generateHash(salt string, data string) string {
 
 	return codestr
 }
-

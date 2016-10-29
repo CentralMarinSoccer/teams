@@ -1,116 +1,63 @@
 package teamsnap
 
 import (
-	"time"
 	"fmt"
 	log "github.com/Sirupsen/logrus"
-
+	"time"
 )
 
-func (ts TeamSnap) events(links relHrefDatas) []TeamEvent {
+const pastGameTime = -2
 
-	var events []TeamEvent
+func processEvent(results nameValueResults, ts TeamSnap, team *Team) bool {
 
-	// Load all of the team event locations
-	ts.teamLocations(links)
+	// We only care about games
+	if results["is_game"] != "true" {
+		return true
+	}
 
-	// Load the events
-	if href, ok := links.findRelLink("events"); ok {
-		tr, _ := ts.makeRequest(href)
-		for _, e := range tr.Collection.Items {
-			if event, ok := ts.event(e, ts.locations); ok {
-				events = append(events, event)
-			}
+	// Use the appropriate location
+	var location TeamEventLocation
+	if results["location_id"] == "" {
+		location = ts.locations[results["location_id"]]
+	} else {
+		location = ts.divisionLocations[results["location_id"]]
+	}
+
+	// Game start is arrival_date + minutes_to_arrive_early
+	start, _ := time.Parse(time.RFC3339, results["arrival_date"])
+	if results["minutes_to_arrive_early"] != "" {
+		if earlyArrival, err := time.ParseDuration(fmt.Sprintf("%sm", results["minutes_to_arrive_early"])); err == nil {
+			start = start.Add(earlyArrival)
 		}
 	}
 
-	return events
-}
+	// Only add events if they're for today or the future
+	diff := start.Sub(time.Now())
+	if diff.Hours() > pastGameTime {
 
-// Show games that started two hours before now
-const pastGameTime = -2
-func (ts TeamSnap) event(e relHrefData, locs map[string]TeamEventLocation) (TeamEvent, bool) {
-
-	if results, ok := e.Data.findValues("is_game", "name", "arrival_date", "duration_in_minutes", "division_location_id", "location_id", "minutes_to_arrive_early"); ok {
-		if results["is_game"] != "true" {
-			return TeamEvent{}, false
-		}
-		var loc TeamEventLocation
-		locID := results["location_id"]
-		if locID == "" {
-			locID = results["division_location_id"]
-		}
-		loc = locs[locID]
-		start, _ := time.Parse(time.RFC3339, results["arrival_date"])
-
-		// Game start is arrival_date + minutes_to_arrive_early
-		if (results["minutes_to_arrive_early"] != "") {
-			if earlyArrival, err := time.ParseDuration(fmt.Sprintf("%sm", results["minutes_to_arrive_early"])); err == nil {
-				start = start.Add(earlyArrival);
-			}
+		var event = TeamEvent{
+			Start:    start,
+			Opponent: ts.opponents[results["opponent_id"]],
+			Duration: results["duration_in_minutes"],
+			Location: TeamEventLocation{
+				Name:    location.Name,
+				Address: location.Address,
+			},
 		}
 
-		// Only add events if they're for today or the future
-		diff := start.Sub(time.Now())
-		if diff.Hours() > pastGameTime {
-
-			var event =  TeamEvent{
-				Start:    start,
-				Opponent: ts.opponent(e.Links),
-				Duration: results["duration_in_minutes"],
-				Location: TeamEventLocation{
-					Name:    loc.Name,
-					Address: loc.Address,
-				},
-			}
-
+		if location.Address != "" {
 			// Geocode address to latitude / longitude
-			if address := ts.configuration.Geocoder.Lookup(loc.Address); address != nil {
+			if address := ts.configuration.Geocoder.Lookup(location.Address); address != nil {
 				event.Location.Address = address.FormattedAddress
 				event.Location.Latitude = address.Lat
 				event.Location.Longitude = address.Lng
 			} else {
-				log.WithFields(log.Fields{"package":"teamsnap"}).Warnf("Unable to geocode address: %s for %s", loc.Address, loc.Name)
-
-			}
-
-			return event, true
-		}
-	}
-
-	return TeamEvent{}, false
-}
-
-func (ts TeamSnap) teamLocations(links relHrefDatas) {
-
-	// Load club and division locations
-	ts.loadLocations(links, "division_locations")
-	ts.loadLocations(links, "locations")
-}
-
-func (ts TeamSnap) loadLocations(links relHrefDatas, locType string) {
-
-	if href, ok := links.findRelLink(locType); ok {
-		tr, _ := ts.makeRequest(href)
-		for _, l := range tr.Collection.Items {
-			if results, ok := l.Data.findValues("id", "name", "address"); ok {
-				ts.locations[results["id"]] = TeamEventLocation{
-					Name:    results["name"],
-					Address: results["address"],
-				}
+				log.WithFields(log.Fields{"package": "teamsnap"}).Warnf("Unable to geocode address: %s for %s", location.Address, location.Name)
 			}
 		}
-	}
-}
 
-func (ts TeamSnap) opponent(links relHrefDatas) string {
-	if href, ok := links.findRelLink("opponent"); ok {
-		tr, _ := ts.makeRequest(href)
-		if results, ok := tr.Collection.Items[0].Data.findValues("name"); ok {
-			return results["name"]
-		}
+		team.Events = append(team.Events, event)
 	}
 
-	return ""
+	return true
 }
-
