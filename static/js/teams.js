@@ -3,6 +3,12 @@
 // TODO: Need to handle no dates (no scheduled events)
 
 ////////////////////////////////////////////
+// 
+// Modal Team Popup
+//
+
+
+////////////////////////////////////////////
 //
 // Extend the Date object with some nice helpers
 //
@@ -173,8 +179,9 @@ var Teams = (function() {
     var _locations = Locations; // All locations
     var _teams  = []
 
-    var teamsFn = doT.template("<table><tr><td><ul>{{~it :value:index}} <li data-index='{{=index}}'>{{=value.year}} {{=value.gender}} {{=value.level}} - {{=value.name}}</li> {{~}}</ul></td><td valign='top'><div id='team'/></td></tr></table>");
-    var teamFn = doT.template("{{?it.image_url}}<img src='{{=it.image_url}}' width='300'/>{{?}}<ul>{{~it.members :value:index}} <li data-index='{{=index}}'>{{=value.name}} {{=value.type}}</li> {{~}}");
+    //var teamsFn = doT.template("<table><tr><td><ul>{{~it :value:index}} <li data-index='{{=index}}'>{{=value.year}} {{=value.gender}} {{=value.level}}</li> {{~}}</ul></td><td valign='top'><div id='team'/></td></tr></table>");
+    var teamsFn = doT.template("<ul>{{~it :value:index}} <li data-index='{{=index}}'>{{=value.year}} {{=value.gender}} {{=value.level}}</li> {{~}}</ul><div id='teamModal' class='modal'><div class='modal-content'><span class='close'>x</span><p id='team'></p></div></div>");
+    var teamFn = doT.template("<h2>{{=it.year}} {{=it.gender}} {{=it.level}}</h2>{{?it.image_url}}<img src='{{=it.image_url}}' width='300'/>{{?}}<ul>{{~it.members :value:index}} <li data-index='{{=index}}'>{{=value.name}} {{=value.type}}</li> {{~}}");
 
     var teamName = function(team) {
         return team.year + " " + team.gender + " " + team.level;
@@ -304,8 +311,13 @@ var Teams = (function() {
         teams.innerHTML = teamsFn(_teams);
 	var _teamId = document.getElementById("team");
 
+        // Get the modal
+        var modal = document.getElementById('teamModal');
+        var span = document.getElementsByClassName('close')[0];
+
         teams.addEventListener('click', function (event) {
           var index = event.target.getAttribute('data-index');
+          if (index == undefined) return;
           var team = _teams[index];
 
           team.members.sort(function(member1, member2) {
@@ -319,8 +331,20 @@ var Teams = (function() {
               return 0;
           });
 
+          modal.style.display = "block";
+
           _teamId.innerHTML = teamFn(team);
         });
+
+        // close the modal
+        span.onclick = function() {
+          modal.style.display = "none";
+        }
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
     };
 
     var activeMarkers = [];
