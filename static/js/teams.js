@@ -3,12 +3,6 @@
 // TODO: Need to handle no dates (no scheduled events)
 
 ////////////////////////////////////////////
-// 
-// Modal Team Popup
-//
-
-
-////////////////////////////////////////////
 //
 // Extend the Date object with some nice helpers
 //
@@ -246,10 +240,6 @@ var Teams = (function() {
             _teams.push(team);
         });
 
-        /*
-         years []years
-         year {year, boys->[teams], girls->[teams]}
-         */
         // Sort teams to facilitate generating data structure
         _teams.sort(function(team1, team2) {
             if (team1.year > team2.year) return -1;
@@ -342,19 +332,14 @@ var Teams = (function() {
         teams.innerHTML = teamsFn(years);
 	    var _teamId = document.getElementById("team");
 
-        // Get the modal
-        var modal = document.getElementById('teamModal');
-        var span = document.getElementsByClassName('close')[0];
-
         teams.addEventListener('click', function (event) {
           var index = event.target.getAttribute('data-index');
           if (index == undefined) return;
           var team = _teams[index];
 
           team.members.sort(function(member1, member2) {
-              // sort on type first
-              if (member1.type > member2.type) return 1;
-              if (member1.type < member2.type) return -1;
+              if (member1.is_player > member2.is_player) return 1;
+              if (member1.is_player < member2.is_player) return -1;
 
               if (member1.name > member2.name) return 1;
               if (member1.name < member2.name) return -1;
@@ -362,22 +347,8 @@ var Teams = (function() {
               return 0;
           });
 
-          modal.style.display = "block";
-
           _teamId.innerHTML = teamFn(team);
         });
-
-        if (modal && span) {
-            // close the modal
-            span.onclick = function() {
-                modal.style.display = "none";
-            }
-            window.onclick = function(event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
-                }
-            }
-        }
     };
 
     var activeMarkers = [];
