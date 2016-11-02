@@ -55,15 +55,11 @@ type Team struct {
 	Events   []TeamEvent  `json:"events,omitempty"`
 }
 
-const memberTypePlayer = "player"
-const memberTypeCoach = "coach"
-const memberTypeManager = "manager"
-const memberTypeAssistantManager = "assistant manager"
-
 // TeamMember holds the text and metadata for a team member
 type TeamMember struct {
 	Name       string `json:"name"`
-	MemberType string `json:"type"`
+	IsPlayer   bool   `json:"is_player"`
+	Position   string `json:"position,omitempty"`
 }
 
 // TeamEvent contains all of the data that makes up an event
