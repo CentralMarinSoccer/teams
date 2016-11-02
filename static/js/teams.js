@@ -239,14 +239,55 @@ var Teams = (function() {
 
         xhr.send();
     };
-    var processData = function (data) {
 
+    var processTeams = function(data) {
+
+        data.teams.forEach(function (team) {
+            _teams.push(team);
+        });
+
+        /*
+         years []years
+         year {year, boys->[teams], girls->[teams]}
+         */
+        // Sort teams to facilitate generating data structure
+        _teams.sort(function(team1, team2) {
+            if (team1.year > team2.year) return -1;
+            if (team1.year < team2.year) return 1;
+
+            if (team1.gender > team2.gender) return 1;
+            if (team1.gender < team2.gender) return -1;
+
+            if (team1.level > team2.level) return 1;
+            if (team1.level < team2.level) return -1;
+
+            return 0;
+        });
+
+        // generate data structure
+        var years = [];
+        var year = {};
+        _teams.forEach(function(team, i) {
+            if (team.year != year.name) {
+                year = {}
+                year.name = team.year;
+                year.boys = []
+                year.girls = []
+                years.push(year)
+            }
+
+            var team_name =  {name: team.level, index: i};
+            team.gender == "Boys" ? year.boys.push(team_name) : year.girls.push(team_name)
+        });
+
+        displayTeams(years);
+
+    };
+
+    var processMapData = function(data) {
         var dates = {};
-
         // construct locations
         data.teams.forEach(function (team) {
-
-            _teams.push(team);
 
             if (team.events) {
                 team.events.forEach(function (event) {
@@ -288,27 +329,18 @@ var Teams = (function() {
         });
 
         updateMap(availableDates[0]);
-
-        // Sort and Display teams
-        _teams.sort(function(team1, team2) {
-            if (team1.gender > team2.gender) return 1;
-            if (team1.gender < team2.gender) return -1;
-
-            if (team1.year > team2.year) return 1;
-            if (team1.year < team2.year) return -1;
-
-            if (team1.level > team2.level) return 1;
-            if (team1.level < team2.level) return -1;
-
-            return 0;
-        });
-        displayTeams();
     };
 
-    var displayTeams = function() {
+    var processData = function (data) {
+
+        processMapData(data);
+        processTeams(data);
+    };
+
+    var displayTeams = function(years) {
         var teams = document.getElementById("teams");
-        teams.innerHTML = teamsFn(_teams);
-	var _teamId = document.getElementById("team");
+        teams.innerHTML = teamsFn(years);
+	    var _teamId = document.getElementById("team");
 
         // Get the modal
         var modal = document.getElementById('teamModal');
@@ -335,14 +367,16 @@ var Teams = (function() {
           _teamId.innerHTML = teamFn(team);
         });
 
-        // close the modal
-        span.onclick = function() {
-          modal.style.display = "none";
-        }
-        window.onclick = function(event) {
-          if (event.target == modal) {
-            modal.style.display = "none";
-          }
+        if (modal && span) {
+            // close the modal
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
         }
     };
 
