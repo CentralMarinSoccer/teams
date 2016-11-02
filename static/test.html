@@ -15,6 +15,29 @@
     <div id="teams"></div>
 </div>
 
+<script id="teamtmpl" type="text/x-dot-template">
+    <h2>{{=it.year}} {{=it.gender}} {{=it.level}}</h2>
+    {{?it.image_url}}<img src='{{=it.image_url}}' width='300'/>{{?}}
+    <ul>
+        {{~it.members :value:index}}
+            <li data-index='{{=index}}'>{{=value.name}} {{=value.type}}</li>
+        {{~}}
+    </ul>
+</script>
+
+<script id="teamstmpl" type="text/x-dot-template">
+    <ul>
+        {{~it :value:index}}
+            <li data-index='{{=index}}'>{{=value.year}} {{=value.gender}} {{=value.level}}</li>
+        {{~}}
+    </ul>
+    <div id='teamModal' class='modal'>
+        <div class='modal-content'>
+            <span class='close'>x</span>
+            <p id='team'></p>
+        </div>
+    </div>
+</script>
 <script type="text/javascript" src="/teams/static/js/doT.min.js"></script>
 <script type="text/javascript" src="/teams/static/js/teams.js"></script>
 <script type="text/javascript" src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDX_StXtOoH-lt4qm0neF16QX_7x7GyWIg&v=3.exp&callback=Teams.initMap'></script>

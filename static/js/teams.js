@@ -179,9 +179,8 @@ var Teams = (function() {
     var _locations = Locations; // All locations
     var _teams  = []
 
-    //var teamsFn = doT.template("<table><tr><td><ul>{{~it :value:index}} <li data-index='{{=index}}'>{{=value.year}} {{=value.gender}} {{=value.level}}</li> {{~}}</ul></td><td valign='top'><div id='team'/></td></tr></table>");
-    var teamsFn = doT.template("<ul>{{~it :value:index}} <li data-index='{{=index}}'>{{=value.year}} {{=value.gender}} {{=value.level}}</li> {{~}}</ul><div id='teamModal' class='modal'><div class='modal-content'><span class='close'>x</span><p id='team'></p></div></div>");
-    var teamFn = doT.template("<h2>{{=it.year}} {{=it.gender}} {{=it.level}}</h2>{{?it.image_url}}<img src='{{=it.image_url}}' width='300'/>{{?}}<ul>{{~it.members :value:index}} <li data-index='{{=index}}'>{{=value.name}} {{=value.type}}</li> {{~}}");
+    var teamsFn = doT.template(document.getElementById('teamstmpl').text)
+    var teamFn = doT.template(document.getElementById('teamtmpl').text);
 
     var teamName = function(team) {
         return team.year + " " + team.gender + " " + team.level;
