@@ -327,21 +327,36 @@ var Teams = (function() {
         processTeams(data);
     };
 
+    var modal;
+    var modalCloseButton;
+    var openModal = function() {
+        if (modal == undefined) {
+            modal = document.getElementById('teamModal');
+            modalCloseButton = modal.getElementsByTagName('a')[0];
+
+            // setup close handler
+            modalCloseButton.onclick = function() {
+                modal.style.opacity = 0;
+                modal.style.pointerEvents = "none";
+            };
+        }
+
+        modal.style.opacity = 1;
+        modal.style.pointerEvents = "auto";
+
+    };
+
     var displayTeams = function(years) {
         var teams = document.getElementById("teams");
         teams.innerHTML = teamsFn(years);
 	    var _teamId = document.getElementById("team");
-
-        var modal = document.getElementById('teamModal');
-        var close = modal.getElementsByTagName('a')[0];
 
         teams.addEventListener('click', function (event) {
           var index = event.target.getAttribute('data-index');
           if (index == undefined) return;
           var team = _teams[index];
 
-          modal.style.opacity = 1;
-          modal.pointerEvents = "auto";
+          openModal();
 
           team.members.sort(function(member1, member2) {
               if (member1.is_player > member2.is_player) return 1;
@@ -352,10 +367,6 @@ var Teams = (function() {
 
               return 0;
           });
-          close.onclick = function() {
-              modal.style.opacity = 0;
-              modal.pointerEvents = "none";
-          }
 
           _teamId.innerHTML = teamFn(team);
         });
