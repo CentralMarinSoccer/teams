@@ -2,116 +2,116 @@
 <head>
     <title>Hello</title>
     <style>
-        #map {
+        #teams-map {
             height: 400px;
             width: 100%;
         }
 
-        .cm-modalDialog {
-            position: fixed;
-            font-family: Arial, Helvetica, sans-serif;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            background: rgba(0, 0, 0, 0.8);
-            z-index: 99999;
-            opacity:0;
-            -webkit-transition: opacity 400ms ease-in;
-            -moz-transition: opacity 400ms ease-in;
-            transition: opacity 400ms ease-in;
-            pointer-events: none;
-            overflow: auto;
-        }
-        /*.cm-modalDialog:target {*/
-            /*opacity:1;*/
-            /*pointer-events: auto;*/
-        /*}*/
-        .cm-modalDialog > div {
-            width: 80%;
-            position: relative;
-            margin: 10% auto;
-            padding: 5px 20px 13px 20px;
-            border-radius: 10px;
-            background: #fff;
-        }
-        .cm-modalClose {
-            background: #606061;
-            color: #FFFFFF;
-            line-height: 25px;
-            position: absolute;
-            right: -12px;
-            text-align: center;
-            top: -10px;
-            width: 24px;
-            text-decoration: none;
-            font-weight: bold;
-            -webkit-border-radius: 12px;
-            -moz-border-radius: 12px;
-            border-radius: 12px;
-            -moz-box-shadow: 1px 1px 3px #000;
-            -webkit-box-shadow: 1px 1px 3px #000;
-            box-shadow: 1px 1px 3px #000;
-        }
-        .cm-modalClose:hover {
-            background: #00d9ff;
-        }
+/* Modal Dialog */
+.modalDialog {
+    position: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+    opacity:0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+    overflow: auto;
+}
+.modalDialog > div {
+    width: 80%;
+    position: relative;
+    margin: 10% auto;
+    padding: 5px 20px 13px 20px;
+    border-radius: 10px;
+    background: #fff;
+}
+.modalClose {
+    background: #606061;
+    color: #FFFFFF;
+    line-height: 25px;
+    position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -10px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+    box-shadow: 1px 1px 3px #000;
+}
+.modalClose:hover {
+    background: #00d9ff;
+}
 
-        /* CM Table */
-        .cm-table {
-            display:table;
-            border-collapse: collapse;
-            width: 100%;
-        }
-        .cm-header {
-            display:table-header-group;
-            font-weight:bold;
-        }
-        .cm-row {
-            display:table-row;
-        }
-        .cm-cell {
-            display:table-cell;
-            width:33%;
-        }
+/* Table */
+.table {
+    display:table;
+    border-collapse: collapse;
+    width: 100%;
+}
+.header {
+    display:table-header-group;
+    font-weight:bold;
+}
+.row {
+    display:table-row;
+}
+.even-row {
+    background:#eee;
+}
+.cell {
+    display:table-cell;
+    width:33%;
+}
+.border-line {
+    border-top: 1px solid #000;
+}
 
-        .cm-line {
-            border-bottom: 1px solid #000;
-        }
     </style>
 </head>
 <body>
 <div>
-    <select id="map-date-picker"></select>
-    <div id="map"></div>
+    <select id="teams-map-date-picker"></select>
+    <div id="teams-map"></div>
     <div id="teams"></div>
 </div>
 
 <script id="teamstmpl" type="text/x-dot-template">
-    <div class="cm-table">
-        <div class="cm-header cm-line">
-            <div class="cm-cell">&nbsp;</div>
-            <div class="cm-cell">Boys</div>
-            <div class="cm-cell">Girls</div>
+    <div class="table">
+        <div class="header">
+            <div class="cell">&nbsp;</div>
+            <div class="cell">Boys</div>
+            <div class="cell">Girls</div>
         </div>
         {{~it :year}}
-            <div class="cm-row cm-line">
-                <div class="cm-cell">{{=year.name}}</div>
-                <div class="cm-cell">
-                    {{~ year.boys :team}}
-                        <a href="#teamModal" data-index="{{=team.index}}">{{=team.name}}<br/></a>
-                    {{~}}
+            <div class="row {{?year.name}}border-line{{?}}">
+                <div class="cell">{{=year.name}}</div>
+                <div class="cell {{?year.even_row}}even-row{{?}}">
+                    {{?year.boys}}
+                        <a href="#" data-index="{{=year.boys.index}}">{{=year.boys.name}}</a>
+                    {{?}}
                 </div>
-                <div class="cm-cell">
-                    {{~ year.girls :team}}
-                        <a href="#teamModal" data-index="{{=team.index}}">{{=team.name}}<br/></a>
-                    {{~}}
+                <div class="cell {{?year.even_row}}even-row{{?}}">
+                    {{?year.girls}}
+                        <a href="#" data-index="{{=year.girls.index}}">{{=year.girls.name}}</a>
+                    {{?}}
                 </div>
             </div>
         {{~}}
     </div>
-    <div id='teamModal' class='cm-modalDialog'>
-        <div><a href="#close" title="Close" class="cm-modalClose">X</a>
+    <div id='teamModal' class='modalDialog'>
+        <div><a href="#" title="Close" class="modalClose">X</a>
             <p id='team'></p>
         </div>
     </div>
@@ -121,13 +121,13 @@
     <h2>{{=it.year}} {{=it.gender}} {{=it.level}}</h2>
     {{?it.image_url}}<img src='{{=it.image_url}}' width='100%'/>{{?}}
     <hr/>
-    <div class="cm-table">
-        <div class="cm-header">
-            <div class="cm-cell">Players</div>
-            <div class="cm-cell">Coaches and Managers</div>
+    <div class="table">
+        <div class="header">
+            <div class="cell">Players</div>
+            <div class="cell">Coaches and Managers</div>
         </div>
-        <div class="cm-row">
-            <div class="cm-cell">
+        <div class="row">
+            <div class="cell">
                 <ul>
                     {{~it.members :value:index}}
                         {{?value.is_player}}
@@ -136,8 +136,7 @@
                     {{~}}
                 </ul>
             </div>
-            <div class="cm-cell">
-
+            <div class="cell">
                 <ul>
                     {{~it.members :value:index}}
                         {{?!value.is_player}}
