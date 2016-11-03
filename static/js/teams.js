@@ -101,7 +101,7 @@ var Teams = (function() {
             });
 
             marker.games.forEach(function (game) {
-                info += "<li>" + game.toString() + "</li>"
+                info += "<li>" + game.display() + "</li>"
             });
             info += "</ul>";
 
@@ -156,7 +156,7 @@ var Teams = (function() {
 
         return {
             compareString: function() { return _dateObj + _teamName; },
-            toString: function() { return _dateObj.displayTime() + ": " + _teamName; },
+            display: function() { return _dateObj.displayTime() + ": " + _teamName; },
             compare: function(game) {
                 var c1 = this.compareString();
                 var c2 = game.compareString();
@@ -332,10 +332,16 @@ var Teams = (function() {
         teams.innerHTML = teamsFn(years);
 	    var _teamId = document.getElementById("team");
 
+        var modal = document.getElementById('teamModal');
+        var close = modal.getElementsByTagName('a')[0];
+
         teams.addEventListener('click', function (event) {
           var index = event.target.getAttribute('data-index');
           if (index == undefined) return;
           var team = _teams[index];
+
+          modal.style.opacity = 1;
+          modal.pointerEvents = "auto";
 
           team.members.sort(function(member1, member2) {
               if (member1.is_player > member2.is_player) return 1;
@@ -346,6 +352,10 @@ var Teams = (function() {
 
               return 0;
           });
+          close.onclick = function() {
+              modal.style.opacity = 0;
+              modal.pointerEvents = "none";
+          }
 
           _teamId.innerHTML = teamFn(team);
         });
