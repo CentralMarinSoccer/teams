@@ -131,7 +131,7 @@ var Teams = (function () {
                     google.maps.event.addListener(marker, 'click', (function (marker) {
                         return function () {
                             _infoWindow.setContent(_getInfo(marker));
-                            _infoWindow.open(map, marker);
+                            _infoWindow.open(_map, marker);
                         }
                     })(marker));
                 }
