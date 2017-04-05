@@ -45,6 +45,7 @@ func main() {
 	var ok bool
 	if env, ok = ValidateEnvs(); !ok {
 		log.Errorln("Missing required environment variables")
+		os.Exit(-1)
 	}
 
 	// Create a geocoder
