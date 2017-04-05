@@ -8,4 +8,5 @@ TeamSnap teams are expected to have the following:
 TeamSnap members are expected to have the following:
 
 * Coach and managers must be listed as non-players
-* Coach must have coach in their email label
+* Coach must have coach in their position label
+* Manager must be team owner

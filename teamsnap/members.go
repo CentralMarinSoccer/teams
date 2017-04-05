@@ -9,7 +9,12 @@ import (
 func processMember(data nameValueResults, _ TeamSnap, team *Team) bool {
 	log.WithFields(log.Fields{"package": "teamsnap"}).Debugf("Processing Member: %v", data)
 
+	// We only care about position for non-players
 	isPlayer := data["is_non_player"] == "false"
+	position := data["position"]
+	if isPlayer {
+		position = ""
+	}
 
 	// update the team year
 	teamYear(data["birthday"], &team.Year)
@@ -18,7 +23,7 @@ func processMember(data nameValueResults, _ TeamSnap, team *Team) bool {
 	team.Members = append(team.Members, TeamMember{
 		Name:       name(data["first_name"], data["last_name"], isPlayer),
 		IsPlayer:   isPlayer,
-		Position:   data["position"],
+		Position:   position,
 	})
 
 	return true
